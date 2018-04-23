@@ -39,19 +39,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        top.setPrefHeight(Screen.getPrimary().getBounds().getHeight() / 30);
-
-        double imageSize = Screen.getPrimary().getBounds().getHeight() / 100;
-        logoImage.setFitHeight(imageSize*2.5);
-        logoImage.setFitWidth(imageSize*2.5);
-
-        logoTitle.setFitHeight(imageSize*1.4);
-        logoTitle.setFitWidth(imageSize*10);;
-
         tokenLabel.setText(LINK);
-        tokenLabel.setStyle("-fx-font-size:".concat(String.valueOf(imageSize*1.4)).concat(";")
-                .concat(" -fx-border-color: transparent; -fx-padding: 5 0 5 0;"));
         tokenLabel.setOnMouseClicked(event -> Main.service.showDocument(LINK));
 
         select_settings.setOnMouseClicked((MouseEvent e) -> display(Sections.EMAIL_SETTINGS.getSection_number()));

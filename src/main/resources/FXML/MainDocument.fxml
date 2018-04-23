@@ -9,12 +9,12 @@
             style="-fx-background-color: #fff" stylesheets="@/css/root_anchorpane.css"
             xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.MainController">
     <top>
-        <GridPane fx:id="top" style="-fx-background-color: #2cc185" alignment="CENTER" hgap="10">
+        <GridPane fx:id="top" style="-fx-background-color: #2cc185" prefHeight="32" alignment="CENTER" hgap="10">
             <children>
                 <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
                     <HBox alignment="CENTER">
                         <children>
-                            <ImageView fx:id="logoImage">
+                            <ImageView fitWidth="20" fitHeight="20" fx:id="logoImage">
                                 <image>
                                     <Image url="@/images/logo.png"/>
                                 </image>
@@ -24,7 +24,7 @@
                     </HBox>
                     <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
                         <children>
-                            <ImageView fx:id="logoTitle">
+                            <ImageView fitWidth="100" fitHeight="15" fx:id="logoTitle">
                                 <image>
                                     <Image url="@/images/logo-title.png"/>
                                 </image>
@@ -33,13 +33,14 @@
                         <padding><Insets right="13"/></padding>
                     </HBox>
                     <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
-                        <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff">
+                        <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
+                                   style="-fx-font-size: 14px; -fx-border-color: transparent; -fx-padding: 5 0 5 0;">
                             <font>
                                 <Font size="12"/>
                             </font>
                         </Hyperlink>
                         <padding>
-                            <Insets right="15" left="15"/>
+                            <Insets right="40" left="40"/>
                         </padding>
                     </HBox>
                 </HBox>
