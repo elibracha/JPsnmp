@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane fx:id="borderPane" xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane fx:id="borderPane" xmlns:fx="http://javafx.com/fxml/1" prefHeight="200"
             style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-color: #008d54" xmlns="http://javafx.com/javafx/8"
             fx:controller="Controllers.STController">
 
@@ -35,12 +35,16 @@
                     <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
                         <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff">
                             <font>
-                                <Font size="12"/>
+                                <Font size="14"/>
                             </font>
                         </Hyperlink>
                     </HBox>
                 <Label alignment="CENTER" onMouseClicked="#exit" style="-fx-font:16 Arial;"
-                       text="X" textFill="#fff" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                       text="X" textFill="#fff" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                    <padding>
+                        <Insets right="10"/>
+                    </padding>
+                </Label>
             </children>
         </GridPane>
     </top>

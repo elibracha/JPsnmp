@@ -40,12 +40,6 @@ public class Main extends Application {
                 .getResource("FXML/STDocument.fxml"));
         Parent root = loader.load();
 
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setWidth(primScreenBounds.getWidth() / 3.8);
-        stage.setHeight(primScreenBounds.getHeight() / 5);
-        setMoveAble(root, stage);
-
-
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
