@@ -15,7 +15,7 @@
                       AnchorPane.topAnchor="50"
                       AnchorPane.bottomAnchor="60"/>
     <HBox spacing="10" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
-        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="35"
+        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="35 "
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
