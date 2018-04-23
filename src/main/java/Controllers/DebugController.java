@@ -1,23 +1,14 @@
 package Controllers;
 
 import com.jfoenix.controls.JFXTextArea;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
+
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class DebugController implements Initializable {
- 
+
     private static String LOG_PATH = " log/history.txt";
 
     @FXML
@@ -25,7 +16,7 @@ public class DebugController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    	//Platform.runLater(() -> setLogger());
+        //Platform.runLater(() -> setLogger());
     }
 
 /*    private void appendTextArea(String str) {

@@ -1,54 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
-<?import com.jfoenix.controls.JFXProgressBar?>
-<?import org.controlsfx.control.RangeSlider?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.image.ImageView?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1"
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.RangeSlider?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.121"
             fx:controller="Controllers.NetworkController"
             stylesheets="@/css/network_anchorpane.css">
 
-    <JFXTreeTableView fx:id="networkView" layoutX="32.0" layoutY="65.0" prefHeight="147.0"
-                      prefWidth="570.0"/>
-    <JFXProgressBar fx:id="scanProgressBar" layoutX="260.0" layoutY="212.0" prefHeight="29.0"
-                    prefWidth="342.0"
-                    progress="0.0"/>
-    <RangeSlider fx:id="rangerSlider" max="254" min="1" layoutX="191.0" layoutY="36.0" prefWidth="200"
-                 maxHeight="1" onMouseDragged="#handleRange"/>
-    <JFXTextField fx:id="networkValue1" focusColor="#008d54" layoutX="33.0" layoutY="25.0" maxWidth="25"
-                  promptText="255" onKeyReleased="#validateNetAndCommunity"/>
-    <JFXTextField fx:id="networkValue2" focusColor="#008d54" layoutX="67.0" layoutY="25.0" maxWidth="25"
-                  promptText="255" onKeyReleased="#validateNetAndCommunity"/>
-    <JFXTextField fx:id="networkValue3" focusColor="#008d54" layoutX="99.0" layoutY="25.0" maxWidth="25"
-                  promptText="255" onKeyReleased="#validateNetAndCommunity"/>
-    <JFXTextField fx:id="rangeField" focusColor="#008d54" layoutX="131.0" layoutY="25.0" maxWidth="50.0"
-                  text="1-254" disable="true"/>
-    <JFXTextField fx:id="community" focusColor="#008d54" labelFloat="true" layoutX="404.0" layoutY="25.0"
-                  maxWidth="90.0" promptText="community" text="public"
-                  onKeyReleased="#validateNetAndCommunity"/>
-    <JFXButton fx:id="btn_addNet" layoutX="503.0" layoutY="30.0" prefWidth="100"
-               styleClass="add-network-button" text="Add Network" onMouseClicked="#AddNewNet"
-               disable="true"/>
-    <JFXButton fx:id="btn_deleteNet" disable="true" styleClass="table-view-button" layoutX="33"
-               layoutY="213" prefWidth="60" text="Delete" onMouseClicked="#deleteNetwork"/>
-    <JFXButton layoutX="94" layoutY="213" prefWidth="60" styleClass="table-view-button" text="Import"/>
-    <JFXButton layoutX="155" layoutY="213" prefWidth="60" styleClass="table-view-button" text="Export"/>
-    <JFXButton fx:id="btn_scan" disable="true" onMouseClicked="#execute" layoutX="218.0"
-               layoutY="213.0" prefHeight="27.0" prefWidth="40.0" styleClass="scan-button">
-        <graphic>
-            <ImageView fitHeight="17.0" fitWidth="17.0">
-                <Image url="@/images/refresh.png"/>
-            </ImageView>
-        </graphic>
-    </JFXButton>
-    <Label layoutX="61.0" layoutY="38.0" prefHeight="17.0" prefWidth="3.0" text="."/>
-    <Label layoutX="94.0" layoutY="38.0" text="."/>
-    <Label layoutX="126.0" layoutY="38.0" prefHeight="17.0" prefWidth="3.0" text="."/>
+    <JFXTreeTableView fx:id="networkView" AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35"
+                      AnchorPane.topAnchor="50"
+                      AnchorPane.bottomAnchor="60"/>
+    <HBox spacing="10" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
+        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="35"
+                      promptText="255" onKeyReleased="#validateNetAndCommunity"/>
+        <Label prefWidth="3.0" text=".">
+            <padding>
+                <Insets top="15"/>
+            </padding>
+        </Label>
+        <JFXTextField fx:id="networkValue2" focusColor="#008d54" maxWidth="35"
+                      promptText="255" onKeyReleased="#validateNetAndCommunity"/>
+        <Label prefWidth="3.0" text=".">
+            <padding>
+                <Insets top="15"/>
+            </padding>
+        </Label>
+        <JFXTextField fx:id="networkValue3" focusColor="#008d54" maxWidth="35"
+                      promptText="255" onKeyReleased="#validateNetAndCommunity"/>
+        <Label prefWidth="3.0" text=".">
+            <padding>
+                <Insets top="15"/>
+            </padding>
+        </Label>
+        <JFXTextField fx:id="rangeField" focusColor="#008d54" maxWidth="50"
+                      text="1-254" disable="true"/>
+        <RangeSlider fx:id="rangerSlider" max="254" min="1" maxHeight="1" prefWidth="215" onMouseDragged="#handleRange">
+            <padding>
+                <Insets top="15"/>
+            </padding>
+        </RangeSlider>
+        <JFXTextField fx:id="community" focusColor="#008d54" labelFloat="true" promptText="community" text="public"
+                      onKeyReleased="#validateNetAndCommunity" maxWidth="115"/>
+        <JFXButton fx:id="btn_addNet"
+                   styleClass="add-network-button" text="Add Network" onMouseClicked="#AddNewNet"
+                   disable="true"/>
+    </HBox>
 
+    <HBox AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35" AnchorPane.bottomAnchor="25">
+        <JFXButton fx:id="btn_deleteNet" disable="true" styleClass="table-view-button" text="Delete"
+                   onMouseClicked="#deleteNetwork"/>
+        <JFXButton styleClass="table-view-button" text="Import"/>
+        <JFXButton styleClass="table-view-button" text="Export"/>
+        <JFXButton fx:id="btn_scan" disable="true" onMouseClicked="#execute" styleClass="scan-button">
+            <graphic>
+                <ImageView fitHeight="23" fitWidth="23">
+                    <Image url="@/images/refresh.png"/>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXProgressBar fx:id="scanProgressBar" progress="0.0" prefHeight="35" prefWidth="457">
+            <padding>
+                <Insets left="1" top="0"></Insets>
+            </padding>
+        </JFXProgressBar>
+    </HBox>
 </AnchorPane>

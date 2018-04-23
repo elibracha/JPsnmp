@@ -20,8 +20,8 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-	public static HostServices service;
-	
+    public static HostServices service;
+
     private double xOffset = 0;
     private double yOffset = 0;
 
@@ -32,16 +32,18 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-    	service = getHostServices();
- 
-    	stage.initStyle(StageStyle.UNDECORATED);
-    	
-    	FXMLLoader loader = new FXMLLoader(getClass().getClassLoader()
-    			.getResource("FXML/STDocument.fxml"));
+        service = getHostServices();
+
+        stage.initStyle(StageStyle.UNDECORATED);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader()
+                .getResource("FXML/STDocument.fxml"));
         Parent root = loader.load();
- 
-    	
-        setMoveAble(root,stage);
+
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setWidth(primScreenBounds.getWidth() / 3.8);
+        stage.setHeight(primScreenBounds.getHeight() / 5);
+        setMoveAble(root, stage);
 
 
         Scene scene = new Scene(root);
@@ -53,11 +55,11 @@ public class Main extends Application {
         STController.flag.addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                new Thread (()-> {
-                    if(new SnmpMailer().verify(String.valueOf(Properties.getInstance().getPort()), Properties.getInstance().getHost(),
-                            Properties.getInstance().getUsername(), Properties.getInstance().getPassword())){
+                new Thread(() -> {
+                    if (new SnmpMailer().verify(String.valueOf(Properties.getInstance().getPort()), Properties.getInstance().getHost(),
+                            Properties.getInstance().getUsername(), Properties.getInstance().getPassword())) {
                         Properties.getInstance().setFlag(true);
-                    }else{
+                    } else {
                         Properties.getInstance().setFlag(false);
                     }
                     Platform.runLater(() -> {
@@ -75,21 +77,27 @@ public class Main extends Application {
     private void setMainDoc(Parent root, Scene scene, Stage stage) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/FXML/MainDocument.fxml"));
 
-        setMoveAble(root,stage);
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setWidth(primScreenBounds.getWidth() / 2.5);
+        stage.setHeight(primScreenBounds.getHeight() / 3);
+        setMoveAble(root, stage);
+
+        setMoveAble(root, stage);
 
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
         centerInScreen(stage);
     }
 
-    private void centerInScreen(Stage stage){
+    private void centerInScreen(Stage stage) {
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
         stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
     }
 
-    private void setMoveAble(Parent root ,Stage stage){
+    private void setMoveAble(Parent root, Stage stage) {
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
             yOffset = event.getSceneY();

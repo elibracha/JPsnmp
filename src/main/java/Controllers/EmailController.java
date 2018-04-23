@@ -84,10 +84,10 @@ public class EmailController implements Initializable {
         System.exit(0);
     }
 
-    private void buildLabel(){
-        if(EmailController.flag.getValue()){
+    private void buildLabel() {
+        if (EmailController.flag.getValue()) {
             labelInfo.setText("For Custom SMTP, Please Check The Box Below And Set Up The Properties.");
-        }else{
+        } else {
             labelInfo.setText("*Your SMTP Settings Changed Or Can't Connect, Please Try Again.");
         }
     }

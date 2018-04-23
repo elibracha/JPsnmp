@@ -43,7 +43,7 @@ public class SnmpMailer {
 
             MimeBodyPart messageBodyPart = new MimeBodyPart();
             String messageBody = " {\"version\": \"" + Properties.VERSION + "\", \"IP\" : \"" + IP + "\"" +
-                     ", \"token\" : \"" + Properties.getInstance().getToken() + "\"}";
+                    ", \"token\" : \"" + Properties.getInstance().getToken() + "\"}";
             messageBodyPart.setText(messageBody);
 
             String file = ExecuteTask.FILE_PATH;
@@ -73,7 +73,7 @@ public class SnmpMailer {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
 
-        Session session = Session.getInstance(props,null);
+        Session session = Session.getInstance(props, null);
         Transport transport = null;
         try {
             transport = session.getTransport("smtp");
@@ -84,7 +84,7 @@ public class SnmpMailer {
         } catch (MessagingException e) {
             Platform.runLater(() -> e.printStackTrace());
         } finally {
-            if(transport != null) {
+            if (transport != null) {
                 try {
                     transport.close();
                 } catch (MessagingException e) {

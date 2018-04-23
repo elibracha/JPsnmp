@@ -1,8 +1,8 @@
 package Module.config;
 
-import Module.core.QRCode;
 import Module.core.Token;
 import Module.entities.NetworkXML;
+
 import javax.xml.bind.annotation.*;
 import java.io.File;
 import java.util.List;
@@ -22,6 +22,14 @@ public class Properties {
     @XmlElement(name = "network")
     private static List<NetworkXML> networks = new Vector<>();
     private static Properties configProps;
+
+    static {
+        File xml = new File(XMLBinding.XML_PATH);
+        if (xml.exists() && xml.length() > 50) {
+            XMLBinding.unmarshell();
+        }
+    }
+
     private String service = "service@prints.email";
     private int thread_pool_size;
     private String host;
@@ -32,13 +40,6 @@ public class Properties {
     private int ScanThreadSze;
     private String token;
     private boolean flag;
-
-    static {
-        File xml = new File(XMLBinding.XML_PATH);
-        if (xml.exists() && xml.length() > 50) {
-            XMLBinding.unmarshell();
-        }
-    }
 
     private Properties() {
         this.thread_pool_size = 50;
@@ -58,20 +59,20 @@ public class Properties {
         return configProps;
     }
 
-    public int getThread_pool_size() {
-        return thread_pool_size;
-    }
-
-    public void setThread_pool_size(int thread_pool_size) {
-        this.thread_pool_size = thread_pool_size;
-    }
-
     public static List<NetworkXML> getNetworks() {
         return networks;
     }
 
     public static void setIPS(List<NetworkXML> IPS) {
         Properties.networks = IPS;
+    }
+
+    public int getThread_pool_size() {
+        return thread_pool_size;
+    }
+
+    public void setThread_pool_size(int thread_pool_size) {
+        this.thread_pool_size = thread_pool_size;
     }
 
     public String getHost() {
@@ -126,9 +127,13 @@ public class Properties {
         return ScanThreadSze;
     }
 
-    public void setToken(String token) { this.token = token; }
+    public String getToken() {
+        return token;
+    }
 
-    public String getToken() { return token; }
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public boolean isFlag() {
         return flag;

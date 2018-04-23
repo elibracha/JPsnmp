@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
 import org.controlsfx.control.RangeSlider;
+
 import java.io.File;
 import java.net.URL;
 import java.util.Calendar;
@@ -43,8 +44,9 @@ public class NetworkController implements Initializable {
     private JFXTextField rangeField, community, networkValue1, networkValue2, networkValue3;
 
     @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
+
 
         rangerSlider.setHighValue(255);
         rangerSlider.setLowValue(0);
@@ -54,21 +56,21 @@ public class NetworkController implements Initializable {
         networkValue3.textProperty().addListener((ov, oldValue, newValue) -> validateValue(networkValue3));
 
         JFXTreeTableColumn<NetworkView, String> network = new JFXTreeTableColumn<>("Network");
-        network.setPrefWidth(145);
+        network.setPrefWidth(190);
         network.setCellValueFactory(param -> param.getValue().getValue().networkProperty());
 
         JFXTreeTableColumn<NetworkView, String> range = new JFXTreeTableColumn<>("Range");
-        range.setPrefWidth(140);
+        range.setPrefWidth(160);
         range.setCellValueFactory(param -> param.getValue().getValue().rangeProperty());
 
         JFXTreeTableColumn<NetworkView, String> community = new JFXTreeTableColumn<>("Community");
-        community.setPrefWidth(145);
+        community.setPrefWidth(180);
         community.setCellValueFactory(param -> param.getValue().getValue().communityProperty());
 
         JFXTreeTableColumn<NetworkView, String> printers = new JFXTreeTableColumn<>("Printers");
-        printers.setPrefWidth(135);
+        printers.setPrefWidth(160);
         printers.setCellValueFactory(param -> param.getValue().getValue().printerProperty());
-        
+
         final TreeItem<NetworkView> root = new RecursiveTreeItem<>(nets, RecursiveTreeObject::getChildren);
         networkView.setRoot(root);
         networkView.getColumns().setAll(network, range, community, printers);
@@ -80,10 +82,10 @@ public class NetworkController implements Initializable {
                 selectedNetwork = networkView.getFocusModel().getFocusedItem().getValue();
             }
         });
-        
-        if((new File(XMLBinding.XML_PATH)).exists())
-        	setTableView();
-        
+
+        if ((new File(XMLBinding.XML_PATH)).exists())
+            setTableView();
+
         runNetworkChecks();
     }
 
@@ -179,7 +181,8 @@ public class NetworkController implements Initializable {
             task.setOnRunning(event -> Platform.runLater(() -> System.out.println(String.format("Execute Started At - %s", Calendar.getInstance().getTime()))));
             task.setOnSucceeded(event -> {
                 Platform.runLater(() -> System.out.println(String.format("Execute Done At - %s", Calendar.getInstance().getTime())));
-                XMLBinding.marshell();;
+                XMLBinding.marshell();
+                ;
                 setTableView();
             });
             new Thread(task).start();

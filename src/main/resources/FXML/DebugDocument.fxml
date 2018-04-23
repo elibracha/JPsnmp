@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
 <?import com.jfoenix.controls.JFXTextArea?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1"
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.121"
             fx:controller="Controllers.DebugController">
     <Label layoutX="32.0" layoutY="15.0" text="Debugger" textFill="#2cc185">
         <font>

@@ -1,15 +1,5 @@
 package Module.core;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.EnumMap;
-import java.util.Map;
-
-import javax.imageio.ImageIO;
-
 import Module.config.Properties;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -18,14 +8,22 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.EnumMap;
+import java.util.Map;
+
 public class QRCode {
 
     public static final String myCodeText = "https://app.prints.email/?computer=".concat(Properties.getInstance().getToken());
 
     public static void createQRCode() {
-        String imagepath = "/images/qr.png";
+        String imagepath = "images/qr.png";
 
-        String filePath = QRCode.class.getResource(imagepath).getPath();
+        String filePath = QRCode.class.getClassLoader().getResource(imagepath).getPath();
 
         int size = 250;
         String fileType = "png";

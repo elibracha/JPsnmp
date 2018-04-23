@@ -22,6 +22,20 @@ public class SnmpZipMaker {
     private static final String MESSAGE_TO_LOG = "Added To Zip ";
     private static final String ERROR_MESSAGE = "\n---- Error : Could'nt Create A Zip File ----\n";
 
+    public static void removeZip(String zipName) {
+        try {
+            File file = new File(zipName);
+
+            if (!file.delete()) {
+                System.out.println("Delete operation failed. Please delete manually");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     /**
      * Adds an extra file to the zip archive, copying in the created
      * date and a comment.
@@ -54,19 +68,5 @@ public class SnmpZipMaker {
             System.err.println(ERROR_MESSAGE);
             e.printStackTrace();
         }
-    }
-
-    public static void removeZip(String zipName) {
-        try {
-            File file = new File(zipName);
-
-            if (!file.delete()) {
-                System.out.println("Delete operation failed. Please delete manually");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }

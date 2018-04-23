@@ -17,15 +17,93 @@ import java.util.List;
 
 
 public class SnmpWalk {
-    private String targetAddr;
-    private String oidStr = "mib-2";
     private static String commStr = "public";
     private static String portNum = "161";
+    private String targetAddr;
+    private String oidStr = "mib-2";
 
 
     public SnmpWalk(String targetAddr, String commStr) {
         this.targetAddr = targetAddr;
         SnmpWalk.commStr = commStr;
+    }
+
+    public static boolean scanNet(String address, String community, String oidStr) throws IOException {
+        Address targetAddress = GenericAddress.parse(String.format("udp:%s/%s", address, portNum));
+        TransportMapping<? extends Address> transport = new DefaultUdpTransportMapping();
+        Snmp snmp = new Snmp(transport);
+        transport.listen();
+
+        CommunityTarget target = new CommunityTarget();
+        target.setCommunity(new OctetString(community));
+        target.setAddress(targetAddress);
+        target.setRetries(3);
+        target.setTimeout(Properties.getInstance().getTimeout());
+        target.setVersion(SnmpConstants.version2c);
+
+        PDU pdu = new PDU();
+        pdu.addOID(new VariableBinding(new OID(SnmpWalk.translateNameToOID(oidStr) + ".43")));
+
+        OID oid;
+
+        try {
+            oid = new OID(translateNameToOID(oidStr) + ".43");
+        } catch (Exception e) {
+            System.err.println("Failed to understand the OID or object name.");
+            throw e;
+        }
+
+        try {
+            Variable response = snmp.getNext(pdu, target).getResponse()
+                    .getVariable(new OID(SnmpWalk.translateNameToOID(oidStr) + ".43"));
+
+            return response != null;
+
+        } catch (NullPointerException e) {
+            return false;
+        }
+    }
+
+    private static String translateNameToOID(String oidStr) {
+        switch (oidStr) {
+            case "mib-2":
+                oidStr = ".1.3.6.1.2.1";
+                break;
+            case "mib2":
+                oidStr = ".1.3.6.1.2.1";
+                break;
+            case "system":
+                oidStr = ".1.3.6.1.2.1.1";
+                break;
+            case "interfaces":
+                oidStr = ".1.3.6.1.2.1.2";
+                break;
+            case "at":
+                oidStr = ".1.3.6.1.2.1.3";
+                break;
+            case "ip":
+                oidStr = ".1.3.6.1.2.1.4";
+                break;
+            case "icmp":
+                oidStr = ".1.3.6.1.2.1.5";
+                break;
+            case "tcp":
+                oidStr = ".1.3.6.1.2.1.6";
+                break;
+            case "udp":
+                oidStr = ".1.3.6.1.2.1.7";
+                break;
+            case "egp":
+                oidStr = ".1.3.6.1.2.1.8";
+                break;
+            case "transmission":
+                oidStr = ".1.3.6.1.2.1.10";
+                break;
+            case "snmp":
+                oidStr = ".1.3.6.1.2.1.11";
+                break;
+        }
+        return oidStr;
     }
 
     public String execSnmpwalk() throws IOException {
@@ -107,85 +185,6 @@ public class SnmpWalk {
 
         return new String(buffer);
 
-    }
-
-    public static boolean scanNet(String address, String community, String oidStr) throws IOException {
-        Address targetAddress = GenericAddress.parse(String.format("udp:%s/%s", address, portNum));
-        TransportMapping<? extends Address> transport = new DefaultUdpTransportMapping();
-        Snmp snmp = new Snmp(transport);
-        transport.listen();
-
-        CommunityTarget target = new CommunityTarget();
-        target.setCommunity(new OctetString(community));
-        target.setAddress(targetAddress);
-        target.setRetries(1);
-        target.setTimeout(Properties.getInstance().getTimeout());
-        target.setVersion(SnmpConstants.version2c);
-
-        PDU pdu = new PDU();
-        pdu.addOID(new VariableBinding(new OID(SnmpWalk.translateNameToOID(oidStr) + ".43")));
-
-        OID oid;
-
-        try {
-            oid = new OID(translateNameToOID(oidStr) + ".43");
-        } catch (Exception e) {
-            System.err.println("Failed to understand the OID or object name.");
-            throw e;
-        }
-
-        try {
-            Variable response = snmp.getNext(pdu, target).getResponse()
-                    .getVariable(new OID(SnmpWalk.translateNameToOID(oidStr) + ".43"));
-
-            return response != null;
-
-        } catch (NullPointerException e) {
-            return false;
-        }
-    }
-
-
-    private static String translateNameToOID(String oidStr) {
-        switch (oidStr) {
-            case "mib-2":
-                oidStr = ".1.3.6.1.2.1";
-                break;
-            case "mib2":
-                oidStr = ".1.3.6.1.2.1";
-                break;
-            case "system":
-                oidStr = ".1.3.6.1.2.1.1";
-                break;
-            case "interfaces":
-                oidStr = ".1.3.6.1.2.1.2";
-                break;
-            case "at":
-                oidStr = ".1.3.6.1.2.1.3";
-                break;
-            case "ip":
-                oidStr = ".1.3.6.1.2.1.4";
-                break;
-            case "icmp":
-                oidStr = ".1.3.6.1.2.1.5";
-                break;
-            case "tcp":
-                oidStr = ".1.3.6.1.2.1.6";
-                break;
-            case "udp":
-                oidStr = ".1.3.6.1.2.1.7";
-                break;
-            case "egp":
-                oidStr = ".1.3.6.1.2.1.8";
-                break;
-            case "transmission":
-                oidStr = ".1.3.6.1.2.1.10";
-                break;
-            case "snmp":
-                oidStr = ".1.3.6.1.2.1.11";
-                break;
-        }
-        return oidStr;
     }
 }
 

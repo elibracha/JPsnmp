@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXButton?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1"
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.121"
             fx:controller="Controllers.EmailController">
 
     <Label layoutX="35.0" layoutY="25.0" fx:id="labelInfo" style="-fx-font-family: Arial"
@@ -32,7 +30,7 @@
     <Label fx:id="loaderSMTP" layoutX="227.0" layoutY="225.0" textFill="#000"/>
     <JFXButton fx:id="next" disable="true" layoutX="488.0" layoutY="225.0" prefHeight="25.0"
                prefWidth="116.0"
-               style="-fx-background-color: #2cc185;" text="Continue" textFill="WHITE"/>
+               style="-fx-background-color: #2cc185;" text="Save" textFill="WHITE"/>
 
 
 </AnchorPane>
