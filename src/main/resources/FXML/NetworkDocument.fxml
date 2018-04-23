@@ -11,7 +11,9 @@
             fx:controller="Controllers.NetworkController"
             stylesheets="@/css/network_anchorpane.css">
 
-    <JFXTreeTableView fx:id="networkView" AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35"
+    <JFXTreeTableView fx:id="networkView"
+                      AnchorPane.rightAnchor="35"
+                      AnchorPane.leftAnchor="35"
                       AnchorPane.topAnchor="50"
                       AnchorPane.bottomAnchor="60"/>
     <HBox spacing="7" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
@@ -52,17 +54,17 @@
 
     <HBox AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35" AnchorPane.bottomAnchor="25">
         <JFXButton fx:id="btn_deleteNet" disable="true" styleClass="table-view-button" text="Delete"
-                   onMouseClicked="#deleteNetwork" style="-fx-font-size: 12"/>
-        <JFXButton styleClass="table-view-button" text="Import"/>
-        <JFXButton styleClass="table-view-button" text="Export"/>
-        <JFXButton fx:id="btn_scan" disable="true" onMouseClicked="#execute" styleClass="scan-button">
+                   onMouseClicked="#deleteNetwork" style="-fx-font-size: 12" prefHeight="35"/>
+        <JFXButton styleClass="table-view-button" text="Import" prefHeight="35"/>
+        <JFXButton styleClass="table-view-button" text="Export" prefHeight="35"/>
+        <JFXButton fx:id="btn_scan" disable="true" prefHeight="35" onMouseClicked="#execute" styleClass="scan-button">
             <graphic>
                 <ImageView fitHeight="23" fitWidth="23">
                     <Image url="@/images/refresh.png"/>
                 </ImageView>
             </graphic>
         </JFXButton>
-        <JFXProgressBar fx:id="scanProgressBar" progress="0.0" prefHeight="35" prefWidth="457">
+        <JFXProgressBar fx:id="scanProgressBar" progress="0.0" prefHeight="35" prefWidth="416">
             <padding>
                 <Insets left="1" top="0"></Insets>
             </padding>
