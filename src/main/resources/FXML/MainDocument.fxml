@@ -36,11 +36,11 @@
                         <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
                                    style="-fx-font-size: 14px; -fx-border-color: transparent; -fx-padding: 5 0 5 0;">
                             <font>
-                                <Font size="12"/>
+                                <Font size="16"/>
                             </font>
                         </Hyperlink>
                         <padding>
-                            <Insets right="40" left="40"/>
+                            <Insets right="34" left="34"/>
                         </padding>
                     </HBox>
                 </HBox>
