@@ -14,22 +14,22 @@
     <JFXTreeTableView fx:id="networkView" AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35"
                       AnchorPane.topAnchor="50"
                       AnchorPane.bottomAnchor="60"/>
-    <HBox spacing="10" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
-        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="35 "
+    <HBox spacing="7" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
+        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
                 <Insets top="15"/>
             </padding>
         </Label>
-        <JFXTextField fx:id="networkValue2" focusColor="#008d54" maxWidth="35"
+        <JFXTextField fx:id="networkValue2" focusColor="#008d54" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
                 <Insets top="15"/>
             </padding>
         </Label>
-        <JFXTextField fx:id="networkValue3" focusColor="#008d54" maxWidth="35"
+        <JFXTextField fx:id="networkValue3" focusColor="#008d54" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
@@ -38,13 +38,13 @@
         </Label>
         <JFXTextField fx:id="rangeField" focusColor="#008d54" maxWidth="50"
                       text="1-254" disable="true"/>
-        <RangeSlider fx:id="rangerSlider" max="254" min="1" maxHeight="1" prefWidth="215" onMouseDragged="#handleRange">
+        <RangeSlider fx:id="rangerSlider" max="254" min="1" maxHeight="1" prefWidth="190" onMouseDragged="#handleRange">
             <padding>
                 <Insets top="15"/>
             </padding>
         </RangeSlider>
         <JFXTextField fx:id="community" focusColor="#008d54" labelFloat="true" promptText="community" text="public"
-                      onKeyReleased="#validateNetAndCommunity" maxWidth="115"/>
+                      onKeyReleased="#validateNetAndCommunity" maxWidth="100"/>
         <JFXButton fx:id="btn_addNet"
                    styleClass="add-network-button" text="Add Network" onMouseClicked="#AddNewNet"
                    disable="true"/>
@@ -52,7 +52,7 @@
 
     <HBox AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35" AnchorPane.bottomAnchor="25">
         <JFXButton fx:id="btn_deleteNet" disable="true" styleClass="table-view-button" text="Delete"
-                   onMouseClicked="#deleteNetwork"/>
+                   onMouseClicked="#deleteNetwork" style="-fx-font-size: 12"/>
         <JFXButton styleClass="table-view-button" text="Import"/>
         <JFXButton styleClass="table-view-button" text="Export"/>
         <JFXButton fx:id="btn_scan" disable="true" onMouseClicked="#execute" styleClass="scan-button">

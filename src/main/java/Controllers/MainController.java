@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Screen;
 
@@ -28,7 +29,7 @@ public class MainController implements Initializable {
     private HBox exit, select_settings, select_bugs;
 
     @FXML
-    private AnchorPane top;
+    private GridPane top;
 
     @FXML
     private Hyperlink tokenLabel;

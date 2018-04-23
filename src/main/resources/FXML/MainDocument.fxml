@@ -4,13 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" id="root" prefHeight="300.0" prefWidth="635.0"
             style="-fx-background-color: #fff" stylesheets="@/css/root_anchorpane.css"
             xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.MainController">
     <top>
-        <AnchorPane fx:id="top" style="-fx-background-color: #2cc185">
+        <GridPane fx:id="top" style="-fx-background-color: #2cc185" alignment="CENTER" hgap="10">
             <children>
-                <HBox AnchorPane.leftAnchor="5" spacing="10">
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
                     <HBox alignment="CENTER">
                         <children>
                             <ImageView fx:id="logoImage">
@@ -19,8 +20,9 @@
                                 </image>
                             </ImageView>
                         </children>
+                        <padding><Insets right="10" left="10"/></padding>
                     </HBox>
-                    <HBox alignment="CENTER">
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
                         <children>
                             <ImageView fx:id="logoTitle">
                                 <image>
@@ -28,31 +30,34 @@
                                 </image>
                             </ImageView>
                         </children>
+                        <padding><Insets right="13"/></padding>
                     </HBox>
-                    <HBox alignment="CENTER">
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
                         <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff">
                             <font>
                                 <Font size="12"/>
                             </font>
                         </Hyperlink>
+                        <padding>
+                            <Insets right="15" left="15"/>
+                        </padding>
                     </HBox>
                 </HBox>
-                <HBox fx:id="select_bugs" AnchorPane.rightAnchor="70"  alignment="CENTER">
+                <HBox fx:id="select_bugs" GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="CENTER">
                     <ImageView fitHeight="25.0" fitWidth="25.0">
                         <image>
                             <Image url="@/images/bugs.png"/>
                         </image>
                     </ImageView>
                 </HBox>
-                <HBox fx:id="select_settings" AnchorPane.rightAnchor="35"  alignment="CENTER">
+                <HBox fx:id="select_settings" GridPane.columnIndex="4" GridPane.rowIndex="0" alignment="CENTER">
                     <ImageView fitHeight="23.0" fitWidth="23.0">
                         <image>
                             <Image url="@/images/settings.png"/>
                         </image>
                     </ImageView>
                 </HBox>
-                <HBox fx:id="exit" onMouseClicked="#exit" AnchorPane.rightAnchor="0"
-                        alignment="CENTER">
+                <HBox fx:id="exit" onMouseClicked="#exit" GridPane.columnIndex="5" GridPane.rowIndex="0" alignment="CENTER">
                     <ImageView fitHeight="25.0" fitWidth="25.0">
                         <image>
                             <Image url="@/images/clear.png"/>
@@ -60,7 +65,7 @@
                     </ImageView>
                 </HBox>
             </children>
-        </AnchorPane>
+        </GridPane>
     </top>
     <center>
         <StackPane>

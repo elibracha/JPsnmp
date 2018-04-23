@@ -78,7 +78,7 @@ public class Main extends Application {
         root = FXMLLoader.load(getClass().getResource("/FXML/MainDocument.fxml"));
 
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        stage.setWidth(primScreenBounds.getWidth() / 2.5);
+        stage.setWidth(primScreenBounds.getWidth() / 2.6);
         stage.setHeight(primScreenBounds.getHeight() / 3);
         setMoveAble(root, stage);
 
