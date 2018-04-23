@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Screen;
 
@@ -35,7 +36,7 @@ public class STController implements Initializable {
     @FXML
     private ImageView qrcode, logoImage, logoTitle;
     @FXML
-    private AnchorPane top;
+    private GridPane top;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -49,8 +50,6 @@ public class STController implements Initializable {
         logoTitle.setFitWidth(imageSize*10);;
 
         tokenLabel.setText(LINK);
-        tokenLabel.setStyle("-fx-font-size:".concat(String.valueOf(imageSize*1.4)).concat(";")
-                .concat(" -fx-border-color: transparent; -fx-padding: 5 0 5 0;"));
         tokenLabel.setOnMouseClicked(event -> Main.service.showDocument(LINK));
 
         if (!new File(XMLBinding.XML_PATH).exists()) {

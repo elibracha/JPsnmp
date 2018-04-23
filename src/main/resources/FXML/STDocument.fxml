@@ -12,10 +12,9 @@
             fx:controller="Controllers.STController">
 
     <top>
-        <AnchorPane fx:id="top" layoutX="0" layoutY="0" style="-fx-background-color: #2cc185">
+        <GridPane fx:id="top" style="-fx-background-color: #2cc185" alignment="CENTER" hgap="10">
             <children>
-                <HBox AnchorPane.leftAnchor="5" spacing="10">
-                    <HBox alignment="CENTER">
+                    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
                         <children>
                             <ImageView fx:id="logoImage">
                                 <image>
@@ -24,7 +23,7 @@
                             </ImageView>
                         </children>
                     </HBox>
-                    <HBox alignment="CENTER">
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
                         <children>
                             <ImageView fx:id="logoTitle">
                                 <image>
@@ -33,19 +32,17 @@
                             </ImageView>
                         </children>
                     </HBox>
-                    <HBox alignment="CENTER">
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
                         <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff">
                             <font>
                                 <Font size="12"/>
                             </font>
                         </Hyperlink>
                     </HBox>
-                </HBox>
-                <Label alignment="CENTER" onMouseClicked="#exit"
-                       prefHeight="26.0" prefWidth="30.0" style="-fx-font:15px Arial;"
-                       text="X" textFill="#fff" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0"/>
+                <Label alignment="CENTER" onMouseClicked="#exit" style="-fx-font:16 Arial;"
+                       text="X" textFill="#fff" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
             </children>
-        </AnchorPane>
+        </GridPane>
     </top>
     <center>
         <GridPane alignment="CENTER" hgap="50" vgap="2">
