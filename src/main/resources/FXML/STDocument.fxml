@@ -35,7 +35,7 @@
                     <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
                         <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff">
                             <font>
-                                <Font size="14"/>
+                                <Font size="16"/>
                             </font>
                         </Hyperlink>
                     </HBox>
