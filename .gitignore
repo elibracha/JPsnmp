@@ -24,4 +24,5 @@ hs_err_pid*
 #idea workspace#
 .idea/
 target/
-printsemail.iml
+JPsnmp.iml
+printsservice.iml
