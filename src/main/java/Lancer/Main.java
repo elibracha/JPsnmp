@@ -40,6 +40,8 @@ public class Main extends Application {
                 .getResource("FXML/STDocument.fxml"));
         Parent root = loader.load();
 
+        setMoveAble(root, stage);
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

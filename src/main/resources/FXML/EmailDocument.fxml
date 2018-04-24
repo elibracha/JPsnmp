@@ -2,7 +2,7 @@
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1"
             xmlns="http://javafx.com/javafx/8.0.121"
             fx:controller="Controllers.EmailController">
@@ -10,27 +10,33 @@
     <Label layoutX="35.0" layoutY="25.0" fx:id="labelInfo" style="-fx-font-family: Arial"
            text="For Custom SMTP, Please Check The Box Below And Set Up The Properties."/>
     <CheckBox fx:id="checkBox" layoutY="60" layoutX="35" text="Custom Settings"/>
-    <JFXTextField fx:id="emailUser" labelFloat="true" focusColor="#2cc185" layoutX="35.0" layoutY="107.0"
-                  prefHeight="25.0"
-                  prefWidth="217.0"
-                  promptText="Email User"/>
-    <JFXTextField fx:id="host" labelFloat="true" focusColor="#2cc185" layoutX="35.0" layoutY="172.0"
-                  prefHeight="25.0"
-                  prefWidth="217.0"
-                  promptText="Host"/>
-    <JFXPasswordField fx:id="password" labelFloat="true" focusColor="#2cc185" layoutX="390.0"
-                      layoutY="107.0"
-                      prefHeight="25.0" prefWidth="217.0"
-                      promptText="Password"/>
-    <JFXTextField fx:id="port" labelFloat="true" focusColor="#2cc185" layoutX="390.0" layoutY="172.0"
-                  prefHeight="25.0"
-                  prefWidth="217.0"
-                  promptText="Port"/>
-
-    <Label fx:id="loaderSMTP" layoutX="227.0" layoutY="225.0" textFill="#000"/>
-    <JFXButton fx:id="next" disable="true" layoutX="488.0" layoutY="225.0" prefHeight="25.0"
-               prefWidth="116.0"
-               style="-fx-background-color: #2cc185;" text="Save" textFill="WHITE"/>
-
-
+    <AnchorPane fx:id="ancher" layoutY="115" layoutX="35" prefWidth="700" prefHeight="150">
+        <JFXTextField fx:id="emailUser" labelFloat="true" focusColor="#2cc185"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Email User"
+                      AnchorPane.leftAnchor="0"/>
+        <JFXTextField fx:id="host" labelFloat="true" focusColor="#2cc185"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Host"
+                      AnchorPane.leftAnchor="0"
+                      AnchorPane.bottomAnchor="50"/>
+        <JFXPasswordField fx:id="password" labelFloat="true" focusColor="#2cc185"
+                          prefHeight="25.0"
+                          prefWidth="217.0"
+                          promptText="Password"
+                          AnchorPane.rightAnchor="35"/>
+        <JFXTextField fx:id="port" labelFloat="true" focusColor="#2cc185"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Port"
+                      AnchorPane.rightAnchor="35"
+                      AnchorPane.bottomAnchor="50"/>
+        <JFXButton fx:id="next" disable="true" AnchorPane.bottomAnchor="0"
+                   AnchorPane.rightAnchor="35" prefHeight="25.0"
+                   prefWidth="116.0"
+                   style="-fx-background-color: #2cc185;" text="Save" textFill="WHITE"/>
+    </AnchorPane>
+    <Label fx:id="loaderSMTP" layoutX="280.0" layoutY="245.0" textFill="#000"/>
 </AnchorPane>

@@ -63,7 +63,7 @@ public class STController implements Initializable {
 
     @FXML
     private void checkCode() {
-   /*     int hash = 0, i, chr;
+       int hash = 0, i, chr;
         String result = null;
 
         for (i = 0; i < Properties.getInstance().getToken().length() && code.getText().length() == 4; i++) {
@@ -83,15 +83,8 @@ public class STController implements Initializable {
             qrcode.setVisible(false);
             SMTPLabel.setVisible(true);
             flag.setValue(true);
-        }*/
-
-        if (code != null && code.getText().length() > 4) {
-            code.setVisible(false);
-            scanlabel.setVisible(false);
-            qrcode.setVisible(false);
-            SMTPLabel.setVisible(true);
-            flag.setValue(true);
         }
+
 
     }
 

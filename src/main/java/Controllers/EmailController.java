@@ -16,6 +16,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 
 import java.net.URL;
@@ -107,7 +108,7 @@ public class EmailController implements Initializable {
                 Properties.getInstance().setFlag(false);
                 Platform.runLater(() -> flag.setValue(false));
             }
-            Platform.runLater(() -> loaderSMTP.setLayoutX(227));
+            Platform.runLater(() -> loaderSMTP.setLayoutX(270));
         } else {
             jumpSectionNetworks();
         }
