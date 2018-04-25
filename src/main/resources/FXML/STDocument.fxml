@@ -7,47 +7,53 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane fx:id="borderPane" xmlns:fx="http://javafx.com/fxml/1" prefHeight="200"
-            style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-color: #008d54" xmlns="http://javafx.com/javafx/8"
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" prefHeight="230"
+            style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-color: #008d54"
+            xmlns="http://javafx.com/javafx/8"
             fx:controller="Controllers.STController">
 
     <top>
         <GridPane fx:id="top" style="-fx-background-color: #2cc185" alignment="CENTER" hgap="10">
             <children>
-                    <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
-                        <children>
-                            <ImageView fx:id="logoImage">
-                                <image>
-                                    <Image url="@/images/logo.png"/>
-                                </image>
-                            </ImageView>
-                        </children>
-                        <padding>
-                            <Insets left="3"/>
-                        </padding>
-                    </HBox>
-                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
-                        <children>
-                            <ImageView fx:id="logoTitle">
-                                <image>
-                                    <Image url="@/images/logo-title.png"/>
-                                </image>
-                            </ImageView>
-                        </children>
-                    </HBox>
-                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
-                        <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
-                                   style="-fx-font-size: 14px; -fx-border-color: transparent;">
-                            <font>
-                                <Font size="16"/>
-                            </font>
-                        </Hyperlink>
-                    </HBox>
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="logoImage">
+                            <image>
+                                <Image url="@/images/logo.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets left="3"/>
+                    </padding>
+                </HBox>
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="logoTitle">
+                            <image>
+                                <Image url="@/images/logo-title.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
+                    <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
+                               style="-fx-font-size: 14px; -fx-border-color: transparent;">
+                        <font>
+                            <Font size="16"/>
+                        </font>
+                    </Hyperlink>
+                </HBox>
                 <Label alignment="CENTER" onMouseClicked="#exit" style="-fx-font:16 Arial;"
                        text="X" textFill="#fff" GridPane.columnIndex="4" GridPane.rowIndex="0">
                     <padding>
                         <Insets right="10"/>
                     </padding>
+                    <GridPane.margin>
+                        <Insets>
+                            <left>40</left>
+                        </Insets>
+                    </GridPane.margin>
                 </Label>
             </children>
         </GridPane>
@@ -55,7 +61,7 @@
     <center>
         <GridPane alignment="CENTER" hgap="50" vgap="2">
             <children>
-                <ImageView fx:id="qrcode" fitHeight="75.0" fitWidth="75.0"
+                <ImageView fx:id="qrcode" fitHeight="100.0" fitWidth="100.0"
                            GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.halignment="CENTER">
                 </ImageView>
                 <Label fx:id="scanlabel" textFill="black" text="Scan me!"
@@ -63,6 +69,7 @@
                 <Label fx:id="SMTPLabel" text="Checking SMTP Settings. please wait..."
                        GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
                 <JFXTextField fx:id="code" focusColor="#008d54" maxWidth="120" onKeyReleased="#checkCode"
+                              alignment="CENTER"
                               GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Please enter code"/>
             </children>
         </GridPane>

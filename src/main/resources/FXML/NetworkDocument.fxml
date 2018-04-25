@@ -14,7 +14,7 @@
     <JFXTreeTableView fx:id="networkView"
                       AnchorPane.rightAnchor="35"
                       AnchorPane.leftAnchor="35"
-                      AnchorPane.topAnchor="50"
+                      AnchorPane.topAnchor="55"
                       AnchorPane.bottomAnchor="60"/>
     <HBox spacing="8" AnchorPane.topAnchor="15" AnchorPane.leftAnchor="35" AnchorPane.rightAnchor="35">
         <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="40"
