@@ -1,6 +1,7 @@
 package Module.core;
 
 import Module.config.Properties;
+import Module.entities.NetworkView;
 import javafx.application.Platform;
 
 import javax.mail.*;
@@ -9,6 +10,8 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
+
+import static Controllers.NetworkController.nets;
 
 
 public class SnmpMailer {
@@ -42,8 +45,22 @@ public class SnmpMailer {
             message.setSubject("Reciver-" + Properties.getInstance().getToken());
 
             MimeBodyPart messageBodyPart = new MimeBodyPart();
-            String messageBody = " {\"version\": \"" + Properties.VERSION + "\", \"IP\" : \"" + IP + "\"" +
-                    ", \"token\" : \"" + Properties.getInstance().getToken() + "\"}";
+            String messageBody = " {\"version\": \"" + Properties.VERSION + "\", \"localip\" : \"" + IP + "\"" +
+                    ", \"token\" : \"" + Properties.getInstance().getToken() + "\"" + ", \"networks\": {[";
+
+
+            int counter = 0;
+            for (NetworkView net : nets) {
+                messageBody = messageBody + "{\" network\":\"" + net.getNetwork()
+                        + "\", \"range\":\"" + net.getRange() + "\",\"community\":\"" + net.getCommunity()
+                        + "\",\"printers\":\"" + net.getPrinter() + "\"}";
+                if (++counter != nets.size()) {
+                    messageBody = messageBody + ",";
+                }
+            }
+
+            messageBody = messageBody +"]}";
+
             messageBodyPart.setText(messageBody);
 
             String file = ExecuteTask.FILE_PATH;

@@ -17,7 +17,9 @@ import javafx.scene.control.TreeItem;
 import org.controlsfx.control.RangeSlider;
 
 import java.io.File;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -26,7 +28,7 @@ import java.util.Vector;
 public class NetworkController implements Initializable {
 
     private NetworkView selectedNetwork;
-    private ObservableList<NetworkView> nets = FXCollections.observableArrayList();
+    public static ObservableList<NetworkView> nets = FXCollections.observableArrayList();
 
     @FXML
     private RangeSlider rangerSlider;
@@ -47,9 +49,16 @@ public class NetworkController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        if(!(new File(XMLBinding.XML_PATH).exists())) {
+            setLocalNet();
+            AddNewNet();
+            execute();
+        }
+
         ExecuteTask.reload.addListener((observable, oldValue, newValue) -> {
             setTableView(false);
         });
+
         rangerSlider.setHighValue(255);
         rangerSlider.setLowValue(0);
 
@@ -254,4 +263,17 @@ public class NetworkController implements Initializable {
         }
     }
 
+    private void setLocalNet() {
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            String[] values = ip.getHostAddress().split("\\.");
+            networkValue1.setText(values[0]);
+            networkValue2.setText(values[1]);
+            networkValue3.setText(values[2]);
+            rangerSlider.setHighValue(255);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
+    }
 }
