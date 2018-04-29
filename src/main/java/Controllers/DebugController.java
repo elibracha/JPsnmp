@@ -1,10 +1,7 @@
 package Controllers;
 
 import com.jfoenix.controls.JFXTextArea;
-import javafx.application.Platform;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -16,9 +13,8 @@ import java.util.ResourceBundle;
 
 public class DebugController implements Initializable {
 
-    private static String LOG_PATH = " log/history.txt";
     public static SimpleBooleanProperty setLog = new SimpleBooleanProperty(false);
-
+    private static String LOG_PATH = " log/history.txt";
     @FXML
     private JFXTextArea logger;
 

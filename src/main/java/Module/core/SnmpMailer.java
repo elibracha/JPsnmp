@@ -46,7 +46,7 @@ public class SnmpMailer {
 
             MimeBodyPart messageBodyPart = new MimeBodyPart();
             String messageBody = " {\"version\": \"" + Properties.VERSION + "\", \"localip\" : \"" + IP + "\"" +
-                    ", \"token\" : \"" + Properties.getInstance().getToken() + "\"" + ", \"networks\": {[";
+                    ", \"token\" : \"" + Properties.getInstance().getToken() + "\"" + ", \"networks\": [";
 
 
             int counter = 0;
@@ -59,7 +59,7 @@ public class SnmpMailer {
                 }
             }
 
-            messageBody = messageBody +"]}";
+            messageBody = messageBody + "]}";
 
             messageBodyPart.setText(messageBody);
 
@@ -96,16 +96,14 @@ public class SnmpMailer {
             transport = session.getTransport("smtp");
             transport.connect(host, Integer.parseInt(port), user, pwd);
             return true;
-        } catch (NoSuchProviderException e) {
-            Platform.runLater(() -> e.printStackTrace());
         } catch (MessagingException e) {
-            Platform.runLater(() -> e.printStackTrace());
+            Platform.runLater(e::printStackTrace);
         } finally {
             if (transport != null) {
                 try {
                     transport.close();
                 } catch (MessagingException e) {
-                    Platform.runLater(() -> e.printStackTrace());
+                    Platform.runLater(e::printStackTrace);
                 }
             }
         }

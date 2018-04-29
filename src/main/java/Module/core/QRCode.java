@@ -23,11 +23,11 @@ public class QRCode {
     public static void createQRCode() {
         String imagepath = "images/qr.png";
 
-        //String filePath = QRCode.class.getClassLoader().getResource(imagepath).getPath();
+        String filePath = QRCode.class.getClassLoader().getResource(imagepath).getPath();
 
         int size = 250;
         String fileType = "png";
-        File myFile = new File(imagepath);
+        File myFile = new File(filePath);
 
         try {
 

@@ -23,8 +23,8 @@ public class ExecuteTask extends Task<Void> {
     private static final ReentrantLock LOCK = new ReentrantLock();
     private static final String LOCALHOST_IP = "Unknown";
     public static String FILE_PATH = "";
-    private static Map<String, String> mappedSet = new HashMap<>();
     public static SimpleBooleanProperty reload = new SimpleBooleanProperty(false);
+    private static Map<String, String> mappedSet = new HashMap<>();
 
     static {
         try {
@@ -138,10 +138,8 @@ public class ExecuteTask extends Task<Void> {
                 InetAddress inet = InetAddress.getByName(ip);
                 boolean reachable = inet.isReachable(2000);
 
-                String currentData = null;
-
                 if (reachable) {
-                    boolean response = SnmpWalk.scanNet(ip, commStr, "mib-2");
+                    boolean response = SnmpWalk.scanNet(ip, commStr);
                     if (response) {
                         for (NetworkXML net : Properties.getNetworks()) {
                             if (net.getNetwork().concat(".").concat(net.getRange()).equals(ip)) {
@@ -150,7 +148,7 @@ public class ExecuteTask extends Task<Void> {
                                 break;
                             }
                         }
-                        currentData = snmpWalk.execSnmpwalk();
+                        String currentData = snmpWalk.execSnmpwalk();
 
                         LOCK.lock();
                         if (currentData != null && !currentData.isEmpty())

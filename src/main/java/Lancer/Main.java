@@ -6,8 +6,6 @@ import Module.core.SnmpMailer;
 import javafx.application.Application;
 import javafx.application.HostServices;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
@@ -25,9 +23,7 @@ public class Main extends Application {
     private double xOffset = 0;
     private double yOffset = 0;
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -48,14 +44,14 @@ public class Main extends Application {
 
         centerInScreen(stage);
 
-        STController.flag.addListener((observable, oldValue, newValue) -> checkSMTP(root,scene,stage).start());
+        STController.flag.addListener((observable, oldValue, newValue) -> checkSMTP(root, scene, stage).start());
 
-        if(STController.flag.getValue()){
-            checkSMTP(root,scene,stage).start();
+        if (STController.flag.getValue()) {
+            checkSMTP(root, scene, stage).start();
         }
     }
 
-    private Thread checkSMTP(Parent root, Scene scene, Stage stage){
+    private Thread checkSMTP(Parent root, Scene scene, Stage stage) {
         return new Thread(() -> {
             if (new SnmpMailer().verify(String.valueOf(Properties.getInstance().getPort()), Properties.getInstance().getHost(),
                     Properties.getInstance().getUsername(), Properties.getInstance().getPassword())) {
@@ -72,6 +68,7 @@ public class Main extends Application {
             });
         });
     }
+
     private void setMainDoc(Parent root, Scene scene, Stage stage) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/FXML/MainDocument.fxml"));
 

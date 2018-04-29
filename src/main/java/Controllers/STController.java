@@ -60,12 +60,12 @@ public class STController implements Initializable {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-            if(image == null){
+            if (image == null) {
                 qrcode.setVisible(false);
                 scanlabel.setVisible(false);
             }
             SMTPLabel.setVisible(false);
-        }else{
+        } else {
             scanSMTP();
         }
     }
@@ -91,7 +91,7 @@ public class STController implements Initializable {
         }
     }
 
-    private void scanSMTP(){
+    private void scanSMTP() {
         code.setVisible(false);
         scanlabel.setVisible(false);
         qrcode.setVisible(false);
@@ -99,6 +99,7 @@ public class STController implements Initializable {
         flag.setValue(true);
         flag.set(true);
     }
+
     @FXML
     private void exit() {
         System.exit(0);

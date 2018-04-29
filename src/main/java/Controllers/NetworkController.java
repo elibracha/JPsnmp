@@ -27,9 +27,8 @@ import java.util.Vector;
 
 public class NetworkController implements Initializable {
 
-    private NetworkView selectedNetwork;
     public static ObservableList<NetworkView> nets = FXCollections.observableArrayList();
-
+    private NetworkView selectedNetwork;
     @FXML
     private RangeSlider rangerSlider;
 
@@ -49,7 +48,7 @@ public class NetworkController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        if(!(new File(XMLBinding.XML_PATH).exists())) {
+        if (!(new File(XMLBinding.XML_PATH).exists())) {
             setLocalNet();
             AddNewNet();
             execute();

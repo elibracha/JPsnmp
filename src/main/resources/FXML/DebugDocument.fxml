@@ -5,8 +5,8 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="230.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.121"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DebugController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="230.0" prefWidth="680.0"
+            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="Controllers.DebugController">
     <Label text="Debugger" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="35" textFill="#2cc185">
         <font>
             <Font name="System Bold" size="18.0"/>
