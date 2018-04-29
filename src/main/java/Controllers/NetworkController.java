@@ -47,7 +47,9 @@ public class NetworkController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
+        ExecuteTask.reload.addListener((observable, oldValue, newValue) -> {
+            setTableView(false);
+        });
         rangerSlider.setHighValue(255);
         rangerSlider.setLowValue(0);
 
@@ -56,7 +58,7 @@ public class NetworkController implements Initializable {
         networkValue3.textProperty().addListener((ov, oldValue, newValue) -> validateValue(networkValue3));
 
         JFXTreeTableColumn<NetworkView, String> network = new JFXTreeTableColumn<>("Network");
-        network.setPrefWidth(190);
+        network.setPrefWidth(175);
         network.setCellValueFactory(param -> param.getValue().getValue().networkProperty());
 
         JFXTreeTableColumn<NetworkView, String> range = new JFXTreeTableColumn<>("Range");
@@ -64,7 +66,7 @@ public class NetworkController implements Initializable {
         range.setCellValueFactory(param -> param.getValue().getValue().rangeProperty());
 
         JFXTreeTableColumn<NetworkView, String> community = new JFXTreeTableColumn<>("Community");
-        community.setPrefWidth(180);
+        community.setPrefWidth(160);
         community.setCellValueFactory(param -> param.getValue().getValue().communityProperty());
 
         JFXTreeTableColumn<NetworkView, String> printers = new JFXTreeTableColumn<>("Printers");
@@ -84,7 +86,7 @@ public class NetworkController implements Initializable {
         });
 
         if ((new File(XMLBinding.XML_PATH)).exists())
-            setTableView();
+            setTableView(true);
 
         runNetworkChecks();
     }
@@ -147,12 +149,10 @@ public class NetworkController implements Initializable {
         if (!community.getText().trim().isEmpty() && !networkValue1.getText().trim().isEmpty() &&
                 !networkValue2.getText().trim().isEmpty() && !networkValue3.getText().trim().isEmpty()) {
             String range = String.format("%d-%d", lowValue, highValue);
-            networkView.getRoot().getChildren().add(
-                    new TreeItem<>(new NetworkView(new SimpleStringProperty(networkBuilder.toString()),
-                            new SimpleStringProperty(range),
-                            new SimpleStringProperty(community.getText()),
-                            new SimpleStringProperty("0"))));
-
+            nets.add(new NetworkView(new SimpleStringProperty(networkBuilder.toString()),
+                    new SimpleStringProperty(range),
+                    new SimpleStringProperty(community.getText()),
+                    new SimpleStringProperty("0")));
             List<NetworkXML> allIPS = Properties.getNetworks();
             String[] rangeValues = range.split("-");
 
@@ -161,7 +161,6 @@ public class NetworkController implements Initializable {
             }
 
             Properties.setIPS(allIPS);
-
             XMLBinding.marshell();
 
             community.setText("public");
@@ -182,50 +181,57 @@ public class NetworkController implements Initializable {
             task.setOnSucceeded(event -> {
                 Platform.runLater(() -> System.out.println(String.format("Execute Done At - %s", Calendar.getInstance().getTime())));
                 XMLBinding.marshell();
-                ;
-                setTableView();
             });
             new Thread(task).start();
         });
     }
 
-    private void setTableView() {
+    private void setTableView(boolean flag) {
 
         String networkName = "";
         String netCommunity = "";
         int printersFound = 0;
         int start = -1;
 
-        if (Properties.getNetworks().size() > 0) {
-            int end = -1;
-            for (NetworkXML net : Properties.getNetworks()) {
-                if (!networkName.equals(net.getNetwork())) {
-                    if (!networkName.isEmpty() && end != -1) {
-                        nets.add(new NetworkView(new SimpleStringProperty(networkName),
-                                new SimpleStringProperty(String.format("%d-%d", start, end)),
-                                new SimpleStringProperty(netCommunity),
-                                new SimpleStringProperty(String.valueOf(printersFound))));
-                        printersFound = 0;
+        if (flag) {
+            if (Properties.getNetworks().size() > 0) {
+                int end = -1;
+                for (NetworkXML net : Properties.getNetworks()) {
+                    if (!networkName.equals(net.getNetwork())) {
+                        start = Integer.valueOf(net.getRange());
+                        if (!networkName.isEmpty() && end != -1) {
+                            addToList(networkName, end, start, netCommunity, printersFound);
+                            printersFound = 0;
+                        }
+
+                        networkName = net.getNetwork();
+                        printersFound += net.getPrinters();
+                    } else {
+                        printersFound += net.getPrinters();
+                        end = Integer.parseInt(net.getRange());
                     }
-
-                    networkName = net.getNetwork();
-                    start = Integer.parseInt(net.getRange());
-                    netCommunity = net.getCommunity();
-                    printersFound += net.getPrinters();
-                } else {
-                    printersFound += net.getPrinters();
-                    end = Integer.parseInt(net.getRange());
                 }
+                addToList(networkName, end, start, netCommunity, printersFound);
             }
-            nets.add(new NetworkView(new SimpleStringProperty(networkName),
-                    new SimpleStringProperty(String.format("%d-%d", start, end)),
-                    new SimpleStringProperty(netCommunity),
-                    new SimpleStringProperty(String.valueOf(printersFound))));
+        } else {
+            for (NetworkView net : nets) {
+                for (NetworkXML n : Properties.getNetworks()) {
+                    if (n.getNetwork().equals(net.getNetwork())) {
+                        printersFound = printersFound + n.getPrinters();
+                        net.setPrinter(String.valueOf(printersFound));
+                    }
+                }
+                printersFound = 0;
+            }
+            networkView.refresh();
         }
+    }
 
-        final TreeItem<NetworkView> root = new RecursiveTreeItem<>(nets, RecursiveTreeObject::getChildren);
-        networkView.setRoot(null);
-        networkView.setRoot(root);
+    private void addToList(String networkName, int end, int start, String netCommunity, int printersFound) {
+        nets.add(new NetworkView(new SimpleStringProperty(networkName),
+                new SimpleStringProperty(String.format("%d-%d", start, end)),
+                new SimpleStringProperty(netCommunity),
+                new SimpleStringProperty(String.valueOf(printersFound))));
     }
 
     private void validateValue(JFXTextField field) {

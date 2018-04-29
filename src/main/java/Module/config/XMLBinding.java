@@ -1,5 +1,7 @@
 package Module.config;
 
+import javafx.application.Platform;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -17,7 +19,7 @@ public class XMLBinding {
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.marshal(Properties.getInstance(), file);
         } catch (JAXBException e) {
-            e.printStackTrace();
+            Platform.runLater(() -> e.printStackTrace());
         }
 
     }
@@ -38,7 +40,7 @@ public class XMLBinding {
             Properties.getInstance().setToken(configPropsXML.getToken());
             Properties.getInstance().setFlag(configPropsXML.isFlag());
         } catch (JAXBException e) {
-            e.printStackTrace();
+            Platform.runLater(() -> e.printStackTrace());
         }
 
     }

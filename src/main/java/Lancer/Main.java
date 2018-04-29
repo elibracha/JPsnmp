@@ -48,28 +48,30 @@ public class Main extends Application {
 
         centerInScreen(stage);
 
-        STController.flag.addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                new Thread(() -> {
-                    if (new SnmpMailer().verify(String.valueOf(Properties.getInstance().getPort()), Properties.getInstance().getHost(),
-                            Properties.getInstance().getUsername(), Properties.getInstance().getPassword())) {
-                        Properties.getInstance().setFlag(true);
-                    } else {
-                        Properties.getInstance().setFlag(false);
-                    }
-                    Platform.runLater(() -> {
-                        try {
-                            setMainDoc(root, scene, stage);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    });
-                }).start();
-            }
-        });
+        STController.flag.addListener((observable, oldValue, newValue) -> checkSMTP(root,scene,stage).start());
+
+        if(STController.flag.getValue()){
+            checkSMTP(root,scene,stage).start();
+        }
     }
 
+    private Thread checkSMTP(Parent root, Scene scene, Stage stage){
+        return new Thread(() -> {
+            if (new SnmpMailer().verify(String.valueOf(Properties.getInstance().getPort()), Properties.getInstance().getHost(),
+                    Properties.getInstance().getUsername(), Properties.getInstance().getPassword())) {
+                Properties.getInstance().setFlag(true);
+            } else {
+                Properties.getInstance().setFlag(false);
+            }
+            Platform.runLater(() -> {
+                try {
+                    setMainDoc(root, scene, stage);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        });
+    }
     private void setMainDoc(Parent root, Scene scene, Stage stage) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/FXML/MainDocument.fxml"));
 

@@ -3,6 +3,7 @@ package Module.core;
 import Module.config.Properties;
 import Module.config.XMLBinding;
 import Module.entities.NetworkXML;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.concurrent.Task;
 
 import java.io.File;
@@ -23,6 +24,7 @@ public class ExecuteTask extends Task<Void> {
     private static final String LOCALHOST_IP = "Unknown";
     public static String FILE_PATH = "";
     private static Map<String, String> mappedSet = new HashMap<>();
+    public static SimpleBooleanProperty reload = new SimpleBooleanProperty(false);
 
     static {
         try {
@@ -144,15 +146,16 @@ public class ExecuteTask extends Task<Void> {
                         for (NetworkXML net : Properties.getNetworks()) {
                             if (net.getNetwork().concat(".").concat(net.getRange()).equals(ip)) {
                                 net.setPrinter(1);
+                                reload.setValue(true);
                                 break;
                             }
                         }
                         currentData = snmpWalk.execSnmpwalk();
 
-                        synchronized (this) {
-                            if (currentData != null && !currentData.isEmpty())
-                                mappedSet.put(ip, currentData);
-                        }
+                        LOCK.lock();
+                        if (currentData != null && !currentData.isEmpty())
+                            mappedSet.put(ip, currentData);
+                        LOCK.unlock();
                     }
                 } else {
                     Thread.currentThread().interrupt();
@@ -164,6 +167,7 @@ public class ExecuteTask extends Task<Void> {
                 e.printStackTrace();
             } finally {
                 LOCK.lock();
+                reload.setValue(false);
                 ++precent;
                 LOCK.unlock();
                 updateProgress(precent, Properties.getNetworks().size());

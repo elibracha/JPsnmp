@@ -3,6 +3,7 @@ package Controllers;
 import Lancer.Main;
 import Module.config.XMLBinding;
 import Module.enums.Sections;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
@@ -28,13 +29,7 @@ public class MainController implements Initializable {
     private HBox exit, select_settings, select_bugs;
 
     @FXML
-    private GridPane top;
-
-    @FXML
     private Hyperlink tokenLabel;
-
-    @FXML
-    private ImageView logoImage, logoTitle;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +37,10 @@ public class MainController implements Initializable {
         tokenLabel.setOnMouseClicked(event -> Main.service.showDocument(LINK));
 
         select_settings.setOnMouseClicked((MouseEvent e) -> display(Sections.EMAIL_SETTINGS.getSection_number()));
-        select_bugs.setOnMouseClicked((MouseEvent e) -> display(Sections.DEBUG.getSection_number()));
+        select_bugs.setOnMouseClicked((MouseEvent e) -> {
+            Platform.runLater(() -> DebugController.setLog.setValue(true));
+            display(Sections.DEBUG.getSection_number());
+        });
 
         EmailController.jump.addListener((observable, oldValue, newValue) -> {
             display(Sections.NETWORK_SETTINGS.getSection_number());

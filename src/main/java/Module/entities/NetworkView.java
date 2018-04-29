@@ -37,4 +37,5 @@ public class NetworkView extends RecursiveTreeObject<NetworkView> {
         return community;
     }
 
+    public void setPrinter(String printer) { this.printer.set(printer); }
 }

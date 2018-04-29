@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/8.0.121"
-            fx:controller="Controllers.DebugController">
-    <Label layoutX="32.0" layoutY="15.0" text="Debugger" textFill="#2cc185">
+<AnchorPane prefHeight="230.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DebugController">
+    <Label text="Debugger" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="35" textFill="#2cc185">
         <font>
-            <Font name="System Bold" size="16.0"/>
+            <Font name="System Bold" size="18.0"/>
         </font>
     </Label>
-    <Separator layoutX="32.0" layoutY="40.0" prefHeight="0.0" prefWidth="570.0"/>
-    <JFXTextArea fx:id="logger" layoutY="90" layoutX="35" prefWidth="570" prefHeight="140"
-                 focusColor="#008d54"></JFXTextArea>
+    <Separator AnchorPane.rightAnchor="35" AnchorPane.leftAnchor="35" prefHeight="1.0"/>
+    <JFXTextArea fx:id="logger" focusColor="#008d54" AnchorPane.leftAnchor="35" AnchorPane.topAnchor="50"
+                 AnchorPane.bottomAnchor="35" AnchorPane.rightAnchor="35" prefHeight="140" prefWidth="570"/>
 </AnchorPane>

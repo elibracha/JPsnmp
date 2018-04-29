@@ -10,15 +10,15 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Maven: com.google.zxing:core:3.3.0" level="project" />
-    <orderEntry type="library" exported="" name="Maven: com.google.zxing:javase:3.3.0" level="project" />
-    <orderEntry type="library" exported="" name="Maven: com.beust:jcommander:1.48" level="project" />
-    <orderEntry type="library" exported="" name="Maven: com.github.jai-imageio:jai-imageio-core:1.3.1" level="project" />
-    <orderEntry type="library" exported="" name="Maven: org.controlsfx:controlsfx:8.40.12" level="project" />
-    <orderEntry type="library" exported="" name="Maven: com.jfoenix:jfoenix:1.4.0" level="project" />
-    <orderEntry type="library" exported="" name="Maven: javax.mail:mail:1.5.0-b01" level="project" />
-    <orderEntry type="library" exported="" name="Maven: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" exported="" name="Maven: org.snmp4j:snmp4j:2.5.11" level="project" />
-    <orderEntry type="library" exported="" name="Maven: log4j:log4j:1.2.14" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:core:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:javase:3.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.48" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jai-imageio:jai-imageio-core:1.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.controlsfx:controlsfx:8.40.12" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:1.4.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.mail:mail:1.5.0-b01" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.snmp4j:snmp4j:2.5.11" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.14" level="project" />
   </component>
 </module>

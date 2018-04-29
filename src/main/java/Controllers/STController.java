@@ -16,6 +16,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Screen;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,7 +46,6 @@ public class STController implements Initializable {
 
         logoTitle.setFitHeight(imageSize * 1.4);
         logoTitle.setFitWidth(imageSize * 10);
-        ;
 
         tokenLabel.setText(LINK);
         tokenLabel.setOnMouseClicked(event -> Main.service.showDocument(LINK));
@@ -52,9 +53,20 @@ public class STController implements Initializable {
         if (!new File(XMLBinding.XML_PATH).exists()) {
             QRCode.createQRCode();
 
-            Image image = new Image(getClass().getResourceAsStream("/images/qr.png"));
-            qrcode.setImage(image);
+            Image image = null;
+            try {
+                image = new Image(new FileInputStream(new File("images/qr.png")));
+                qrcode.setImage(image);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            if(image == null){
+                qrcode.setVisible(false);
+                scanlabel.setVisible(false);
+            }
             SMTPLabel.setVisible(false);
+        }else{
+            scanSMTP();
         }
     }
 
@@ -75,16 +87,18 @@ public class STController implements Initializable {
 
 
         if (result != null && code.getText().equals(result)) {
-            code.setVisible(false);
-            scanlabel.setVisible(false);
-            qrcode.setVisible(false);
-            SMTPLabel.setVisible(true);
-            flag.setValue(true);
+            scanSMTP();
         }
-
-
     }
 
+    private void scanSMTP(){
+        code.setVisible(false);
+        scanlabel.setVisible(false);
+        qrcode.setVisible(false);
+        SMTPLabel.setVisible(true);
+        flag.setValue(true);
+        flag.set(true);
+    }
     @FXML
     private void exit() {
         System.exit(0);

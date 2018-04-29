@@ -1,26 +1,40 @@
 package Controllers;
 
 import com.jfoenix.controls.JFXTextArea;
+import javafx.application.Platform;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class DebugController implements Initializable {
 
     private static String LOG_PATH = " log/history.txt";
+    public static SimpleBooleanProperty setLog = new SimpleBooleanProperty(false);
 
     @FXML
     private JFXTextArea logger;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Platform.runLater(() -> setLogger());
-    }
-
-/*    private void appendTextArea(String str) {
-        logger.appendText(str);
+/*        Platform.runLater(() -> setLogger());
+        setLog.addListener((observable, oldValue, newValue) -> {
+            if(newValue){
+                try {
+                    load_logs();
+                    setLog.setValue(false);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });*/
     }
 
     private void load_logs() throws IOException {
@@ -50,7 +64,6 @@ public class DebugController implements Initializable {
         if (!Files.exists(Paths.get(LOG_PATH))) {
             try {
                 Files.createFile(Paths.get(LOG_PATH));
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -78,30 +91,23 @@ public class DebugController implements Initializable {
         System.setOut(new PrintStream(new OutputStream() {
             @Override
             public void write(int b) throws IOException {
-            	Platform.runLater(() -> {
-	                appendTextArea(String.valueOf((char) b));
-	                try {
-						save_logs(String.valueOf((char) b));
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-	            });
-
+                try {
+                    save_logs(String.valueOf((char) b));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }, true));
 
         System.setErr(new PrintStream(new OutputStream() {
             @Override
             public void write(int b) throws IOException {
-            	Platform.runLater(() -> {
-	                appendTextArea(String.valueOf((char) b));
-	                try {
-						save_logs(String.valueOf((char) b));
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-	            });
+                try {
+                    save_logs(String.valueOf((char) b));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }, true));
-    }*/
+    }
 }
