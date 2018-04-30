@@ -135,6 +135,6 @@
 
 .add-network-button {
     -fx-background-color: #008d54;
-    -fx-background-radius: 10px;
+    -fx-background-radius: 2px;
     -fx-text-fill: #fff;
 }

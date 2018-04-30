@@ -35,7 +35,7 @@ public class XMLBinding {
             Properties.getInstance().setPassword(configPropsXML.getPassword());
             Properties.getInstance().setService(configPropsXML.getService());
             Properties.getInstance().setUsername(configPropsXML.getUsername());
-            Properties.getInstance().setThread_pool_size(configPropsXML.getThread_pool_size());
+            Properties.getInstance().setThreadPoolSize(configPropsXML.getThreadPoolSize());
             Properties.getInstance().setTimeout(configPropsXML.getTimeout());
             Properties.getInstance().setToken(configPropsXML.getToken());
             Properties.getInstance().setFlag(configPropsXML.isFlag());

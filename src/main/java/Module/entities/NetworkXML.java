@@ -28,19 +28,45 @@ public class NetworkXML {
         return network;
     }
 
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+
     public String getRange() {
         return range;
+    }
+
+    public void setRange(String range) {
+        this.range = range;
     }
 
     public String getCommunity() {
         return community;
     }
 
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
     public int getPrinters() {
+        return printer;
+    }
+
+    public int getPrinter() {
         return printer;
     }
 
     public void setPrinter(int printer) {
         this.printer = printer;
+    }
+
+    @Override
+    public String toString() {
+        return "<NetworkXML{" +
+                "network='" + network + '\'' +
+                ", range='" + range + '\'' +
+                ", community='" + community + '\'' +
+                ", printer=" + printer +
+                "}>";
     }
 }

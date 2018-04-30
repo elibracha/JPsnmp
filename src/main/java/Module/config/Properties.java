@@ -17,7 +17,6 @@ public class Properties {
     public static final String DEFAULT_PASSWORD = "AgiPPhRCcXDypY/RKZITaI8IYBjJ3KNvT6d6nImMi88x";
     public static final int DEFAULT_PORT = 25;
     public static final String VERSION = "1.0.0.0";
-
     @XmlElementWrapper(name = "IPS")
     @XmlElement(name = "network")
     private static List<NetworkXML> networks = new Vector<>();
@@ -25,30 +24,28 @@ public class Properties {
 
     static {
         File xml = new File(XMLBinding.XML_PATH);
-        if (xml.exists() && xml.length() > 50) {
+        if (xml.exists()) {
             XMLBinding.unmarshell();
         }
     }
 
     private String service = "service@prints.email";
-    private int thread_pool_size;
+    private int threadPoolSize;
     private String host;
     private int port;
     private int timeout;
     private String password;
     private String username;
-    private int ScanThreadSze;
     private String token;
     private boolean flag;
 
     private Properties() {
-        this.thread_pool_size = 50;
+        this.threadPoolSize = 50;
         this.host = DEFAULT_HOST;
         this.username = DEFAULT_USER;
         this.password = DEFAULT_PASSWORD;
         this.port = DEFAULT_PORT;
         this.timeout = 4000;
-        this.ScanThreadSze = 40;
         this.token = (new Token(8)).nextString().toLowerCase();
         this.flag = false;
     }
@@ -67,12 +64,12 @@ public class Properties {
         Properties.networks = IPS;
     }
 
-    public int getThread_pool_size() {
-        return thread_pool_size;
+    public int getThreadPoolSize() {
+        return threadPoolSize;
     }
 
-    public void setThread_pool_size(int thread_pool_size) {
-        this.thread_pool_size = thread_pool_size;
+    public void setThreadPoolSize(int threadPoolSize) {
+        this.threadPoolSize = threadPoolSize;
     }
 
     public String getHost() {
@@ -121,10 +118,6 @@ public class Properties {
 
     public void setService(String service) {
         this.service = service;
-    }
-
-    public int getScanThreadSze() {
-        return ScanThreadSze;
     }
 
     public String getToken() {

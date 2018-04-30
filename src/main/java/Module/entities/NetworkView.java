@@ -25,6 +25,10 @@ public class NetworkView extends RecursiveTreeObject<NetworkView> {
         return network.get();
     }
 
+    public void setNetwork(String network) {
+        this.network.set(network);
+    }
+
     public SimpleStringProperty networkProperty() {
         return network;
     }
@@ -41,8 +45,16 @@ public class NetworkView extends RecursiveTreeObject<NetworkView> {
         return range.get();
     }
 
+    public void setRange(String range) {
+        this.range.set(range);
+    }
+
     public String getCommunity() {
         return community.get();
+    }
+
+    public void setCommunity(String community) {
+        this.community.set(community);
     }
 
     public String getPrinter() {

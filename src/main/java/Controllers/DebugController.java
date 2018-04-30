@@ -86,7 +86,7 @@ public class DebugController implements Initializable {
 
         System.setOut(new PrintStream(new OutputStream() {
             @Override
-            public void write(int b) throws IOException {
+            public void write(int b) {
                 try {
                     save_logs(String.valueOf((char) b));
                 } catch (IOException e) {
@@ -97,7 +97,7 @@ public class DebugController implements Initializable {
 
         System.setErr(new PrintStream(new OutputStream() {
             @Override
-            public void write(int b) throws IOException {
+            public void write(int b) {
                 try {
                     save_logs(String.valueOf((char) b));
                 } catch (IOException e) {

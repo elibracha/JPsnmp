@@ -89,6 +89,7 @@ public class STController implements Initializable {
         if (result != null && code.getText().equals(result)) {
             scanSMTP();
         }
+
     }
 
     private void scanSMTP() {

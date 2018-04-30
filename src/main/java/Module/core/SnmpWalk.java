@@ -56,9 +56,7 @@ public class SnmpWalk {
                     System.out.println("Snmp GetNext Response for sysObjectID = " + responsePDU.getVariableBindings());
                     snmp.close();
 
-                    if (responsePDU.getVariableBindings().toString().contains("1.3.6.1.2.1.43."))
-                        return true;
-                    return false;
+                    return responsePDU.getVariableBindings().toString().contains("1.3.6.1.2.1.43.");
                 }
             }
         }

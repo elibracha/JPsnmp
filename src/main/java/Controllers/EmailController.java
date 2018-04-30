@@ -77,13 +77,6 @@ public class EmailController implements Initializable {
         checkFieldsAndEnableSections(false);
     }
 
-    @FXML
-    public void exit() {
-        setFields();
-        XMLBinding.marshell();
-        System.exit(0);
-    }
-
     private void buildLabel() {
         if (EmailController.flag.getValue()) {
             labelInfo.setText("For Custom SMTP, Please Check The Box Below And Set Up The Properties.");

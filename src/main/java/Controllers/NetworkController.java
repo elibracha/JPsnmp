@@ -3,6 +3,7 @@ package Controllers;
 import Module.config.Properties;
 import Module.config.XMLBinding;
 import Module.core.ExecuteTask;
+import Module.core.XLSXReader;
 import Module.entities.NetworkView;
 import Module.entities.NetworkXML;
 import com.jfoenix.controls.*;
@@ -14,6 +15,8 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TreeItem;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import org.controlsfx.control.RangeSlider;
 
 import java.io.File;
@@ -29,6 +32,10 @@ public class NetworkController implements Initializable {
 
     public static ObservableList<NetworkView> nets = FXCollections.observableArrayList();
     private NetworkView selectedNetwork;
+
+    @FXML
+    private AnchorPane anchorPane;
+
     @FXML
     private RangeSlider rangerSlider;
 
@@ -47,12 +54,6 @@ public class NetworkController implements Initializable {
     @SuppressWarnings("unchecked")
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        if (!(new File(XMLBinding.XML_PATH).exists())) {
-            setLocalNet();
-            AddNewNet();
-            execute();
-        }
 
         ExecuteTask.reload.addListener((observable, oldValue, newValue) -> {
             setTableView(false);
@@ -74,7 +75,7 @@ public class NetworkController implements Initializable {
         range.setCellValueFactory(param -> param.getValue().getValue().rangeProperty());
 
         JFXTreeTableColumn<NetworkView, String> community = new JFXTreeTableColumn<>("Community");
-        community.setPrefWidth(160);
+        community.setPrefWidth(175);
         community.setCellValueFactory(param -> param.getValue().getValue().communityProperty());
 
         JFXTreeTableColumn<NetworkView, String> printers = new JFXTreeTableColumn<>("Printers");
@@ -93,9 +94,18 @@ public class NetworkController implements Initializable {
             }
         });
 
-        if ((new File(XMLBinding.XML_PATH)).exists())
+        if (!Properties.getNetworks().isEmpty()) {
             setTableView(true);
+        }
 
+        if (!(new File(XMLBinding.XML_PATH).exists())) {
+            setLocalNet();
+            AddNewNet();
+        } else {
+            setTableView(true);
+        }
+
+        execute();
         runNetworkChecks();
     }
 
@@ -169,10 +179,7 @@ public class NetworkController implements Initializable {
             }
 
             Properties.setIPS(allIPS);
-            XMLBinding.marshell();
-
             community.setText("public");
-
             runNetworkChecks();
         }
     }
@@ -181,6 +188,9 @@ public class NetworkController implements Initializable {
     private void execute() {
         Platform.runLater(() -> {
             ExecuteTask task = new ExecuteTask();
+
+            task.killExecution();
+
             scanProgressBar.progressProperty().unbind();
 
             scanProgressBar.progressProperty().bind(task.progressProperty());
@@ -188,10 +198,24 @@ public class NetworkController implements Initializable {
             task.setOnRunning(event -> Platform.runLater(() -> System.out.println(String.format("Execute Started At - %s", Calendar.getInstance().getTime()))));
             task.setOnSucceeded(event -> {
                 Platform.runLater(() -> System.out.println(String.format("Execute Done At - %s", Calendar.getInstance().getTime())));
-                XMLBinding.marshell();
             });
+            for (NetworkXML net : Properties.getNetworks()) {
+                net.setPrinter(0);
+            }
+            setTableView(false);
             new Thread(task).start();
         });
+    }
+
+    @FXML
+    private void openFileChooser() {
+        File file = new FileChooser().showOpenDialog(anchorPane.getScene().getWindow());
+        if (file != null) {
+            XLSXReader reader = new XLSXReader();
+            reader.readFromCSV(file);
+            setTableView(true);
+            execute();
+        }
     }
 
     private void setTableView(boolean flag) {
@@ -200,26 +224,57 @@ public class NetworkController implements Initializable {
         String netCommunity = "";
         int printersFound = 0;
         int start = -1;
+        boolean oneRangeNet = true;
 
         if (flag) {
             if (Properties.getNetworks().size() > 0) {
                 int end = -1;
+                flag:
                 for (NetworkXML net : Properties.getNetworks()) {
+                    for (NetworkView view : nets) {
+                        if (net.getNetwork().equals(view.getNetwork())) {
+                            int lowRange = Integer.valueOf(view.getRange().split("-")[0]);
+                            int highRange = Integer.valueOf(view.getRange().split("-")[1]);
+                            if (Integer.valueOf(net.getRange()) < lowRange) {
+                                view.setRange(String.format("%d-%d", Integer.valueOf(net.getRange()), highRange));
+                            } else if (Integer.valueOf(net.getRange()) > highRange) {
+                                view.setRange(String.format("%d-%d", lowRange, Integer.valueOf(net.getRange())));
+                            }
+                            continue flag;
+                        }
+                    }
                     if (!networkName.equals(net.getNetwork())) {
-                        start = Integer.valueOf(net.getRange());
-                        if (!networkName.isEmpty() && end != -1) {
+                        if (!networkName.isEmpty()) {
+                            if (start > end) {
+                                int temp = start;
+                                start = end;
+                                end = temp;
+                            }
                             addToList(networkName, end, start, netCommunity, printersFound);
                             printersFound = 0;
+                            oneRangeNet = true;
                         }
 
+                        start = Integer.valueOf(net.getRange());
                         networkName = net.getNetwork();
+                        netCommunity = net.getCommunity();
                         printersFound += net.getPrinters();
                     } else {
+                        oneRangeNet = false;
                         printersFound += net.getPrinters();
                         end = Integer.parseInt(net.getRange());
                     }
                 }
-                addToList(networkName, end, start, netCommunity, printersFound);
+                if (oneRangeNet)
+                    end = start;
+                if (start != -1 && end != -1) {
+                    if (start > end) {
+                        int temp = start;
+                        start = end;
+                        end = temp;
+                    }
+                    addToList(networkName, end, start, netCommunity, printersFound);
+                }
             }
         } else {
             for (NetworkView net : nets) {

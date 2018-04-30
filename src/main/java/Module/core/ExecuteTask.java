@@ -1,7 +1,6 @@
 package Module.core;
 
 import Module.config.Properties;
-import Module.config.XMLBinding;
 import Module.entities.NetworkXML;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.concurrent.Task;
@@ -35,28 +34,20 @@ public class ExecuteTask extends Task<Void> {
         }
     }
 
-    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThread_pool_size();
+    private SnmpWorker[] snmpWorkers = new SnmpWorker[Properties.getInstance().getThreadPoolSize()];
+    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThreadPoolSize();
+
+    public void killExecution() {
+        for (SnmpWorker worker : snmpWorkers) {
+            if (worker != null)
+                worker.interrupt();
+        }
+    }
 
     @Override
     protected Void call() {
-        Properties ini = Properties.getInstance();
-
-        File xml = new File(XMLBinding.XML_PATH);
-
-        if (xml.exists())
-            XMLBinding.unmarshell();
-        else {
-            try {
-                if (xml.createNewFile())
-                    XMLBinding.marshell();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
         try {
             List<NetworkXML> networks = Properties.getNetworks();
-
-            SnmpWorker[] snmpWorkers = new SnmpWorker[ini.getThread_pool_size()];
 
             int counter = 0;
 
@@ -82,7 +73,8 @@ public class ExecuteTask extends Task<Void> {
             }
 
             for (SnmpWorker worker : snmpWorkers) {
-                worker.join();
+                if (worker != null)
+                    worker.join();
             }
 
             send();
