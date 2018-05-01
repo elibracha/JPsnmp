@@ -14,6 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -51,14 +52,27 @@ public class NetworkController implements Initializable {
     @FXML
     private JFXTextField rangeField, community, networkValue1, networkValue2, networkValue3;
 
+    @FXML
+    private Label precentLabel;
+
     @SuppressWarnings("unchecked")
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        ExecuteTask.reload.addListener((observable, oldValue, newValue) -> {
-            setTableView(false);
-        });
+        ExecuteTask.reload.addListener((observable, oldValue, newValue) -> setTableView(false));
 
+        scanProgressBar.progressProperty().addListener((observable, oldValue, newValue) -> {
+            precentLabel.setVisible(false);
+            if ((newValue).doubleValue() * 100 > 0) {
+                if((530 - (newValue.doubleValue() * 446)) < 485)
+                    precentLabel.setVisible(true);
+                AnchorPane.setRightAnchor(precentLabel, 530 - (newValue.doubleValue() * 446));
+                precentLabel.setText(String.format("%.0f", (newValue).doubleValue() * 100) + '%');
+            }
+            if ((newValue).doubleValue() * 100 == 100) {
+                precentLabel.setText("Sending...");
+            }
+        });
         rangerSlider.setHighValue(255);
         rangerSlider.setLowValue(0);
 
@@ -195,8 +209,10 @@ public class NetworkController implements Initializable {
 
             scanProgressBar.progressProperty().bind(task.progressProperty());
 
-            task.setOnRunning(event -> Platform.runLater(() -> System.out.println(String.format("Execute Started At - %s", Calendar.getInstance().getTime()))));
+            task.setOnRunning(event -> Platform.runLater(() ->
+                    System.out.println(String.format("Execute Started At - %s", Calendar.getInstance().getTime()))));
             task.setOnSucceeded(event -> {
+                precentLabel.setText("Done");
                 Platform.runLater(() -> System.out.println(String.format("Execute Done At - %s", Calendar.getInstance().getTime())));
             });
             for (NetworkXML net : Properties.getNetworks()) {

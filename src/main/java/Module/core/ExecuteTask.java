@@ -24,6 +24,8 @@ public class ExecuteTask extends Task<Void> {
     public static String FILE_PATH = "";
     public static SimpleBooleanProperty reload = new SimpleBooleanProperty(false);
     private static Map<String, String> mappedSet = new HashMap<>();
+    private SnmpWorker[] snmpWorkers = new SnmpWorker[Properties.getInstance().getThreadPoolSize()];
+    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThreadPoolSize();
 
     static {
         try {
@@ -33,9 +35,6 @@ public class ExecuteTask extends Task<Void> {
             e.printStackTrace();
         }
     }
-
-    private SnmpWorker[] snmpWorkers = new SnmpWorker[Properties.getInstance().getThreadPoolSize()];
-    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThreadPoolSize();
 
     public void killExecution() {
         for (SnmpWorker worker : snmpWorkers) {
@@ -87,7 +86,7 @@ public class ExecuteTask extends Task<Void> {
         return null;
     }
 
-    public void send() {
+    private void send() {
         File filePath = new File(FILE_PATH);
         SnmpZipMaker zw = new SnmpZipMaker();
 
@@ -117,7 +116,7 @@ public class ExecuteTask extends Task<Void> {
         private String ip;
         private String commStr;
 
-        public SnmpWorker(String IP, String commStr) {
+        SnmpWorker(String IP, String commStr) {
             this.ip = IP;
             this.commStr = commStr;
         }

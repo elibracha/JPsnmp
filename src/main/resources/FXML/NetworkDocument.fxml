@@ -65,6 +65,7 @@
             <Insets right="1"/>
         </padding>
     </JFXProgressBar>
+    <Label AnchorPane.rightAnchor="368" AnchorPane.bottomAnchor="32" textFill="#fff" fx:id="precentLabel"/>
     <JFXButton fx:id="btn_scan" disable="true" AnchorPane.bottomAnchor="25" AnchorPane.rightAnchor="25" prefHeight="35"
                onMouseClicked="#execute" styleClass="scan-button">
         <HBox.margin>
