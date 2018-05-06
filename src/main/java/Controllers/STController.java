@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -20,32 +21,48 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.UnaryOperator;
+import java.util.regex.Pattern;
 
 public class STController implements Initializable {
 
     public static final String LINK = QRCode.myCodeText;
     public static SimpleBooleanProperty flag = new SimpleBooleanProperty(false);
     @FXML
-    private Label SMTPLabel, scanlabel;
+    private Label SMTPLabel, scanlabel, validLabel;
     @FXML
     private Hyperlink tokenLabel;
     @FXML
     private JFXTextField code;
     @FXML
-    private ImageView qrcode, logoImage, logoTitle;
+    private ImageView qrcode, logoImage;
     @FXML
     private GridPane top;
 
+    public static void addTextLimiter(final JFXTextField tf, final int maxLength) {
+        tf.textProperty().addListener((ov, oldValue, newValue) -> {
+            if (tf.getText().length() > maxLength) {
+                String s = tf.getText().substring(0, maxLength);
+                tf.setText(s);
+            }
+        });
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addTextLimiter(code, 4);
+
+        Pattern pattern = Pattern.compile("\\d*|\\d+\\,\\d*");
+        TextFormatter formatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
+            return pattern.matcher(change.getControlNewText()).matches() ? change : null;
+        });
+
+        code.setTextFormatter(formatter);
         top.setPrefHeight(Screen.getPrimary().getBounds().getHeight() / 30);
 
         double imageSize = Screen.getPrimary().getBounds().getHeight() / 100;
         logoImage.setFitHeight(imageSize * 2.5);
         logoImage.setFitWidth(imageSize * 2.5);
-
-        logoTitle.setFitHeight(imageSize * 1.4);
-        logoTitle.setFitWidth(imageSize * 10);
 
         tokenLabel.setText(LINK);
         tokenLabel.setOnMouseClicked(event -> Main.service.showDocument(LINK));
@@ -86,8 +103,12 @@ public class STController implements Initializable {
             result = result.substring(0, 4);
 
 
-        if (result != null && code.getText().equals(result)) {
+        if (code.getText().length() == 4 && result != null && code.getText().equals(result)) {
             scanSMTP();
+        } else if (code.getText().length() == 4) {
+            validLabel.setText("Try Again");
+        } else {
+            validLabel.setText("");
         }
     }
 
@@ -104,4 +125,5 @@ public class STController implements Initializable {
     private void exit() {
         System.exit(0);
     }
+
 }

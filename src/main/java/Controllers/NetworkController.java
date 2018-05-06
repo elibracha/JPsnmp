@@ -64,9 +64,9 @@ public class NetworkController implements Initializable {
         scanProgressBar.progressProperty().addListener((observable, oldValue, newValue) -> {
             precentLabel.setVisible(false);
             if ((newValue).doubleValue() * 100 > 0) {
-                if((530 - (newValue.doubleValue() * 446)) < 485)
+                if((530 - (newValue.doubleValue() * 446)) < 450)
                     precentLabel.setVisible(true);
-                AnchorPane.setRightAnchor(precentLabel, 530 - (newValue.doubleValue() * 446));
+                AnchorPane.setRightAnchor(precentLabel, 500 - (newValue.doubleValue() * 446)/2);
                 precentLabel.setText(String.format("%.0f", (newValue).doubleValue() * 100) + '%');
             }
             if ((newValue).doubleValue() * 100 == 100) {
@@ -89,7 +89,7 @@ public class NetworkController implements Initializable {
         range.setCellValueFactory(param -> param.getValue().getValue().rangeProperty());
 
         JFXTreeTableColumn<NetworkView, String> community = new JFXTreeTableColumn<>("Community");
-        community.setPrefWidth(175);
+        community.setPrefWidth(185);
         community.setCellValueFactory(param -> param.getValue().getValue().communityProperty());
 
         JFXTreeTableColumn<NetworkView, String> printers = new JFXTreeTableColumn<>("Printers");

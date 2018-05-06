@@ -11,23 +11,23 @@
            text="For Custom SMTP, Please Check The Box Below And Set Up The Properties."/>
     <CheckBox fx:id="checkBox" layoutY="60" layoutX="35" text="Custom Settings"/>
     <AnchorPane fx:id="ancher" layoutY="115" layoutX="35" prefWidth="700" prefHeight="150">
-        <JFXTextField fx:id="emailUser" labelFloat="true" focusColor="#2cc185"
+        <JFXTextField fx:id="emailUser" labelFloat="true" focusColor="#099bc3"
                       prefHeight="25.0"
                       prefWidth="217.0"
                       promptText="Email User"
                       AnchorPane.leftAnchor="0"/>
-        <JFXTextField fx:id="host" labelFloat="true" focusColor="#2cc185"
+        <JFXTextField fx:id="host" labelFloat="true" focusColor="#099bc3"
                       prefHeight="25.0"
                       prefWidth="217.0"
                       promptText="Host"
                       AnchorPane.leftAnchor="0"
                       AnchorPane.bottomAnchor="50"/>
-        <JFXPasswordField fx:id="password" labelFloat="true" focusColor="#2cc185"
+        <JFXPasswordField fx:id="password" labelFloat="true" focusColor="#099bc3"
                           prefHeight="25.0"
                           prefWidth="217.0"
                           promptText="Password"
                           AnchorPane.rightAnchor="35"/>
-        <JFXTextField fx:id="port" labelFloat="true" focusColor="#2cc185"
+        <JFXTextField fx:id="port" labelFloat="true" focusColor="#099bc3"
                       prefHeight="25.0"
                       prefWidth="217.0"
                       promptText="Port"
@@ -36,7 +36,7 @@
         <JFXButton fx:id="next" disable="true" AnchorPane.bottomAnchor="0"
                    AnchorPane.rightAnchor="35" prefHeight="25.0"
                    prefWidth="116.0"
-                   style="-fx-background-color: #2cc185;" text="Save" textFill="WHITE"/>
+                   style="-fx-background-color: #099bc3;" text="Save" textFill="WHITE"/>
     </AnchorPane>
     <Label fx:id="loaderSMTP" layoutX="280.0" layoutY="245.0" textFill="#000"/>
 </AnchorPane>

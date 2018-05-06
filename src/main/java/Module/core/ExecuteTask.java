@@ -24,8 +24,6 @@ public class ExecuteTask extends Task<Void> {
     public static String FILE_PATH = "";
     public static SimpleBooleanProperty reload = new SimpleBooleanProperty(false);
     private static Map<String, String> mappedSet = new HashMap<>();
-    private SnmpWorker[] snmpWorkers = new SnmpWorker[Properties.getInstance().getThreadPoolSize()];
-    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThreadPoolSize();
 
     static {
         try {
@@ -35,6 +33,9 @@ public class ExecuteTask extends Task<Void> {
             e.printStackTrace();
         }
     }
+
+    private SnmpWorker[] snmpWorkers = new SnmpWorker[Properties.getInstance().getThreadPoolSize()];
+    private double precent = Properties.getNetworks().size() / Properties.getInstance().getThreadPoolSize();
 
     public void killExecution() {
         for (SnmpWorker worker : snmpWorkers) {

@@ -18,35 +18,35 @@
                       AnchorPane.topAnchor="65"
                       AnchorPane.bottomAnchor="60"/>
     <HBox spacing="8" AnchorPane.topAnchor="20" AnchorPane.leftAnchor="25" AnchorPane.rightAnchor="25">
-        <JFXTextField fx:id="networkValue1" focusColor="#008d54" maxWidth="40"
+        <JFXTextField fx:id="networkValue1" focusColor="#099bc3" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
                 <Insets top="15"/>
             </padding>
         </Label>
-        <JFXTextField fx:id="networkValue2" focusColor="#008d54" maxWidth="40"
+        <JFXTextField fx:id="networkValue2" focusColor="#099bc3" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
                 <Insets top="15"/>
             </padding>
         </Label>
-        <JFXTextField fx:id="networkValue3" focusColor="#008d54" maxWidth="40"
+        <JFXTextField fx:id="networkValue3" focusColor="#099bc3" maxWidth="40"
                       promptText="255" onKeyReleased="#validateNetAndCommunity"/>
         <Label prefWidth="3.0" text=".">
             <padding>
                 <Insets top="15"/>
             </padding>
         </Label>
-        <JFXTextField fx:id="rangeField" focusColor="#008d54" maxWidth="50"
+        <JFXTextField fx:id="rangeField" focusColor="#099bc3" maxWidth="50"
                       text="1-254" disable="true"/>
         <RangeSlider fx:id="rangerSlider" max="254" min="1" maxHeight="1" prefWidth="190" onMouseDragged="#handleRange">
             <padding>
                 <Insets top="15"/>
             </padding>
         </RangeSlider>
-        <JFXTextField fx:id="community" focusColor="#008d54" labelFloat="true" promptText="community" text="public"
+        <JFXTextField fx:id="community" focusColor="#099bc3" labelFloat="true" promptText="community" text="public"
                       onKeyReleased="#validateNetAndCommunity" maxWidth="100"/>
         <JFXButton fx:id="btn_addNet" prefWidth="150"
                    styleClass="add-network-button" text="Add Network" onMouseClicked="#AddNewNet"

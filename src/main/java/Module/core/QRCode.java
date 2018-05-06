@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class QRCode {
 
-    public static final String myCodeText = "https://app.prints.email/?computer=".concat(Properties.getInstance().getToken());
+    public static final String myCodeText = "https://app.maprinter.com/".concat(Properties.getInstance().getToken());
 
     public static void createQRCode() {
         String imagepath = "images/qr.png";
@@ -64,9 +64,6 @@ public class QRCode {
         } catch (WriterException | IOException e) {
             e.printStackTrace();
         }
-
-        Properties.getInstance().setToken(myCodeText.substring(myCodeText.lastIndexOf('=') + 1, myCodeText.length()));
-
         System.out.println("\n\nYou have successfully created QR Code.");
     }
 }

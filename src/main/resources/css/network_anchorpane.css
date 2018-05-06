@@ -1,9 +1,9 @@
 .range-slider {
     -fx-control-inner-background: #cdcdcd;
-    -fx-color: #008d54;
-    -fx-focus-color: #008d54;
-    -fx-progress-color: #008d54;
-    -thumb-color: #008d54;
+    -fx-color: #099bc3;
+    -fx-focus-color: #099bc3;
+    -fx-progress-color: #099bc3;
+    -thumb-color: #099bc3;
 }
 
 .range-slider .track {
@@ -20,13 +20,13 @@
 }
 
 .range-slider .low-thumb, .range-slider .high-thumb {
-    -fx-color: #008d54;
+    -fx-color: #099bc3;
     -fx-border-width: 0;
     -fx-pref-width: 15px;
     -fx-pref-height: 15px;
     -fx-focus-color: transparent;
-    -fx-faint-focus-color: #008d54;
-    -fx-border-color: #008d54;
+    -fx-faint-focus-color: #099bc3;
+    -fx-border-color: #099bc3;
 }
 
 .tree-table-view {
@@ -110,8 +110,8 @@
 }
 
 .tree-table-row-cell:selected > .tree-table-cell {
-    -fx-background-color: #008d54;
-    -fx-table-cell-border-color: #008d54;
+    -fx-background-color: #099bc3;
+    -fx-table-cell-border-color: #099bc3;
     -fx-text-fill: white;
 }
 
@@ -125,16 +125,27 @@
 }
 
 .scan-button {
-    -fx-background-color: #008d54;
+    -fx-background-color: #099bc3;
     -fx-background-radius: 0;
 }
 
 .continue-button {
-    -fx-background-color: #2cc185;
+    -fx-background-color: #099bc3;
 }
 
 .add-network-button {
-    -fx-background-color: #008d54;
+    -fx-background-color: #099bc3;
     -fx-background-radius: 2px;
     -fx-text-fill: #fff;
+}
+
+.jfx-progress-bar > .track, .jfx-progress-bar > .bar {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+.jfx-progress-bar > .bar {
+    -fx-background-color: #099bc3;
+}
+.jfx-progress-bar > .track {
+    -fx-background-color: #E0E0E0;
 }
