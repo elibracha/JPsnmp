@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+
 *.war
 *.ear
 *.zip
@@ -26,4 +26,3 @@ hs_err_pid*
 target/
 JPsnmp.iml
 printersservice.iml
-out/
