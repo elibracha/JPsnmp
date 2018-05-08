@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:id="borderPane" prefHeight="200"
+            style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-width: 1px; -fx-border-color: #0e7d9b"
+            xmlns="http://javafx.com/javafx/8"
+            fx:controller="Controllers.STController">
+
+    <top>
+        <GridPane fx:id="top" style="-fx-background-color: #099bc3" alignment="CENTER" hgap="10">
+            <children>
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+                    <children>
+                        <ImageView fx:id="logoImage">
+                            <image>
+                                <Image url="@/images/logo.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                    <padding>
+                        <Insets left="5"/>
+                    </padding>
+                </HBox>
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+                    <Label text="Maprinter" textFill="white" style="-fx-font-size: 18px; -fx-font-weight: bold"/>
+                    <padding>
+                        <Insets right="13"/>
+                    </padding>
+                </HBox>
+                <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
+                    <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
+                               style="-fx-border-color: transparent;">
+                        <font>
+                            <Font size="16"/>
+                        </font>
+                    </Hyperlink>
+                </HBox>
+                <Label alignment="CENTER" onMouseClicked="#exit" style="-fx-font:16 Arial;"
+                       text="X" textFill="#fff" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                    <padding>
+                        <Insets right="10"/>
+                    </padding>
+                    <GridPane.margin>
+                        <Insets>
+                            <left>40</left>
+                        </Insets>
+                    </GridPane.margin>
+                </Label>
+            </children>
+        </GridPane>
+    </top>
+    <center>
+        <GridPane alignment="CENTER" hgap="50" vgap="2">
+            <children>
+                <ImageView fx:id="qrcode" fitHeight="100.0" fitWidth="100.0"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.halignment="CENTER">
+                </ImageView>
+                <Label fx:id="scanlabel" textFill="black" text="Scan me!"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.halignment="CENTER"/>
+                <Label fx:id="SMTPLabel" text="Checking SMTP Settings. please wait..." textAlignment="CENTER"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+                <VBox alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <JFXTextField fx:id="code" focusColor="#099bc3" maxWidth="120" onKeyReleased="#checkCode"
+                                  promptText="Please enter code" alignment="CENTER" prefWidth="200"/>
+                    <Label fx:id="validLabel" textFill="red" GridPane.halignment="CENTER">
+                        <padding>
+                            <Insets top="5"/>
+                        </padding>
+                    </Label>
+                </VBox>
+            </children>
+        </GridPane>
+    </center>
+</BorderPane>

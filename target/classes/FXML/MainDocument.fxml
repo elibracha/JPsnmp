@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="root" prefHeight="350.0"
+            style="-fx-background-color: #fff" stylesheets="@/css/root_anchorpane.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="Controllers.MainController">
+    <top>
+        <AnchorPane style="-fx-background-color: #099bc3" prefHeight="32">
+            <GridPane AnchorPane.leftAnchor="2" AnchorPane.topAnchor="3" hgap="10">
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER">
+                    <HBox alignment="CENTER">
+                        <children>
+                            <ImageView fitWidth="25" fitHeight="25" fx:id="logoImage">
+                                <image>
+                                    <Image url="@/images/logo.png"/>
+                                </image>
+                            </ImageView>
+                        </children>
+                        <padding>
+                            <Insets right="10" left="10"/>
+                        </padding>
+                    </HBox>
+                    <HBox GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER">
+                        <Label text="Maprinter" textFill="white" style="-fx-font-size: 18px; -fx-font-weight: bold"/>
+                        <padding>
+                            <Insets right="13"/>
+                        </padding>
+                    </HBox>
+                    <HBox GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER">
+                        <Hyperlink fx:id="tokenLabel" contentDisplay="CENTER" textFill="#fff"
+                                   style=" -fx-border-color: transparent; -fx-padding: 5 0 5 0;">
+                            <font>
+                                <Font size="16"/>
+                            </font>
+                        </Hyperlink>
+                        <padding>
+                            <Insets right="34" left="34"/>
+                        </padding>
+                    </HBox>
+                </HBox>
+            </GridPane>
+            <GridPane AnchorPane.rightAnchor="2">
+                <HBox fx:id="select_bugs" GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="CENTER">
+                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                        <image>
+                            <Image url="@/images/bugs.png"/>
+                        </image>
+                    </ImageView>
+                    <GridPane.margin>
+                        <Insets>
+                            <left>30</left>
+                        </Insets>
+                    </GridPane.margin>
+                </HBox>
+                <HBox fx:id="select_settings" GridPane.columnIndex="4" GridPane.rowIndex="0" alignment="CENTER">
+                    <ImageView fitHeight="23.0" fitWidth="23.0">
+                        <image>
+                            <Image url="@/images/settings.png"/>
+                        </image>
+                    </ImageView>
+                </HBox>
+                <HBox fx:id="exit" onMouseClicked="#exit" GridPane.columnIndex="5" GridPane.rowIndex="0"
+                      alignment="CENTER">
+                    <ImageView fitHeight="25.0" fitWidth="25.0">
+                        <image>
+                            <Image url="@/images/clear.png"/>
+                        </image>
+                    </ImageView>
+                </HBox>
+            </GridPane>
+        </AnchorPane>
+    </top>
+    <center>
+        <StackPane>
+            <fx:include fx:id="emailSetting" source="EmailDocument.fxml"/>
+            <fx:include fx:id="networkSetting" source="NetworkDocument.fxml"/>
+        </StackPane>
+    </center>
+</BorderPane>

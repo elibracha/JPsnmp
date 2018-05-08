@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="Controllers.EmailController">
+
+    <Label layoutX="35.0" layoutY="25.0" fx:id="labelInfo" style="-fx-font-family: Arial"
+           text="For Custom SMTP, Please Check The Box Below And Set Up The Properties."/>
+    <CheckBox fx:id="checkBox" layoutY="60" layoutX="35" text="Custom Settings"/>
+    <AnchorPane fx:id="ancher" layoutY="115" layoutX="35" prefWidth="700" prefHeight="150">
+        <JFXTextField fx:id="emailUser" labelFloat="true" focusColor="#099bc3"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Email User"
+                      AnchorPane.leftAnchor="0"/>
+        <JFXTextField fx:id="host" labelFloat="true" focusColor="#099bc3"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Host"
+                      AnchorPane.leftAnchor="0"
+                      AnchorPane.bottomAnchor="50"/>
+        <JFXPasswordField fx:id="password" labelFloat="true" focusColor="#099bc3"
+                          prefHeight="25.0"
+                          prefWidth="217.0"
+                          promptText="Password"
+                          AnchorPane.rightAnchor="35"/>
+        <JFXTextField fx:id="port" labelFloat="true" focusColor="#099bc3"
+                      prefHeight="25.0"
+                      prefWidth="217.0"
+                      promptText="Port"
+                      AnchorPane.rightAnchor="35"
+                      AnchorPane.bottomAnchor="50"/>
+        <JFXButton fx:id="next" disable="true" AnchorPane.bottomAnchor="0"
+                   AnchorPane.rightAnchor="35" prefHeight="25.0"
+                   prefWidth="116.0"
+                   style="-fx-background-color: #099bc3;" text="Save" textFill="WHITE"/>
+    </AnchorPane>
+    <Label fx:id="loaderSMTP" layoutX="280.0" layoutY="245.0" textFill="#000"/>
+</AnchorPane>

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="13.7" version="13.7" Modules="professional" RootPath="." Language="en" Id="{49E180EA-2BD2-4383-A9EA-BA03FAB27A3E}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiJavaComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_COLOR_DISABLED_TEXT" Value="3026478" MultiBuildValue="DefaultBuild:15461355" MsiKey="AI_COLOR_DISABLED_TEXT"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE" Value="2960685;4276545;6776679;16176031" MultiBuildValue="DefaultBuild:16777215;16580605;10395294;4108658" MsiKey="AI_CONTROL_VISUAL_STYLE"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_EX" Value="1513239;3026478;3026478" MultiBuildValue="DefaultBuild:16514043;15461355;15461355" MsiKey="AI_CONTROL_VISUAL_STYLE_EX"/>
+    <ROW Property="AI_CONTROL_VISUAL_STYLE_FLAT" MultiBuildValue="DefaultBuild:15925239;15138798;10395294;4108658" MsiKey="AI_CONTROL_VISUAL_STYLE_FLAT"/>
+    <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_FrameBtnsColor" Value="metroblack" MultiBuildValue="DefaultBuild:metrolime" MsiKey="AI_FrameBtnsColor"/>
+    <ROW Property="AI_FrameColor" Value="metroblack" MultiBuildValue="DefaultBuild:metrolime" MsiKey="AI_FrameColor"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="Maprinter"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:metrowhite" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="Manufacturer" Value="Maprinter"/>
+    <ROW Property="ProductCode" Value="1033:{49840800-2100-431B-9633-156FB22A21F0} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Maprinter"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{934171A3-E5A9-4DB5-B2F9-32A8EDCD6C06}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="amd64_Dir" Directory_Parent="lib_Dir" DefaultDir="amd64"/>
+    <ROW Directory="bin_Dir" Directory_Parent="jre_Dir" DefaultDir="bin"/>
+    <ROW Directory="cmm_Dir" Directory_Parent="lib_Dir" DefaultDir="cmm"/>
+    <ROW Directory="conf_Dir" Directory_Parent="APPDIR" DefaultDir="conf"/>
+    <ROW Directory="cursors_Dir" Directory_Parent="images_1_Dir" DefaultDir="cursors"/>
+    <ROW Directory="deploy_Dir" Directory_Parent="lib_Dir" DefaultDir="deploy"/>
+    <ROW Directory="dtplugin_Dir" Directory_Parent="bin_Dir" DefaultDir="dtplugin"/>
+    <ROW Directory="ext_Dir" Directory_Parent="lib_Dir" DefaultDir="ext"/>
+    <ROW Directory="fonts_Dir" Directory_Parent="lib_Dir" DefaultDir="fonts"/>
+    <ROW Directory="images_1_Dir" Directory_Parent="lib_Dir" DefaultDir="images"/>
+    <ROW Directory="images_Dir" Directory_Parent="APPDIR" DefaultDir="images"/>
+    <ROW Directory="jfr_Dir" Directory_Parent="lib_Dir" DefaultDir="jfr"/>
+    <ROW Directory="jre_Dir" Directory_Parent="APPDIR" DefaultDir="jre"/>
+    <ROW Directory="lib_Dir" Directory_Parent="jre_Dir" DefaultDir="lib"/>
+    <ROW Directory="limited_Dir" Directory_Parent="policy_Dir" DefaultDir="limited"/>
+    <ROW Directory="log_Dir" Directory_Parent="APPDIR" DefaultDir="log"/>
+    <ROW Directory="management_Dir" Directory_Parent="lib_Dir" DefaultDir="MANAGE~1|management"/>
+    <ROW Directory="plugin2_Dir" Directory_Parent="bin_Dir" DefaultDir="plugin2"/>
+    <ROW Directory="policy_Dir" Directory_Parent="security_Dir" DefaultDir="policy"/>
+    <ROW Directory="security_Dir" Directory_Parent="lib_Dir" DefaultDir="security"/>
+    <ROW Directory="server_Dir" Directory_Parent="bin_Dir" DefaultDir="server"/>
+    <ROW Directory="unlimited_Dir" Directory_Parent="policy_Dir" DefaultDir="UNLIMI~1|unlimited"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{AAFF62BC-03C9-4DC4-8BD0-32CBC9762F0E}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_ExePath" ComponentId="{3BCC8851-C23E-44EE-ACC0-A87DA11636CD}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="CIEXYZ.pf" ComponentId="{D3ACFC7D-48F2-4DC3-91D3-8D4A6645B2DE}" Directory_="cmm_Dir" Attributes="0" KeyPath="CIEXYZ.pf" Type="0"/>
+    <ROW Component="COPYRIGHT" ComponentId="{D7D0548F-CCA5-48C4-809E-23EFB95ABDF5}" Directory_="jre_Dir" Attributes="0" KeyPath="COPYRIGHT" Type="0"/>
+    <ROW Component="JAWTAccessBridge64.dll" ComponentId="{CA962883-B646-4D03-A7A7-2A58CAE66786}" Directory_="bin_Dir" Attributes="256" KeyPath="JAWTAccessBridge64.dll"/>
+    <ROW Component="JavaAccessBridge64.dll" ComponentId="{FA1FCDCA-A286-4C49-A0AB-A721557CBDA8}" Directory_="bin_Dir" Attributes="256" KeyPath="JavaAccessBridge64.dll"/>
+    <ROW Component="LucidaBrightDemiBold.ttf" ComponentId="{98570B24-230F-4147-BC8B-BD6C62283F63}" Directory_="fonts_Dir" Attributes="0" Type="0"/>
+    <ROW Component="ProductInformation" ComponentId="{A00F85A6-5B91-45CF-BF38-A075794E38FF}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="README.md" ComponentId="{418E1593-C1E8-433E-8FBB-258C49D047D0}" Directory_="conf_Dir" Attributes="0" KeyPath="README.md" Type="0"/>
+    <ROW Component="README.md_1" ComponentId="{6D8EA978-0F9A-46A7-A0C2-E32F170BB1FA}" Directory_="log_Dir" Attributes="0" KeyPath="README.md_1" Type="0"/>
+    <ROW Component="WindowsAccessBridge64.dll" ComponentId="{7902BA21-768B-4969-80FA-0D6C516E41B2}" Directory_="bin_Dir" Attributes="256" KeyPath="WindowsAccessBridge64.dll"/>
+    <ROW Component="accessbridge64.jar" ComponentId="{6499348F-2C10-4A67-BA0E-E12302274158}" Directory_="ext_Dir" Attributes="0" KeyPath="accessbridge64.jar" Type="0"/>
+    <ROW Component="accessibility.properties" ComponentId="{50534C27-0D62-41D6-BE11-9A03101F5F1E}" Directory_="lib_Dir" Attributes="0" KeyPath="accessibility.properties" Type="0"/>
+    <ROW Component="apimswincoreconsolel110.dll" ComponentId="{E1BEEEE9-854A-4B7F-9088-DB951F95FE51}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreconsolel110.dll"/>
+    <ROW Component="apimswincoredatetimel110.dll" ComponentId="{C5C027AF-D0A8-40AC-897C-3BBDC8C16268}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoredatetimel110.dll"/>
+    <ROW Component="apimswincoredebugl110.dll" ComponentId="{A4620091-5752-437A-BE02-B30687BB8331}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoredebugl110.dll"/>
+    <ROW Component="apimswincoreerrorhandlingl110.dll" ComponentId="{EE89E6A8-74B3-42AC-B387-A71B458156DE}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreerrorhandlingl110.dll"/>
+    <ROW Component="apimswincorefilel110.dll" ComponentId="{B2F694D8-274B-487F-97D4-1DBA495EA9DE}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorefilel110.dll"/>
+    <ROW Component="apimswincorefilel120.dll" ComponentId="{6C18DBDF-011C-4F6F-876A-18D903A5EC67}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorefilel120.dll"/>
+    <ROW Component="apimswincorefilel210.dll" ComponentId="{267566F5-F92F-4223-A674-6C14CE8B30AD}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorefilel210.dll"/>
+    <ROW Component="apimswincorehandlel110.dll" ComponentId="{32B01C79-3B59-485B-B837-DA10F6A7E7DB}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorehandlel110.dll"/>
+    <ROW Component="apimswincoreheapl110.dll" ComponentId="{97354BF5-0D61-4620-81D5-BC13C8D9B6EA}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreheapl110.dll"/>
+    <ROW Component="apimswincoreinterlockedl110.dll" ComponentId="{554B7A0F-C73F-4AC3-AE89-FDF3DE8964E7}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreinterlockedl110.dll"/>
+    <ROW Component="apimswincorelibraryloaderl110.dll" ComponentId="{D4168D27-0B06-4102-BAA8-E3C91D49F853}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorelibraryloaderl110.dll"/>
+    <ROW Component="apimswincorelocalizationl120.dll" ComponentId="{779FB739-872F-48C7-B116-1BB5613E7F3E}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorelocalizationl120.dll"/>
+    <ROW Component="apimswincorememoryl110.dll" ComponentId="{9488EFDF-05F7-42D0-A9E9-D4B356DE7C88}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorememoryl110.dll"/>
+    <ROW Component="apimswincorenamedpipel110.dll" ComponentId="{7D813E17-22A3-419E-867D-4F43AE507FE5}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorenamedpipel110.dll"/>
+    <ROW Component="apimswincoreprocessenvironmentl110.dll" ComponentId="{1F4ED683-F16F-4C2F-A46F-1A873D036E29}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreprocessenvironmentl110.dll"/>
+    <ROW Component="apimswincoreprocessthreadsl110.dll" ComponentId="{4C188F9D-9D53-4EA9-89A5-7FAC34D1653B}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreprocessthreadsl110.dll"/>
+    <ROW Component="apimswincoreprocessthreadsl111.dll" ComponentId="{2F011B5E-8445-4FBA-883E-82CAFD6278F5}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreprocessthreadsl111.dll"/>
+    <ROW Component="apimswincoreprofilel110.dll" ComponentId="{5203FABB-6599-4323-93C6-FC89DAB7F43D}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreprofilel110.dll"/>
+    <ROW Component="apimswincorertlsupportl110.dll" ComponentId="{773ED0CE-0866-42CA-BFE3-A2347C019508}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorertlsupportl110.dll"/>
+    <ROW Component="apimswincorestringl110.dll" ComponentId="{647CED14-3E04-4582-887E-E07186528F42}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincorestringl110.dll"/>
+    <ROW Component="apimswincoresynchl110.dll" ComponentId="{48A969BF-974B-4352-A4D6-03121791CF36}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoresynchl110.dll"/>
+    <ROW Component="apimswincoresynchl120.dll" ComponentId="{CD491B0D-D959-4783-BFB2-AF123C5553EF}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoresynchl120.dll"/>
+    <ROW Component="apimswincoresysinfol110.dll" ComponentId="{B1742FD1-E8A2-4EA9-BD60-B684C067CB2C}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoresysinfol110.dll"/>
+    <ROW Component="apimswincoretimezonel110.dll" ComponentId="{63822535-A6E7-4AEE-B4CA-441ACFCDD9B3}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoretimezonel110.dll"/>
+    <ROW Component="apimswincoreutill110.dll" ComponentId="{D86AE069-0827-4898-9222-F18306C24CC7}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincoreutill110.dll"/>
+    <ROW Component="apimswincrtconiol110.dll" ComponentId="{BEDAB26D-4CDF-44B5-9D02-36ACFC0C0D3E}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtconiol110.dll"/>
+    <ROW Component="apimswincrtconvertl110.dll" ComponentId="{937E58D4-C884-41BF-B4F3-E06F998777AE}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtconvertl110.dll"/>
+    <ROW Component="apimswincrtenvironmentl110.dll" ComponentId="{94D32404-C240-4E0E-B33B-A18C1A033D52}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtenvironmentl110.dll"/>
+    <ROW Component="apimswincrtfilesysteml110.dll" ComponentId="{9D9DDD3A-61A1-4D4B-8197-DB347DF7F0FA}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtfilesysteml110.dll"/>
+    <ROW Component="apimswincrtheapl110.dll" ComponentId="{B4D8B937-9203-4F29-99CE-B9FCD1EE436F}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtheapl110.dll"/>
+    <ROW Component="apimswincrtlocalel110.dll" ComponentId="{83E94C67-E5A3-46C2-8E09-DF87D61953A6}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtlocalel110.dll"/>
+    <ROW Component="apimswincrtmathl110.dll" ComponentId="{DD8DEA15-10BE-4BBF-A695-9B227F65E044}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtmathl110.dll"/>
+    <ROW Component="apimswincrtmultibytel110.dll" ComponentId="{38BE43F6-679B-4650-8EB1-0E35953C65A7}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtmultibytel110.dll"/>
+    <ROW Component="apimswincrtprivatel110.dll" ComponentId="{D45CAD12-6704-4AAD-8EB4-E6DC383E5540}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtprivatel110.dll"/>
+    <ROW Component="apimswincrtprocessl110.dll" ComponentId="{71E0855A-B4B5-4088-958C-7C5D95F77E13}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtprocessl110.dll"/>
+    <ROW Component="apimswincrtruntimel110.dll" ComponentId="{7E48F73E-76C1-4C44-9A38-BB937C4C7CCA}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtruntimel110.dll"/>
+    <ROW Component="apimswincrtstdiol110.dll" ComponentId="{D9CBA6A5-CF18-4907-8286-B92A0DB6D300}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtstdiol110.dll"/>
+    <ROW Component="apimswincrtstringl110.dll" ComponentId="{18EB3EDC-FDF0-43B7-AA6C-407FFC77D5C7}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtstringl110.dll"/>
+    <ROW Component="apimswincrttimel110.dll" ComponentId="{C0FEE038-2EC8-4192-8F9E-6F5C2BC0EE3B}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrttimel110.dll"/>
+    <ROW Component="apimswincrtutilityl110.dll" ComponentId="{28029749-A799-49E2-B012-3721F5F0009D}" Directory_="bin_Dir" Attributes="256" KeyPath="apimswincrtutilityl110.dll"/>
+    <ROW Component="attach.dll" ComponentId="{538518BF-EAC1-400C-B37E-D9AFDD6854D4}" Directory_="bin_Dir" Attributes="256" KeyPath="attach.dll"/>
+    <ROW Component="awt.dll" ComponentId="{D0B25377-91FF-4065-9DF8-DFB237131CA6}" Directory_="bin_Dir" Attributes="256" KeyPath="awt.dll"/>
+    <ROW Component="bci.dll" ComponentId="{5A9C95BB-B7B0-4BE5-AF95-E767E9AA569B}" Directory_="bin_Dir" Attributes="256" KeyPath="bci.dll"/>
+    <ROW Component="blacklist" ComponentId="{58A48943-6E2F-4EED-914C-C804B6411EC3}" Directory_="security_Dir" Attributes="0" KeyPath="blacklist" Type="0"/>
+    <ROW Component="classes.jsa" ComponentId="{9FF2FB94-31EA-4599-B46E-96B72D291BC5}" Directory_="server_Dir" Attributes="0" KeyPath="classes.jsa" Type="0"/>
+    <ROW Component="concrt140.dll" ComponentId="{2F32425E-DB3C-40FD-9699-24D2E09E075A}" Directory_="bin_Dir" Attributes="256" KeyPath="concrt140.dll"/>
+    <ROW Component="cursors.properties" ComponentId="{2A49E60D-9F8C-49D9-AADD-74A697549AB3}" Directory_="cursors_Dir" Attributes="0" KeyPath="cursors.properties" Type="0"/>
+    <ROW Component="dcpr.dll" ComponentId="{69F82B33-5C12-45BE-87AC-EC818B707316}" Directory_="bin_Dir" Attributes="256" KeyPath="dcpr.dll"/>
+    <ROW Component="decora_sse.dll" ComponentId="{3408D4B6-AC8F-4D21-A501-B388D222065A}" Directory_="bin_Dir" Attributes="256" KeyPath="decora_sse.dll"/>
+    <ROW Component="default.jfc" ComponentId="{F05FECB6-0475-4AC6-9FB3-035709134000}" Directory_="jfr_Dir" Attributes="0" KeyPath="default.jfc" Type="0"/>
+    <ROW Component="deploy.dll" ComponentId="{9BDA55AD-0DDF-4BE9-A3EF-6830A05C50EA}" Directory_="bin_Dir" Attributes="256" KeyPath="deploy.dll"/>
+    <ROW Component="deployJava1.dll" ComponentId="{EAFAC2A7-D57D-49FC-B1E7-076C258DD270}" Directory_="dtplugin_Dir" Attributes="256" KeyPath="deployJava1.dll"/>
+    <ROW Component="dt_shmem.dll" ComponentId="{443BEE1C-1FCC-4712-90E7-E27D120AB8F8}" Directory_="bin_Dir" Attributes="256" KeyPath="dt_shmem.dll"/>
+    <ROW Component="dt_socket.dll" ComponentId="{AD15BEB4-BF52-434B-9605-E26459EC723E}" Directory_="bin_Dir" Attributes="256" KeyPath="dt_socket.dll"/>
+    <ROW Component="eula.dll" ComponentId="{07C310C3-81E4-4FB7-892E-B68467F9D1FD}" Directory_="bin_Dir" Attributes="256" KeyPath="eula.dll"/>
+    <ROW Component="ffjcext.zip" ComponentId="{4437DECF-61BE-4393-881F-55D93D1FFEC9}" Directory_="deploy_Dir" Attributes="0" KeyPath="ffjcext.zip" Type="0"/>
+    <ROW Component="fontmanager.dll" ComponentId="{23CFDD51-6D0A-47E1-BACA-F9C9C98EEE66}" Directory_="bin_Dir" Attributes="256" KeyPath="fontmanager.dll"/>
+    <ROW Component="fxplugins.dll" ComponentId="{24ABE8B9-69DF-4913-A1FE-9BA5D93EAE0D}" Directory_="bin_Dir" Attributes="256" KeyPath="fxplugins.dll"/>
+    <ROW Component="glass.dll" ComponentId="{3B3D0BA2-CBC0-4D5C-9DFE-7CBE9A67A1D1}" Directory_="bin_Dir" Attributes="256" KeyPath="glass.dll"/>
+    <ROW Component="gliblite.dll" ComponentId="{444BCB26-B9DA-43D9-8A53-EA5704BF7FA9}" Directory_="bin_Dir" Attributes="256" KeyPath="gliblite.dll"/>
+    <ROW Component="gstreamerlite.dll" ComponentId="{F834D62F-2D9C-4A18-86E0-97167455D506}" Directory_="bin_Dir" Attributes="256" KeyPath="gstreamerlite.dll"/>
+    <ROW Component="hprof.dll" ComponentId="{C10E6838-CD34-49EB-A8AD-8BCA4EB1C956}" Directory_="bin_Dir" Attributes="256" KeyPath="hprof.dll"/>
+    <ROW Component="instrument.dll" ComponentId="{C6786C59-1E34-479B-A505-B88D6EEAECEC}" Directory_="bin_Dir" Attributes="256" KeyPath="instrument.dll"/>
+    <ROW Component="j2pcsc.dll" ComponentId="{0F329B31-EF4A-4AB3-B26B-B184BD6FFD26}" Directory_="bin_Dir" Attributes="256" KeyPath="j2pcsc.dll"/>
+    <ROW Component="j2pkcs11.dll" ComponentId="{D521083F-4A7C-411B-87F1-BD510AB5DE68}" Directory_="bin_Dir" Attributes="256" KeyPath="j2pkcs11.dll"/>
+    <ROW Component="jaas_nt.dll" ComponentId="{C0E6B715-9442-43FB-8055-4B27193B25C1}" Directory_="bin_Dir" Attributes="256" KeyPath="jaas_nt.dll"/>
+    <ROW Component="jabswitch.exe" ComponentId="{E0F5F47E-81DB-4F6B-8855-398BB69D4198}" Directory_="bin_Dir" Attributes="256" KeyPath="jabswitch.exe"/>
+    <ROW Component="java.dll" ComponentId="{163B9142-2703-4078-83E3-6D7026F588C0}" Directory_="bin_Dir" Attributes="256" KeyPath="java.dll"/>
+    <ROW Component="java.exe" ComponentId="{4077175F-EC55-45D4-B0E7-59AEA4AC6275}" Directory_="bin_Dir" Attributes="256" KeyPath="java.exe"/>
+    <ROW Component="java_crw_demo.dll" ComponentId="{C75F95E2-A372-44A7-A6C1-6503DA65ABCB}" Directory_="bin_Dir" Attributes="256" KeyPath="java_crw_demo.dll"/>
+    <ROW Component="javacpl.cpl" ComponentId="{DE539245-6069-4576-8F86-D1E33BF1C558}" Directory_="bin_Dir" Attributes="256" KeyPath="javacpl.cpl" Type="0"/>
+    <ROW Component="javacpl.exe" ComponentId="{66BE85CB-39A1-4829-B0EC-F393048C3A60}" Directory_="bin_Dir" Attributes="256" KeyPath="javacpl.exe"/>
+    <ROW Component="javafx_font.dll" ComponentId="{3E3DE85B-4C43-4391-B2E8-6CD27D18B654}" Directory_="bin_Dir" Attributes="256" KeyPath="javafx_font.dll"/>
+    <ROW Component="javafx_font_t2k.dll" ComponentId="{3179279C-4E1F-4D52-A0B5-843B31138338}" Directory_="bin_Dir" Attributes="256" KeyPath="javafx_font_t2k.dll"/>
+    <ROW Component="javafx_iio.dll" ComponentId="{9B8D16D1-2DAF-4842-BCFD-82E8456E3D96}" Directory_="bin_Dir" Attributes="256" KeyPath="javafx_iio.dll"/>
+    <ROW Component="javarmi.exe" ComponentId="{81193336-A3FE-4CBA-A4C3-BE9A434B2093}" Directory_="bin_Dir" Attributes="256" KeyPath="javarmi.exe"/>
+    <ROW Component="javaw.exe" ComponentId="{07514083-DD66-4AEA-B638-65BA1D9AFEB4}" Directory_="bin_Dir" Attributes="256" KeyPath="javaw.exe"/>
+    <ROW Component="javaws.exe" ComponentId="{0170C584-D9B3-4274-BFAC-917C3C2218B1}" Directory_="bin_Dir" Attributes="256" KeyPath="javaws.exe"/>
+    <ROW Component="jawt.dll" ComponentId="{09AD5E80-EEC8-4AFE-81D8-1B65204A4A9F}" Directory_="bin_Dir" Attributes="256" KeyPath="jawt.dll"/>
+    <ROW Component="jdwp.dll" ComponentId="{78B7F073-DCA0-425D-97AE-2A15E116F9F3}" Directory_="bin_Dir" Attributes="256" KeyPath="jdwp.dll"/>
+    <ROW Component="jfr.dll" ComponentId="{94BF63F2-EE19-4479-B79E-BD5E2CED2B85}" Directory_="bin_Dir" Attributes="256" KeyPath="jfr.dll"/>
+    <ROW Component="jfxmedia.dll" ComponentId="{A264B10B-43FD-4D5C-BF4A-2B3B9E537922}" Directory_="bin_Dir" Attributes="256" KeyPath="jfxmedia.dll"/>
+    <ROW Component="jfxwebkit.dll" ComponentId="{7C678D72-8542-45E0-9F79-3A4829A9CF01}" Directory_="bin_Dir" Attributes="256" KeyPath="jfxwebkit.dll"/>
+    <ROW Component="jjs.exe" ComponentId="{F919822F-63BC-42E3-BA54-9EAF58AFCA42}" Directory_="bin_Dir" Attributes="256" KeyPath="jjs.exe"/>
+    <ROW Component="jli.dll" ComponentId="{D0B1E464-A65C-474E-ABC3-FC9940622539}" Directory_="bin_Dir" Attributes="256" KeyPath="jli.dll"/>
+    <ROW Component="jmxremote.access" ComponentId="{2E374E3E-AC75-4DBC-A31E-076ADB0CCCC3}" Directory_="management_Dir" Attributes="0" KeyPath="jmxremote.access" Type="0"/>
+    <ROW Component="jp2iexp.dll" ComponentId="{469DA376-C4A9-4D2B-8BDC-200B7E3281AF}" Directory_="bin_Dir" Attributes="256" KeyPath="jp2iexp.dll"/>
+    <ROW Component="jp2launcher.exe" ComponentId="{DF0EB298-04B0-4A79-A95B-51875779687D}" Directory_="bin_Dir" Attributes="256" KeyPath="jp2launcher.exe"/>
+    <ROW Component="jp2native.dll" ComponentId="{361EB00D-B84E-4E91-B4CD-09F90C5B80A8}" Directory_="bin_Dir" Attributes="256" KeyPath="jp2native.dll"/>
+    <ROW Component="jp2ssv.dll" ComponentId="{9C7B394A-B9AB-4EEB-A702-2B16BF512F6A}" Directory_="bin_Dir" Attributes="256" KeyPath="jp2ssv.dll"/>
+    <ROW Component="jpeg.dll" ComponentId="{FE2D30EB-7EAA-445B-970D-58BA1935B4BE}" Directory_="bin_Dir" Attributes="256" KeyPath="jpeg.dll"/>
+    <ROW Component="jsdt.dll" ComponentId="{F5D8C1AC-6469-4A95-93DE-FD82657BEC40}" Directory_="bin_Dir" Attributes="256" KeyPath="jsdt.dll"/>
+    <ROW Component="jsound.dll" ComponentId="{228D11F7-6D72-438A-854E-97FE873FEF55}" Directory_="bin_Dir" Attributes="256" KeyPath="jsound.dll"/>
+    <ROW Component="jsoundds.dll" ComponentId="{B04EAFC5-DD85-4797-9157-F277FEDA812A}" Directory_="bin_Dir" Attributes="256" KeyPath="jsoundds.dll"/>
+    <ROW Component="jvm.cfg" ComponentId="{E652EE0A-731D-4C67-9AE1-7825CF21E5EE}" Directory_="amd64_Dir" Attributes="0" KeyPath="jvm.cfg" Type="0"/>
+    <ROW Component="jvm.dll" ComponentId="{D942C1A9-8D8D-4E64-B5A8-5215A666CD05}" Directory_="server_Dir" Attributes="256" KeyPath="jvm.dll"/>
+    <ROW Component="kcms.dll" ComponentId="{45FDAAC3-DD52-49FE-8CB2-2EF6697C3B0F}" Directory_="bin_Dir" Attributes="256" KeyPath="kcms.dll"/>
+    <ROW Component="keytool.exe" ComponentId="{FEBC6192-6169-4C6E-B8CE-5743A95199ED}" Directory_="bin_Dir" Attributes="256" KeyPath="keytool.exe"/>
+    <ROW Component="kinit.exe" ComponentId="{64348A9E-AE85-473F-A4CE-B9A911BBA497}" Directory_="bin_Dir" Attributes="256" KeyPath="kinit.exe"/>
+    <ROW Component="klist.exe" ComponentId="{934516FE-09F5-4D99-AA82-371DFCB1A24B}" Directory_="bin_Dir" Attributes="256" KeyPath="klist.exe"/>
+    <ROW Component="ktab.exe" ComponentId="{86241D77-3B93-41F8-B9A1-B9BF2C2DFEF7}" Directory_="bin_Dir" Attributes="256" KeyPath="ktab.exe"/>
+    <ROW Component="lcms.dll" ComponentId="{A001D57E-B551-48EF-911C-C4ED18702436}" Directory_="bin_Dir" Attributes="256" KeyPath="lcms.dll"/>
+    <ROW Component="local_policy.jar" ComponentId="{8D5FC0B2-F2D9-4A59-B81F-8764F8D0FBEC}" Directory_="limited_Dir" Attributes="0" KeyPath="local_policy.jar" Type="0"/>
+    <ROW Component="local_policy.jar_1" ComponentId="{80DAC65A-21F3-4A00-9478-97DFADE581CB}" Directory_="unlimited_Dir" Attributes="0" KeyPath="local_policy.jar_1" Type="0"/>
+    <ROW Component="management.dll" ComponentId="{59BBAC07-AA2A-45CD-86D9-2824DFB60FEF}" Directory_="bin_Dir" Attributes="256" KeyPath="management.dll"/>
+    <ROW Component="maprinter.exe_1" ComponentId="{ED9B6D2E-44BF-458F-A304-0B8AF2C3BCB2}" Directory_="APPDIR" Attributes="0" KeyPath="maprinter.exe_1"/>
+    <ROW Component="maprinterservice.exe" ComponentId="{1E8E532A-40B8-4C40-8E23-7E27B294FE29}" Directory_="APPDIR" Attributes="0" KeyPath="maprinterservice.exe"/>
+    <ROW Component="mlib_image.dll" ComponentId="{1B33B64C-4EFA-4CF1-8DE0-63B6B6A6139B}" Directory_="bin_Dir" Attributes="256" KeyPath="mlib_image.dll"/>
+    <ROW Component="msvcp140.dll" ComponentId="{1E4E255F-E60F-4211-A007-72098500874F}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcp140.dll"/>
+    <ROW Component="msvcr100.dll" ComponentId="{34CF9BF7-B958-488A-AC9A-9F5E2E725560}" Directory_="bin_Dir" Attributes="256" KeyPath="msvcr100.dll"/>
+    <ROW Component="msvcr100.dll_1" ComponentId="{29865A43-6D74-4B37-A21C-CD5F1F8B98FC}" Directory_="plugin2_Dir" Attributes="256" KeyPath="msvcr100.dll_1"/>
+    <ROW Component="net.dll" ComponentId="{35E96BAB-AD0F-4C97-96B2-E8C39AAA2875}" Directory_="bin_Dir" Attributes="256" KeyPath="net.dll"/>
+    <ROW Component="nio.dll" ComponentId="{3D4CBE6C-5045-4855-87A1-269E5D88C1B4}" Directory_="bin_Dir" Attributes="256" KeyPath="nio.dll"/>
+    <ROW Component="npdeployJava1.dll" ComponentId="{F4BF59A4-69AD-4CF7-A435-89519BE54A7E}" Directory_="dtplugin_Dir" Attributes="256" KeyPath="npdeployJava1.dll"/>
+    <ROW Component="npjp2.dll" ComponentId="{6BC50319-7E28-43C4-89CF-FC1D86701CF2}" Directory_="plugin2_Dir" Attributes="256" KeyPath="npjp2.dll"/>
+    <ROW Component="npt.dll" ComponentId="{5FC860FA-72AA-4C90-87EF-D04CE6F7BC19}" Directory_="bin_Dir" Attributes="256" KeyPath="npt.dll"/>
+    <ROW Component="orbd.exe" ComponentId="{318FEB9F-2856-499E-BF1B-E43298FADCE2}" Directory_="bin_Dir" Attributes="256" KeyPath="orbd.exe"/>
+    <ROW Component="pack200.exe" ComponentId="{B8004393-2BAD-4B31-9F02-1BF088501DB5}" Directory_="bin_Dir" Attributes="256" KeyPath="pack200.exe"/>
+    <ROW Component="policytool.exe" ComponentId="{48F284E1-5697-4561-994D-F6329BAC9CC8}" Directory_="bin_Dir" Attributes="256" KeyPath="policytool.exe"/>
+    <ROW Component="prism_common.dll" ComponentId="{9FE02D47-0E4C-49B5-974D-65F508A99DDF}" Directory_="bin_Dir" Attributes="256" KeyPath="prism_common.dll"/>
+    <ROW Component="prism_d3d.dll" ComponentId="{1E6A68DD-14A5-4FEE-AF0D-65FFA1F98901}" Directory_="bin_Dir" Attributes="256" KeyPath="prism_d3d.dll"/>
+    <ROW Component="prism_sw.dll" ComponentId="{992E8D85-462A-447A-A889-6B0657A5CB53}" Directory_="bin_Dir" Attributes="256" KeyPath="prism_sw.dll"/>
+    <ROW Component="qr.png" ComponentId="{9C9C20F4-875A-46B7-B5D8-DD0042F4F54D}" Directory_="images_Dir" Attributes="0" KeyPath="qr.png" Type="0"/>
+    <ROW Component="resource.dll" ComponentId="{76795177-71B9-4CDD-AE7A-7F6E9E7D6E5D}" Directory_="bin_Dir" Attributes="256" KeyPath="resource.dll"/>
+    <ROW Component="rmid.exe" ComponentId="{7F41AF1B-E4F1-45A6-8991-22B2BC60B564}" Directory_="bin_Dir" Attributes="256" KeyPath="rmid.exe"/>
+    <ROW Component="rmiregistry.exe" ComponentId="{4A9D8C57-9CE0-451F-B7E2-45F9F660C286}" Directory_="bin_Dir" Attributes="256" KeyPath="rmiregistry.exe"/>
+    <ROW Component="sawindbg.dll" ComponentId="{DFA59679-448B-4999-AE33-7D9831D8DF32}" Directory_="bin_Dir" Attributes="256" KeyPath="sawindbg.dll"/>
+    <ROW Component="servertool.exe" ComponentId="{8B05A06F-D66D-46FF-A870-BA3360720E4E}" Directory_="bin_Dir" Attributes="256" KeyPath="servertool.exe"/>
+    <ROW Component="splashscreen.dll" ComponentId="{F11B5405-AEBB-430B-A295-DF442DA5BA17}" Directory_="bin_Dir" Attributes="256" KeyPath="splashscreen.dll"/>
+    <ROW Component="ssv.dll" ComponentId="{C27AFD4F-235C-454F-AD71-E28C7F275DC3}" Directory_="bin_Dir" Attributes="256" KeyPath="ssv.dll"/>
+    <ROW Component="ssvagent.exe" ComponentId="{4E7E6F1F-3108-4B46-9F98-D161A681D109}" Directory_="bin_Dir" Attributes="256" KeyPath="ssvagent.exe"/>
+    <ROW Component="sunec.dll" ComponentId="{29073FFE-B1C2-415A-89EE-BA9AC5535A50}" Directory_="bin_Dir" Attributes="256" KeyPath="sunec.dll"/>
+    <ROW Component="sunmscapi.dll" ComponentId="{66EFA422-1E88-4498-956E-30BB358B7508}" Directory_="bin_Dir" Attributes="256" KeyPath="sunmscapi.dll"/>
+    <ROW Component="t2k.dll" ComponentId="{2FF00526-7872-4456-B7DD-46939E31E6A6}" Directory_="bin_Dir" Attributes="256" KeyPath="t2k.dll"/>
+    <ROW Component="tnameserv.exe" ComponentId="{8641838E-A36C-45B6-A208-F058B8F97491}" Directory_="bin_Dir" Attributes="256" KeyPath="tnameserv.exe"/>
+    <ROW Component="ucrtbase.dll" ComponentId="{5EF6FF29-7527-4A08-A0DE-8EF025241731}" Directory_="bin_Dir" Attributes="256" KeyPath="ucrtbase.dll"/>
+    <ROW Component="unpack.dll" ComponentId="{19D3BDB8-76BA-4CC9-930C-58BA6D7755EE}" Directory_="bin_Dir" Attributes="256" KeyPath="unpack.dll"/>
+    <ROW Component="unpack200.exe" ComponentId="{17C2B0FE-FB14-4649-B78B-F9556E291B1C}" Directory_="bin_Dir" Attributes="256" KeyPath="unpack200.exe"/>
+    <ROW Component="vcruntime140.dll" ComponentId="{B74EAE29-0C6D-4C4A-B22A-04A0205317C7}" Directory_="bin_Dir" Attributes="256" KeyPath="vcruntime140.dll"/>
+    <ROW Component="verify.dll" ComponentId="{E6D536D1-105D-4B3E-A18A-9910161740CB}" Directory_="bin_Dir" Attributes="256" KeyPath="verify.dll"/>
+    <ROW Component="w2k_lsa_auth.dll" ComponentId="{259E3E32-875A-4F2C-9E8F-5E391932C7C5}" Directory_="bin_Dir" Attributes="256" KeyPath="w2k_lsa_auth.dll"/>
+    <ROW Component="wsdetect.dll" ComponentId="{1086363D-DA7F-4492-B8FA-6F458D3020F7}" Directory_="bin_Dir" Attributes="256" KeyPath="wsdetect.dll"/>
+    <ROW Component="zip.dll" ComponentId="{B347948B-6B1F-4957-9DB3-209D7933A3BC}" Directory_="bin_Dir" Attributes="256" KeyPath="zip.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_CustomARPName AI_ExePath CIEXYZ.pf COPYRIGHT JAWTAccessBridge64.dll JavaAccessBridge64.dll LucidaBrightDemiBold.ttf ProductInformation README.md README.md_1 WindowsAccessBridge64.dll accessbridge64.jar accessibility.properties apimswincoreconsolel110.dll apimswincoredatetimel110.dll apimswincoredebugl110.dll apimswincoreerrorhandlingl110.dll apimswincorefilel110.dll apimswincorefilel120.dll apimswincorefilel210.dll apimswincorehandlel110.dll apimswincoreheapl110.dll apimswincoreinterlockedl110.dll apimswincorelibraryloaderl110.dll apimswincorelocalizationl120.dll apimswincorememoryl110.dll apimswincorenamedpipel110.dll apimswincoreprocessenvironmentl110.dll apimswincoreprocessthreadsl110.dll apimswincoreprocessthreadsl111.dll apimswincoreprofilel110.dll apimswincorertlsupportl110.dll apimswincorestringl110.dll apimswincoresynchl110.dll apimswincoresynchl120.dll apimswincoresysinfol110.dll apimswincoretimezonel110.dll apimswincoreutill110.dll apimswincrtconiol110.dll apimswincrtconvertl110.dll apimswincrtenvironmentl110.dll apimswincrtfilesysteml110.dll apimswincrtheapl110.dll apimswincrtlocalel110.dll apimswincrtmathl110.dll apimswincrtmultibytel110.dll apimswincrtprivatel110.dll apimswincrtprocessl110.dll apimswincrtruntimel110.dll apimswincrtstdiol110.dll apimswincrtstringl110.dll apimswincrttimel110.dll apimswincrtutilityl110.dll attach.dll awt.dll bci.dll blacklist classes.jsa concrt140.dll cursors.properties dcpr.dll decora_sse.dll default.jfc deploy.dll deployJava1.dll dt_shmem.dll dt_socket.dll eula.dll ffjcext.zip fontmanager.dll fxplugins.dll glass.dll gliblite.dll gstreamerlite.dll hprof.dll instrument.dll j2pcsc.dll j2pkcs11.dll jaas_nt.dll jabswitch.exe java.dll java.exe java_crw_demo.dll javacpl.cpl javacpl.exe javafx_font.dll javafx_font_t2k.dll javafx_iio.dll javarmi.exe javaw.exe javaws.exe jawt.dll jdwp.dll jfr.dll jfxmedia.dll jfxwebkit.dll jjs.exe jli.dll jmxremote.access jp2iexp.dll jp2launcher.exe jp2native.dll jp2ssv.dll jpeg.dll jsdt.dll jsound.dll jsoundds.dll jvm.cfg jvm.dll kcms.dll keytool.exe kinit.exe klist.exe ktab.exe lcms.dll local_policy.jar local_policy.jar_1 management.dll maprinter.exe_1 maprinterservice.exe mlib_image.dll msvcp140.dll msvcr100.dll msvcr100.dll_1 net.dll nio.dll npdeployJava1.dll npjp2.dll npt.dll orbd.exe pack200.exe policytool.exe prism_common.dll prism_d3d.dll prism_sw.dll qr.png resource.dll rmid.exe rmiregistry.exe sawindbg.dll servertool.exe splashscreen.dll ssv.dll ssvagent.exe sunec.dll sunmscapi.dll t2k.dll tnameserv.exe ucrtbase.dll unpack.dll unpack200.exe vcruntime140.dll verify.dll w2k_lsa_auth.dll wsdetect.dll zip.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="CIEXYZ.pf" Component_="CIEXYZ.pf" FileName="CIEXYZ.pf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\cmm\CIEXYZ.pf" SelfReg="false" NextFile="GRAY.pf"/>
+    <ROW File="COPYRIGHT" Component_="COPYRIGHT" FileName="COPYRI~1|COPYRIGHT" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\COPYRIGHT" SelfReg="false" NextFile="accessibility.properties"/>
+    <ROW File="GRAY.pf" Component_="CIEXYZ.pf" FileName="GRAY.pf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\cmm\GRAY.pf" SelfReg="false" NextFile="LINEAR_RGB.pf"/>
+    <ROW File="JAWTAccessBridge64.dll" Component_="JAWTAccessBridge64.dll" FileName="JAWTAC~1.DLL|JAWTAccessBridge-64.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\JAWTAccessBridge-64.dll" SelfReg="false" NextFile="jdwp.dll"/>
+    <ROW File="JavaAccessBridge64.dll" Component_="JavaAccessBridge64.dll" FileName="JAVAAC~1.DLL|JavaAccessBridge-64.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\JavaAccessBridge-64.dll" SelfReg="false" NextFile="javacpl.cpl"/>
+    <ROW File="LICENSE" Component_="COPYRIGHT" FileName="LICENSE" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\LICENSE" SelfReg="false" NextFile="README.txt"/>
+    <ROW File="LINEAR_RGB.pf" Component_="CIEXYZ.pf" FileName="LINEAR~1.PF|LINEAR_RGB.pf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\cmm\LINEAR_RGB.pf" SelfReg="false" NextFile="PYCC.pf"/>
+    <ROW File="LucidaBrightDemiBold.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~1.TTF|LucidaBrightDemiBold.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaBrightDemiBold.ttf" SelfReg="false" NextFile="LucidaBrightDemiItalic.ttf"/>
+    <ROW File="LucidaBrightDemiItalic.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~2.TTF|LucidaBrightDemiItalic.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaBrightDemiItalic.ttf" SelfReg="false" NextFile="LucidaBrightItalic.ttf"/>
+    <ROW File="LucidaBrightItalic.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~3.TTF|LucidaBrightItalic.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaBrightItalic.ttf" SelfReg="false" NextFile="LucidaBrightRegular.ttf"/>
+    <ROW File="LucidaBrightRegular.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~4.TTF|LucidaBrightRegular.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaBrightRegular.ttf" SelfReg="false" NextFile="LucidaSansDemiBold.ttf"/>
+    <ROW File="LucidaSansDemiBold.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~5.TTF|LucidaSansDemiBold.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaSansDemiBold.ttf" SelfReg="false" NextFile="LucidaSansRegular.ttf"/>
+    <ROW File="LucidaSansRegular.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~6.TTF|LucidaSansRegular.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaSansRegular.ttf" SelfReg="false" NextFile="LucidaTypewriterBold.ttf"/>
+    <ROW File="LucidaTypewriterBold.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~7.TTF|LucidaTypewriterBold.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaTypewriterBold.ttf" SelfReg="false" NextFile="LucidaTypewriterRegular.ttf"/>
+    <ROW File="LucidaTypewriterRegular.ttf" Component_="LucidaBrightDemiBold.ttf" FileName="LUCIDA~8.TTF|LucidaTypewriterRegular.ttf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fonts\LucidaTypewriterRegular.ttf" SelfReg="false" NextFile="hijrahconfigumalqura.properties"/>
+    <ROW File="PYCC.pf" Component_="CIEXYZ.pf" FileName="PYCC.pf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\cmm\PYCC.pf" SelfReg="false" NextFile="sRGB.pf"/>
+    <ROW File="README.md" Component_="README.md" FileName="README.md" Attributes="0" SourcePath="..\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\conf\README.md" SelfReg="false" NextFile="README.md_1"/>
+    <ROW File="README.md_1" Component_="README.md_1" FileName="README.md" Attributes="0" SourcePath="..\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\log\README.md" SelfReg="false" NextFile="qr.png"/>
+    <ROW File="README.txt" Component_="COPYRIGHT" FileName="README.txt" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\README.txt" SelfReg="false" NextFile="THIRDPARTYLICENSEREADMEJAVAFX.txt"/>
+    <ROW File="THIRDPARTYLICENSEREADME.txt" Component_="COPYRIGHT" FileName="THIRDP~2.TXT|THIRDPARTYLICENSEREADME.txt" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\THIRDPARTYLICENSEREADME.txt" SelfReg="false" NextFile="Welcome.html"/>
+    <ROW File="THIRDPARTYLICENSEREADMEJAVAFX.txt" Component_="COPYRIGHT" FileName="THIRDP~1.TXT|THIRDPARTYLICENSEREADME-JAVAFX.txt" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\THIRDPARTYLICENSEREADME-JAVAFX.txt" SelfReg="false" NextFile="THIRDPARTYLICENSEREADME.txt"/>
+    <ROW File="US_export_policy.jar" Component_="local_policy.jar" FileName="US_EXP~1.JAR|US_export_policy.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\policy\limited\US_export_policy.jar" SelfReg="false" NextFile="local_policy.jar_1"/>
+    <ROW File="US_export_policy.jar_1" Component_="local_policy.jar_1" FileName="US_EXP~1.JAR|US_export_policy.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\policy\unlimited\US_export_policy.jar" SelfReg="false" NextFile="trusted.libraries"/>
+    <ROW File="Welcome.html" Component_="COPYRIGHT" FileName="WELCOM~1.HTM|Welcome.html" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\Welcome.html" SelfReg="false"/>
+    <ROW File="WindowsAccessBridge64.dll" Component_="WindowsAccessBridge64.dll" FileName="WINDOW~1.DLL|WindowsAccessBridge-64.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\WindowsAccessBridge-64.dll" SelfReg="false" NextFile="wsdetect.dll"/>
+    <ROW File="Xusage.txt" Component_="classes.jsa" FileName="Xusage.txt" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\server\Xusage.txt" SelfReg="false" NextFile="servertool.exe"/>
+    <ROW File="accessbridge64.jar" Component_="accessbridge64.jar" FileName="ACCESS~1.JAR|access-bridge-64.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\access-bridge-64.jar" SelfReg="false" NextFile="cldrdata.jar"/>
+    <ROW File="accessibility.properties" Component_="accessibility.properties" FileName="ACCESS~1.PRO|accessibility.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\accessibility.properties" SelfReg="false" NextFile="jvm.cfg"/>
+    <ROW File="apimswincoreconsolel110.dll" Component_="apimswincoreconsolel110.dll" FileName="API-MS~1.DLL|api-ms-win-core-console-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-console-l1-1-0.dll" SelfReg="false" NextFile="apimswincoredatetimel110.dll"/>
+    <ROW File="apimswincoredatetimel110.dll" Component_="apimswincoredatetimel110.dll" FileName="API-MS~2.DLL|api-ms-win-core-datetime-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-datetime-l1-1-0.dll" SelfReg="false" NextFile="apimswincoredebugl110.dll"/>
+    <ROW File="apimswincoredebugl110.dll" Component_="apimswincoredebugl110.dll" FileName="API-MS~3.DLL|api-ms-win-core-debug-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-debug-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreerrorhandlingl110.dll"/>
+    <ROW File="apimswincoreerrorhandlingl110.dll" Component_="apimswincoreerrorhandlingl110.dll" FileName="API-MS~4.DLL|api-ms-win-core-errorhandling-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-errorhandling-l1-1-0.dll" SelfReg="false" NextFile="apimswincorefilel110.dll"/>
+    <ROW File="apimswincorefilel110.dll" Component_="apimswincorefilel110.dll" FileName="API-MS~5.DLL|api-ms-win-core-file-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-file-l1-1-0.dll" SelfReg="false" NextFile="apimswincorefilel120.dll"/>
+    <ROW File="apimswincorefilel120.dll" Component_="apimswincorefilel120.dll" FileName="API-MS~6.DLL|api-ms-win-core-file-l1-2-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-file-l1-2-0.dll" SelfReg="false" NextFile="apimswincorefilel210.dll"/>
+    <ROW File="apimswincorefilel210.dll" Component_="apimswincorefilel210.dll" FileName="API-MS~7.DLL|api-ms-win-core-file-l2-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-file-l2-1-0.dll" SelfReg="false" NextFile="apimswincorehandlel110.dll"/>
+    <ROW File="apimswincorehandlel110.dll" Component_="apimswincorehandlel110.dll" FileName="API-MS~8.DLL|api-ms-win-core-handle-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-handle-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreheapl110.dll"/>
+    <ROW File="apimswincoreheapl110.dll" Component_="apimswincoreheapl110.dll" FileName="API-MS~9.DLL|api-ms-win-core-heap-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-heap-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreinterlockedl110.dll"/>
+    <ROW File="apimswincoreinterlockedl110.dll" Component_="apimswincoreinterlockedl110.dll" FileName="API-M~10.DLL|api-ms-win-core-interlocked-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-interlocked-l1-1-0.dll" SelfReg="false" NextFile="apimswincorelibraryloaderl110.dll"/>
+    <ROW File="apimswincorelibraryloaderl110.dll" Component_="apimswincorelibraryloaderl110.dll" FileName="API-M~11.DLL|api-ms-win-core-libraryloader-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-libraryloader-l1-1-0.dll" SelfReg="false" NextFile="apimswincorelocalizationl120.dll"/>
+    <ROW File="apimswincorelocalizationl120.dll" Component_="apimswincorelocalizationl120.dll" FileName="API-M~12.DLL|api-ms-win-core-localization-l1-2-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-localization-l1-2-0.dll" SelfReg="false" NextFile="apimswincorememoryl110.dll"/>
+    <ROW File="apimswincorememoryl110.dll" Component_="apimswincorememoryl110.dll" FileName="API-M~13.DLL|api-ms-win-core-memory-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-memory-l1-1-0.dll" SelfReg="false" NextFile="apimswincorenamedpipel110.dll"/>
+    <ROW File="apimswincorenamedpipel110.dll" Component_="apimswincorenamedpipel110.dll" FileName="API-M~14.DLL|api-ms-win-core-namedpipe-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-namedpipe-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreprocessenvironmentl110.dll"/>
+    <ROW File="apimswincoreprocessenvironmentl110.dll" Component_="apimswincoreprocessenvironmentl110.dll" FileName="API-M~15.DLL|api-ms-win-core-processenvironment-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-processenvironment-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreprocessthreadsl110.dll"/>
+    <ROW File="apimswincoreprocessthreadsl110.dll" Component_="apimswincoreprocessthreadsl110.dll" FileName="API-M~16.DLL|api-ms-win-core-processthreads-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-processthreads-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreprocessthreadsl111.dll"/>
+    <ROW File="apimswincoreprocessthreadsl111.dll" Component_="apimswincoreprocessthreadsl111.dll" FileName="API-M~17.DLL|api-ms-win-core-processthreads-l1-1-1.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-processthreads-l1-1-1.dll" SelfReg="false" NextFile="apimswincoreprofilel110.dll"/>
+    <ROW File="apimswincoreprofilel110.dll" Component_="apimswincoreprofilel110.dll" FileName="API-M~18.DLL|api-ms-win-core-profile-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-profile-l1-1-0.dll" SelfReg="false" NextFile="apimswincorertlsupportl110.dll"/>
+    <ROW File="apimswincorertlsupportl110.dll" Component_="apimswincorertlsupportl110.dll" FileName="API-M~19.DLL|api-ms-win-core-rtlsupport-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-rtlsupport-l1-1-0.dll" SelfReg="false" NextFile="apimswincorestringl110.dll"/>
+    <ROW File="apimswincorestringl110.dll" Component_="apimswincorestringl110.dll" FileName="API-M~20.DLL|api-ms-win-core-string-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-string-l1-1-0.dll" SelfReg="false" NextFile="apimswincoresynchl110.dll"/>
+    <ROW File="apimswincoresynchl110.dll" Component_="apimswincoresynchl110.dll" FileName="API-M~21.DLL|api-ms-win-core-synch-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-synch-l1-1-0.dll" SelfReg="false" NextFile="apimswincoresynchl120.dll"/>
+    <ROW File="apimswincoresynchl120.dll" Component_="apimswincoresynchl120.dll" FileName="API-M~22.DLL|api-ms-win-core-synch-l1-2-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-synch-l1-2-0.dll" SelfReg="false" NextFile="apimswincoresysinfol110.dll"/>
+    <ROW File="apimswincoresysinfol110.dll" Component_="apimswincoresysinfol110.dll" FileName="API-M~23.DLL|api-ms-win-core-sysinfo-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-sysinfo-l1-1-0.dll" SelfReg="false" NextFile="apimswincoretimezonel110.dll"/>
+    <ROW File="apimswincoretimezonel110.dll" Component_="apimswincoretimezonel110.dll" FileName="API-M~24.DLL|api-ms-win-core-timezone-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-timezone-l1-1-0.dll" SelfReg="false" NextFile="apimswincoreutill110.dll"/>
+    <ROW File="apimswincoreutill110.dll" Component_="apimswincoreutill110.dll" FileName="API-M~25.DLL|api-ms-win-core-util-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-core-util-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtconiol110.dll"/>
+    <ROW File="apimswincrtconiol110.dll" Component_="apimswincrtconiol110.dll" FileName="API-M~26.DLL|api-ms-win-crt-conio-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-conio-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtconvertl110.dll"/>
+    <ROW File="apimswincrtconvertl110.dll" Component_="apimswincrtconvertl110.dll" FileName="API-M~27.DLL|api-ms-win-crt-convert-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-convert-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtenvironmentl110.dll"/>
+    <ROW File="apimswincrtenvironmentl110.dll" Component_="apimswincrtenvironmentl110.dll" FileName="API-M~28.DLL|api-ms-win-crt-environment-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-environment-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtfilesysteml110.dll"/>
+    <ROW File="apimswincrtfilesysteml110.dll" Component_="apimswincrtfilesysteml110.dll" FileName="API-M~29.DLL|api-ms-win-crt-filesystem-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-filesystem-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtheapl110.dll"/>
+    <ROW File="apimswincrtheapl110.dll" Component_="apimswincrtheapl110.dll" FileName="API-M~30.DLL|api-ms-win-crt-heap-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-heap-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtlocalel110.dll"/>
+    <ROW File="apimswincrtlocalel110.dll" Component_="apimswincrtlocalel110.dll" FileName="API-M~31.DLL|api-ms-win-crt-locale-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-locale-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtmathl110.dll"/>
+    <ROW File="apimswincrtmathl110.dll" Component_="apimswincrtmathl110.dll" FileName="API-M~32.DLL|api-ms-win-crt-math-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-math-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtmultibytel110.dll"/>
+    <ROW File="apimswincrtmultibytel110.dll" Component_="apimswincrtmultibytel110.dll" FileName="API-M~33.DLL|api-ms-win-crt-multibyte-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-multibyte-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtprivatel110.dll"/>
+    <ROW File="apimswincrtprivatel110.dll" Component_="apimswincrtprivatel110.dll" FileName="API-M~34.DLL|api-ms-win-crt-private-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-private-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtprocessl110.dll"/>
+    <ROW File="apimswincrtprocessl110.dll" Component_="apimswincrtprocessl110.dll" FileName="API-M~35.DLL|api-ms-win-crt-process-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-process-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtruntimel110.dll"/>
+    <ROW File="apimswincrtruntimel110.dll" Component_="apimswincrtruntimel110.dll" FileName="API-M~36.DLL|api-ms-win-crt-runtime-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-runtime-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtstdiol110.dll"/>
+    <ROW File="apimswincrtstdiol110.dll" Component_="apimswincrtstdiol110.dll" FileName="API-M~37.DLL|api-ms-win-crt-stdio-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-stdio-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtstringl110.dll"/>
+    <ROW File="apimswincrtstringl110.dll" Component_="apimswincrtstringl110.dll" FileName="API-M~38.DLL|api-ms-win-crt-string-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-string-l1-1-0.dll" SelfReg="false" NextFile="apimswincrttimel110.dll"/>
+    <ROW File="apimswincrttimel110.dll" Component_="apimswincrttimel110.dll" FileName="API-M~39.DLL|api-ms-win-crt-time-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-time-l1-1-0.dll" SelfReg="false" NextFile="apimswincrtutilityl110.dll"/>
+    <ROW File="apimswincrtutilityl110.dll" Component_="apimswincrtutilityl110.dll" FileName="API-M~40.DLL|api-ms-win-crt-utility-l1-1-0.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\api-ms-win-crt-utility-l1-1-0.dll" SelfReg="false" NextFile="attach.dll"/>
+    <ROW File="attach.dll" Component_="attach.dll" FileName="attach.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\attach.dll" SelfReg="false" NextFile="awt.dll"/>
+    <ROW File="awt.dll" Component_="awt.dll" FileName="awt.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\awt.dll" SelfReg="false" NextFile="bci.dll"/>
+    <ROW File="bci.dll" Component_="bci.dll" FileName="bci.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\bci.dll" SelfReg="false" NextFile="concrt140.dll"/>
+    <ROW File="blacklist" Component_="blacklist" FileName="BLACKL~1|blacklist" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\blacklist" SelfReg="false" NextFile="blacklisted.certs"/>
+    <ROW File="blacklisted.certs" Component_="blacklist" FileName="BLACKL~1.CER|blacklisted.certs" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\blacklisted.certs" SelfReg="false" NextFile="cacerts"/>
+    <ROW File="cacerts" Component_="blacklist" FileName="cacerts" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\cacerts" SelfReg="false" NextFile="java.policy"/>
+    <ROW File="calendars.properties" Component_="accessibility.properties" FileName="CALEND~1.PRO|calendars.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\calendars.properties" SelfReg="false" NextFile="charsets.jar"/>
+    <ROW File="charsets.jar" Component_="accessibility.properties" FileName="charsets.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\charsets.jar" SelfReg="false" NextFile="classlist"/>
+    <ROW File="classes.jsa" Component_="classes.jsa" FileName="classes.jsa" Attributes="1" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\server\classes.jsa" SelfReg="false" NextFile="jvm.dll"/>
+    <ROW File="classlist" Component_="accessibility.properties" FileName="CLASSL~1|classlist" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\classlist" SelfReg="false" NextFile="CIEXYZ.pf"/>
+    <ROW File="cldrdata.jar" Component_="accessbridge64.jar" FileName="cldrdata.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\cldrdata.jar" SelfReg="false" NextFile="dnsns.jar"/>
+    <ROW File="concrt140.dll" Component_="concrt140.dll" FileName="CONCRT~1.DLL|concrt140.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\concrt140.dll" SelfReg="false" NextFile="dcpr.dll"/>
+    <ROW File="contenttypes.properties" Component_="accessibility.properties" FileName="CONTEN~1.PRO|content-types.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\content-types.properties" SelfReg="false" NextFile="currency.data"/>
+    <ROW File="currency.data" Component_="accessibility.properties" FileName="CURREN~1.DAT|currency.data" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\currency.data" SelfReg="false" NextFile="ffjcext.zip"/>
+    <ROW File="cursors.properties" Component_="cursors.properties" FileName="CURSOR~1.PRO|cursors.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\cursors.properties" SelfReg="false" NextFile="invalid32x32.gif"/>
+    <ROW File="dcpr.dll" Component_="dcpr.dll" FileName="dcpr.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\dcpr.dll" SelfReg="false" NextFile="decora_sse.dll"/>
+    <ROW File="decora_sse.dll" Component_="decora_sse.dll" FileName="DECORA~1.DLL|decora_sse.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\decora_sse.dll" SelfReg="false" NextFile="deploy.dll"/>
+    <ROW File="default.jfc" Component_="default.jfc" FileName="default.jfc" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jfr\default.jfc" SelfReg="false" NextFile="profile.jfc"/>
+    <ROW File="deploy.dll" Component_="deploy.dll" FileName="deploy.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\deploy.dll" SelfReg="false" NextFile="deployJava1.dll"/>
+    <ROW File="deploy.jar" Component_="accessibility.properties" FileName="deploy.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy.jar" SelfReg="false" NextFile="accessbridge64.jar"/>
+    <ROW File="deployJava1.dll" Component_="deployJava1.dll" FileName="DEPLOY~1.DLL|deployJava1.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\dtplugin\deployJava1.dll" SelfReg="false" NextFile="npdeployJava1.dll"/>
+    <ROW File="dnsns.jar" Component_="accessbridge64.jar" FileName="dnsns.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\dnsns.jar" SelfReg="false" NextFile="jaccess.jar"/>
+    <ROW File="dt_shmem.dll" Component_="dt_shmem.dll" FileName="dt_shmem.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\dt_shmem.dll" SelfReg="false" NextFile="dt_socket.dll"/>
+    <ROW File="dt_socket.dll" Component_="dt_socket.dll" FileName="DT_SOC~1.DLL|dt_socket.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\dt_socket.dll" SelfReg="false" NextFile="eula.dll"/>
+    <ROW File="eula.dll" Component_="eula.dll" FileName="eula.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\eula.dll" SelfReg="false" NextFile="fontmanager.dll"/>
+    <ROW File="ffjcext.zip" Component_="ffjcext.zip" FileName="ffjcext.zip" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\ffjcext.zip" SelfReg="false" NextFile="messages.properties"/>
+    <ROW File="flavormap.properties" Component_="accessibility.properties" FileName="FLAVOR~1.PRO|flavormap.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\flavormap.properties" SelfReg="false" NextFile="fontconfig.bfc"/>
+    <ROW File="fontconfig.bfc" Component_="accessibility.properties" FileName="FONTCO~1.BFC|fontconfig.bfc" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fontconfig.bfc" SelfReg="false" NextFile="fontconfig.properties.src"/>
+    <ROW File="fontconfig.properties.src" Component_="accessibility.properties" FileName="FONTCO~1.SRC|fontconfig.properties.src" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\fontconfig.properties.src" SelfReg="false" NextFile="LucidaBrightDemiBold.ttf"/>
+    <ROW File="fontmanager.dll" Component_="fontmanager.dll" FileName="FONTMA~1.DLL|fontmanager.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\fontmanager.dll" SelfReg="false" NextFile="fxplugins.dll"/>
+    <ROW File="fxplugins.dll" Component_="fxplugins.dll" FileName="FXPLUG~1.DLL|fxplugins.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\fxplugins.dll" SelfReg="false" NextFile="glass.dll"/>
+    <ROW File="glass.dll" Component_="glass.dll" FileName="glass.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\glass.dll" SelfReg="false" NextFile="gliblite.dll"/>
+    <ROW File="gliblite.dll" Component_="gliblite.dll" FileName="GLIB-L~1.DLL|glib-lite.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\glib-lite.dll" SelfReg="false" NextFile="gstreamerlite.dll"/>
+    <ROW File="gstreamerlite.dll" Component_="gstreamerlite.dll" FileName="GSTREA~1.DLL|gstreamer-lite.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\gstreamer-lite.dll" SelfReg="false" NextFile="hprof.dll"/>
+    <ROW File="hijrahconfigumalqura.properties" Component_="accessibility.properties" FileName="HIJRAH~1.PRO|hijrah-config-umalqura.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\hijrah-config-umalqura.properties" SelfReg="false" NextFile="cursors.properties"/>
+    <ROW File="hprof.dll" Component_="hprof.dll" FileName="hprof.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\hprof.dll" SelfReg="false" NextFile="instrument.dll"/>
+    <ROW File="instrument.dll" Component_="instrument.dll" FileName="INSTRU~1.DLL|instrument.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\instrument.dll" SelfReg="false" NextFile="j2pcsc.dll"/>
+    <ROW File="invalid32x32.gif" Component_="cursors.properties" FileName="INVALI~1.GIF|invalid32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\invalid32x32.gif" SelfReg="false" NextFile="win32_CopyDrop32x32.gif"/>
+    <ROW File="j2pcsc.dll" Component_="j2pcsc.dll" FileName="j2pcsc.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\j2pcsc.dll" SelfReg="false" NextFile="j2pkcs11.dll"/>
+    <ROW File="j2pkcs11.dll" Component_="j2pkcs11.dll" FileName="j2pkcs11.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\j2pkcs11.dll" SelfReg="false" NextFile="jaas_nt.dll"/>
+    <ROW File="jaas_nt.dll" Component_="jaas_nt.dll" FileName="jaas_nt.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jaas_nt.dll" SelfReg="false" NextFile="jabswitch.exe"/>
+    <ROW File="jabswitch.exe" Component_="jabswitch.exe" FileName="JABSWI~1.EXE|jabswitch.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jabswitch.exe" SelfReg="false" NextFile="javarmi.exe" DigSign="true"/>
+    <ROW File="jaccess.jar" Component_="accessbridge64.jar" FileName="jaccess.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\jaccess.jar" SelfReg="false" NextFile="jfxrt.jar"/>
+    <ROW File="java.dll" Component_="java.dll" FileName="java.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\java.dll" SelfReg="false" NextFile="java.exe"/>
+    <ROW File="java.exe" Component_="java.exe" FileName="java.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\java.exe" SelfReg="false" NextFile="JavaAccessBridge64.dll" DigSign="true"/>
+    <ROW File="java.policy" Component_="blacklist" FileName="JAVA~1.POL|java.policy" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\java.policy" SelfReg="false" NextFile="java.security"/>
+    <ROW File="java.security" Component_="blacklist" FileName="JAVA~1.SEC|java.security" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\java.security" SelfReg="false" NextFile="javaws.policy"/>
+    <ROW File="java_crw_demo.dll" Component_="java_crw_demo.dll" FileName="JAVA_C~1.DLL|java_crw_demo.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\java_crw_demo.dll" SelfReg="false" NextFile="jawt.dll"/>
+    <ROW File="javacpl.cpl" Component_="javacpl.cpl" FileName="javacpl.cpl" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javacpl.cpl" SelfReg="false" NextFile="javacpl.exe"/>
+    <ROW File="javacpl.exe" Component_="javacpl.exe" FileName="javacpl.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javacpl.exe" SelfReg="false" NextFile="javafx_font.dll" DigSign="true"/>
+    <ROW File="javafx.properties" Component_="accessibility.properties" FileName="JAVAFX~1.PRO|javafx.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\javafx.properties" SelfReg="false" NextFile="javaws.jar"/>
+    <ROW File="javafx_font.dll" Component_="javafx_font.dll" FileName="JAVAFX~1.DLL|javafx_font.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javafx_font.dll" SelfReg="false" NextFile="javafx_font_t2k.dll"/>
+    <ROW File="javafx_font_t2k.dll" Component_="javafx_font_t2k.dll" FileName="JAVAFX~2.DLL|javafx_font_t2k.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javafx_font_t2k.dll" SelfReg="false" NextFile="javafx_iio.dll"/>
+    <ROW File="javafx_iio.dll" Component_="javafx_iio.dll" FileName="JAVAFX~3.DLL|javafx_iio.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javafx_iio.dll" SelfReg="false" NextFile="javaw.exe"/>
+    <ROW File="javarmi.exe" Component_="javarmi.exe" FileName="java-rmi.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\java-rmi.exe" SelfReg="false" NextFile="java.dll" DigSign="true"/>
+    <ROW File="javaw.exe" Component_="javaw.exe" FileName="javaw.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javaw.exe" SelfReg="false" NextFile="javaws.exe" DigSign="true"/>
+    <ROW File="javaws.exe" Component_="javaws.exe" FileName="javaws.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\javaws.exe" SelfReg="false" NextFile="java_crw_demo.dll" DigSign="true"/>
+    <ROW File="javaws.jar" Component_="accessibility.properties" FileName="javaws.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\javaws.jar" SelfReg="false" NextFile="jce.jar"/>
+    <ROW File="javaws.policy" Component_="blacklist" FileName="JAVAWS~1.POL|javaws.policy" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\javaws.policy" SelfReg="false" NextFile="local_policy.jar"/>
+    <ROW File="jawt.dll" Component_="jawt.dll" FileName="jawt.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jawt.dll" SelfReg="false" NextFile="JAWTAccessBridge64.dll"/>
+    <ROW File="jce.jar" Component_="accessibility.properties" FileName="jce.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jce.jar" SelfReg="false" NextFile="default.jfc"/>
+    <ROW File="jdwp.dll" Component_="jdwp.dll" FileName="jdwp.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jdwp.dll" SelfReg="false" NextFile="jfr.dll"/>
+    <ROW File="jfr.dll" Component_="jfr.dll" FileName="jfr.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jfr.dll" SelfReg="false" NextFile="jfxmedia.dll"/>
+    <ROW File="jfr.jar" Component_="accessibility.properties" FileName="jfr.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jfr.jar" SelfReg="false" NextFile="jfxswt.jar"/>
+    <ROW File="jfxmedia.dll" Component_="jfxmedia.dll" FileName="jfxmedia.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jfxmedia.dll" SelfReg="false" NextFile="jfxwebkit.dll"/>
+    <ROW File="jfxrt.jar" Component_="accessbridge64.jar" FileName="jfxrt.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\jfxrt.jar" SelfReg="false" NextFile="localedata.jar"/>
+    <ROW File="jfxswt.jar" Component_="accessibility.properties" FileName="jfxswt.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jfxswt.jar" SelfReg="false" NextFile="jsse.jar"/>
+    <ROW File="jfxwebkit.dll" Component_="jfxwebkit.dll" FileName="JFXWEB~1.DLL|jfxwebkit.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jfxwebkit.dll" SelfReg="false" NextFile="jjs.exe"/>
+    <ROW File="jjs.exe" Component_="jjs.exe" FileName="jjs.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jjs.exe" SelfReg="false" NextFile="jli.dll" DigSign="true"/>
+    <ROW File="jli.dll" Component_="jli.dll" FileName="jli.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jli.dll" SelfReg="false" NextFile="jp2iexp.dll"/>
+    <ROW File="jmxremote.access" Component_="jmxremote.access" FileName="JMXREM~1.ACC|jmxremote.access" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\management\jmxremote.access" SelfReg="false" NextFile="jmxremote.password.template"/>
+    <ROW File="jmxremote.password.template" Component_="jmxremote.access" FileName="JMXREM~1.TEM|jmxremote.password.template" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\management\jmxremote.password.template" SelfReg="false" NextFile="management.properties"/>
+    <ROW File="jp2iexp.dll" Component_="jp2iexp.dll" FileName="jp2iexp.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jp2iexp.dll" SelfReg="false" NextFile="jp2launcher.exe"/>
+    <ROW File="jp2launcher.exe" Component_="jp2launcher.exe" FileName="JP2LAU~1.EXE|jp2launcher.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jp2launcher.exe" SelfReg="false" NextFile="jp2native.dll" DigSign="true"/>
+    <ROW File="jp2native.dll" Component_="jp2native.dll" FileName="JP2NAT~1.DLL|jp2native.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jp2native.dll" SelfReg="false" NextFile="jp2ssv.dll"/>
+    <ROW File="jp2ssv.dll" Component_="jp2ssv.dll" FileName="jp2ssv.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jp2ssv.dll" SelfReg="false" NextFile="jpeg.dll"/>
+    <ROW File="jpeg.dll" Component_="jpeg.dll" FileName="jpeg.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jpeg.dll" SelfReg="false" NextFile="jsdt.dll"/>
+    <ROW File="jsdt.dll" Component_="jsdt.dll" FileName="jsdt.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jsdt.dll" SelfReg="false" NextFile="jsound.dll"/>
+    <ROW File="jsound.dll" Component_="jsound.dll" FileName="jsound.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jsound.dll" SelfReg="false" NextFile="jsoundds.dll"/>
+    <ROW File="jsoundds.dll" Component_="jsoundds.dll" FileName="jsoundds.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\jsoundds.dll" SelfReg="false" NextFile="kcms.dll"/>
+    <ROW File="jsse.jar" Component_="accessibility.properties" FileName="jsse.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jsse.jar" SelfReg="false" NextFile="jvm.hprof.txt"/>
+    <ROW File="jvm.cfg" Component_="jvm.cfg" FileName="jvm.cfg" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\amd64\jvm.cfg" SelfReg="false" NextFile="calendars.properties"/>
+    <ROW File="jvm.dll" Component_="jvm.dll" FileName="jvm.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\server\jvm.dll" SelfReg="false" NextFile="Xusage.txt"/>
+    <ROW File="jvm.hprof.txt" Component_="accessibility.properties" FileName="JVMHPR~1.TXT|jvm.hprof.txt" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jvm.hprof.txt" SelfReg="false" NextFile="logging.properties"/>
+    <ROW File="kcms.dll" Component_="kcms.dll" FileName="kcms.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\kcms.dll" SelfReg="false" NextFile="keytool.exe"/>
+    <ROW File="keytool.exe" Component_="keytool.exe" FileName="keytool.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\keytool.exe" SelfReg="false" NextFile="kinit.exe" DigSign="true"/>
+    <ROW File="kinit.exe" Component_="kinit.exe" FileName="kinit.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\kinit.exe" SelfReg="false" NextFile="klist.exe" DigSign="true"/>
+    <ROW File="klist.exe" Component_="klist.exe" FileName="klist.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\klist.exe" SelfReg="false" NextFile="ktab.exe" DigSign="true"/>
+    <ROW File="ktab.exe" Component_="ktab.exe" FileName="ktab.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\ktab.exe" SelfReg="false" NextFile="lcms.dll" DigSign="true"/>
+    <ROW File="lcms.dll" Component_="lcms.dll" FileName="lcms.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\lcms.dll" SelfReg="false" NextFile="management.dll"/>
+    <ROW File="local_policy.jar" Component_="local_policy.jar" FileName="LOCAL_~1.JAR|local_policy.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\policy\limited\local_policy.jar" SelfReg="false" NextFile="US_export_policy.jar"/>
+    <ROW File="local_policy.jar_1" Component_="local_policy.jar_1" FileName="LOCAL_~1.JAR|local_policy.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\policy\unlimited\local_policy.jar" SelfReg="false" NextFile="US_export_policy.jar_1"/>
+    <ROW File="localedata.jar" Component_="accessbridge64.jar" FileName="LOCALE~1.JAR|localedata.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\localedata.jar" SelfReg="false" NextFile="metaindex"/>
+    <ROW File="logging.properties" Component_="accessibility.properties" FileName="LOGGIN~1.PRO|logging.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\logging.properties" SelfReg="false" NextFile="jmxremote.access"/>
+    <ROW File="management.dll" Component_="management.dll" FileName="MANAGE~1.DLL|management.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\management.dll" SelfReg="false" NextFile="mlib_image.dll"/>
+    <ROW File="management.properties" Component_="jmxremote.access" FileName="MANAGE~1.PRO|management.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\management\management.properties" SelfReg="false" NextFile="snmp.acl.template"/>
+    <ROW File="managementagent.jar" Component_="accessibility.properties" FileName="MANAGE~1.JAR|management-agent.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\management-agent.jar" SelfReg="false" NextFile="metaindex_1"/>
+    <ROW File="maprinter.exe_1" Component_="maprinter.exe_1" FileName="MAPRIN~1.EXE|maprinter.exe" Attributes="0" SourcePath="..\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\maprinter.exe" SelfReg="false" NextFile="maprinterservice.exe" DigSign="true"/>
+    <ROW File="maprinterservice.exe" Component_="maprinterservice.exe" FileName="MAPRIN~2.EXE|maprinterservice.exe" Attributes="0" SourcePath="..\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\maprinterservice.exe" SelfReg="false" NextFile="apimswincoreconsolel110.dll" DigSign="true"/>
+    <ROW File="messages.properties" Component_="ffjcext.zip" FileName="MESSAG~1.PRO|messages.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages.properties" SelfReg="false" NextFile="messages_de.properties"/>
+    <ROW File="messages_de.properties" Component_="ffjcext.zip" FileName="MESSAG~2.PRO|messages_de.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_de.properties" SelfReg="false" NextFile="messages_es.properties"/>
+    <ROW File="messages_es.properties" Component_="ffjcext.zip" FileName="MESSAG~3.PRO|messages_es.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_es.properties" SelfReg="false" NextFile="messages_fr.properties"/>
+    <ROW File="messages_fr.properties" Component_="ffjcext.zip" FileName="MESSAG~4.PRO|messages_fr.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_fr.properties" SelfReg="false" NextFile="messages_it.properties"/>
+    <ROW File="messages_it.properties" Component_="ffjcext.zip" FileName="MESSAG~5.PRO|messages_it.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_it.properties" SelfReg="false" NextFile="messages_ja.properties"/>
+    <ROW File="messages_ja.properties" Component_="ffjcext.zip" FileName="MESSAG~6.PRO|messages_ja.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_ja.properties" SelfReg="false" NextFile="messages_ko.properties"/>
+    <ROW File="messages_ko.properties" Component_="ffjcext.zip" FileName="MESSAG~7.PRO|messages_ko.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_ko.properties" SelfReg="false" NextFile="messages_pt_BR.properties"/>
+    <ROW File="messages_pt_BR.properties" Component_="ffjcext.zip" FileName="MESSAG~8.PRO|messages_pt_BR.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_pt_BR.properties" SelfReg="false" NextFile="messages_sv.properties"/>
+    <ROW File="messages_sv.properties" Component_="ffjcext.zip" FileName="MESSAG~9.PRO|messages_sv.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_sv.properties" SelfReg="false" NextFile="messages_zh_CN.properties"/>
+    <ROW File="messages_zh_CN.properties" Component_="ffjcext.zip" FileName="MESSA~10.PRO|messages_zh_CN.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_zh_CN.properties" SelfReg="false" NextFile="messages_zh_HK.properties"/>
+    <ROW File="messages_zh_HK.properties" Component_="ffjcext.zip" FileName="MESSA~11.PRO|messages_zh_HK.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_zh_HK.properties" SelfReg="false" NextFile="messages_zh_TW.properties"/>
+    <ROW File="messages_zh_TW.properties" Component_="ffjcext.zip" FileName="MESSA~12.PRO|messages_zh_TW.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\messages_zh_TW.properties" SelfReg="false" NextFile="splash.gif"/>
+    <ROW File="metaindex" Component_="accessbridge64.jar" FileName="META-I~1|meta-index" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\meta-index" SelfReg="false" NextFile="nashorn.jar"/>
+    <ROW File="metaindex_1" Component_="accessibility.properties" FileName="META-I~1|meta-index" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\meta-index" SelfReg="false" NextFile="net.properties"/>
+    <ROW File="mlib_image.dll" Component_="mlib_image.dll" FileName="MLIB_I~1.DLL|mlib_image.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\mlib_image.dll" SelfReg="false" NextFile="msvcp140.dll"/>
+    <ROW File="msvcp140.dll" Component_="msvcp140.dll" FileName="msvcp140.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\msvcp140.dll" SelfReg="false" NextFile="msvcr100.dll"/>
+    <ROW File="msvcr100.dll" Component_="msvcr100.dll" FileName="msvcr100.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\msvcr100.dll" SelfReg="false" NextFile="net.dll"/>
+    <ROW File="msvcr100.dll_1" Component_="msvcr100.dll_1" FileName="msvcr100.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\plugin2\msvcr100.dll" SelfReg="false" NextFile="npjp2.dll"/>
+    <ROW File="nashorn.jar" Component_="accessbridge64.jar" FileName="nashorn.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\nashorn.jar" SelfReg="false" NextFile="sunec.jar"/>
+    <ROW File="net.dll" Component_="net.dll" FileName="net.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\net.dll" SelfReg="false" NextFile="nio.dll"/>
+    <ROW File="net.properties" Component_="accessibility.properties" FileName="NET~1.PRO|net.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\net.properties" SelfReg="false" NextFile="plugin.jar"/>
+    <ROW File="nio.dll" Component_="nio.dll" FileName="nio.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\nio.dll" SelfReg="false" NextFile="npt.dll"/>
+    <ROW File="npdeployJava1.dll" Component_="npdeployJava1.dll" FileName="NPDEPL~1.DLL|npdeployJava1.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\dtplugin\npdeployJava1.dll" SelfReg="false" NextFile="dt_shmem.dll"/>
+    <ROW File="npjp2.dll" Component_="npjp2.dll" FileName="npjp2.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\plugin2\npjp2.dll" SelfReg="false" NextFile="policytool.exe"/>
+    <ROW File="npt.dll" Component_="npt.dll" FileName="npt.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\npt.dll" SelfReg="false" NextFile="orbd.exe"/>
+    <ROW File="orbd.exe" Component_="orbd.exe" FileName="orbd.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\orbd.exe" SelfReg="false" NextFile="pack200.exe" DigSign="true"/>
+    <ROW File="pack200.exe" Component_="pack200.exe" FileName="pack200.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\pack200.exe" SelfReg="false" NextFile="msvcr100.dll_1" DigSign="true"/>
+    <ROW File="plugin.jar" Component_="accessibility.properties" FileName="plugin.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\plugin.jar" SelfReg="false" NextFile="psfont.properties.ja"/>
+    <ROW File="policytool.exe" Component_="policytool.exe" FileName="POLICY~1.EXE|policytool.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\policytool.exe" SelfReg="false" NextFile="prism_common.dll" DigSign="true"/>
+    <ROW File="prism_common.dll" Component_="prism_common.dll" FileName="PRISM_~1.DLL|prism_common.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\prism_common.dll" SelfReg="false" NextFile="prism_d3d.dll"/>
+    <ROW File="prism_d3d.dll" Component_="prism_d3d.dll" FileName="PRISM_~2.DLL|prism_d3d.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\prism_d3d.dll" SelfReg="false" NextFile="prism_sw.dll"/>
+    <ROW File="prism_sw.dll" Component_="prism_sw.dll" FileName="prism_sw.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\prism_sw.dll" SelfReg="false" NextFile="resource.dll"/>
+    <ROW File="profile.jfc" Component_="default.jfc" FileName="profile.jfc" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\jfr\profile.jfc" SelfReg="false" NextFile="jfr.jar"/>
+    <ROW File="psfont.properties.ja" Component_="accessibility.properties" FileName="PSFONT~1.JA|psfont.properties.ja" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\psfont.properties.ja" SelfReg="false" NextFile="psfontj2d.properties"/>
+    <ROW File="psfontj2d.properties" Component_="accessibility.properties" FileName="PSFONT~1.PRO|psfontj2d.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\psfontj2d.properties" SelfReg="false" NextFile="resources.jar"/>
+    <ROW File="qr.png" Component_="qr.png" FileName="qr.png" Attributes="0" SourcePath="..\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\images\qr.png" SelfReg="false" NextFile="maprinter.exe_1"/>
+    <ROW File="resource.dll" Component_="resource.dll" FileName="resource.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\resource.dll" SelfReg="false" NextFile="rmid.exe"/>
+    <ROW File="resources.jar" Component_="accessibility.properties" FileName="RESOUR~1.JAR|resources.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\resources.jar" SelfReg="false" NextFile="rt.jar"/>
+    <ROW File="rmid.exe" Component_="rmid.exe" FileName="rmid.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\rmid.exe" SelfReg="false" NextFile="rmiregistry.exe" DigSign="true"/>
+    <ROW File="rmiregistry.exe" Component_="rmiregistry.exe" FileName="RMIREG~1.EXE|rmiregistry.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\rmiregistry.exe" SelfReg="false" NextFile="sawindbg.dll" DigSign="true"/>
+    <ROW File="rt.jar" Component_="accessibility.properties" FileName="rt.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\rt.jar" SelfReg="false" NextFile="blacklist"/>
+    <ROW File="sRGB.pf" Component_="CIEXYZ.pf" FileName="sRGB.pf" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\cmm\sRGB.pf" SelfReg="false" NextFile="contenttypes.properties"/>
+    <ROW File="sawindbg.dll" Component_="sawindbg.dll" FileName="sawindbg.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\sawindbg.dll" SelfReg="false" NextFile="classes.jsa"/>
+    <ROW File="servertool.exe" Component_="servertool.exe" FileName="SERVER~1.EXE|servertool.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\servertool.exe" SelfReg="false" NextFile="splashscreen.dll" DigSign="true"/>
+    <ROW File="snmp.acl.template" Component_="jmxremote.access" FileName="SNMPAC~1.TEM|snmp.acl.template" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\management\snmp.acl.template" SelfReg="false" NextFile="managementagent.jar"/>
+    <ROW File="sound.properties" Component_="accessibility.properties" FileName="SOUND~1.PRO|sound.properties" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\sound.properties" SelfReg="false" NextFile="tzdb.dat"/>
+    <ROW File="splash.gif" Component_="ffjcext.zip" FileName="splash.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\splash.gif" SelfReg="false" NextFile="splash2x.gif"/>
+    <ROW File="splash2x.gif" Component_="ffjcext.zip" FileName="SPLASH~1.GIF|splash@2x.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\splash@2x.gif" SelfReg="false" NextFile="splash_11lic.gif"/>
+    <ROW File="splash_112xlic.gif" Component_="ffjcext.zip" FileName="SPLASH~3.GIF|splash_11@2x-lic.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\splash_11@2x-lic.gif" SelfReg="false" NextFile="deploy.jar"/>
+    <ROW File="splash_11lic.gif" Component_="ffjcext.zip" FileName="SPLASH~2.GIF|splash_11-lic.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\deploy\splash_11-lic.gif" SelfReg="false" NextFile="splash_112xlic.gif"/>
+    <ROW File="splashscreen.dll" Component_="splashscreen.dll" FileName="SPLASH~1.DLL|splashscreen.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\splashscreen.dll" SelfReg="false" NextFile="ssv.dll"/>
+    <ROW File="ssv.dll" Component_="ssv.dll" FileName="ssv.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\ssv.dll" SelfReg="false" NextFile="ssvagent.exe"/>
+    <ROW File="ssvagent.exe" Component_="ssvagent.exe" FileName="ssvagent.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\ssvagent.exe" SelfReg="false" NextFile="sunec.dll" DigSign="true"/>
+    <ROW File="sunec.dll" Component_="sunec.dll" FileName="sunec.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\sunec.dll" SelfReg="false" NextFile="sunmscapi.dll"/>
+    <ROW File="sunec.jar" Component_="accessbridge64.jar" FileName="sunec.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\sunec.jar" SelfReg="false" NextFile="sunjce_provider.jar"/>
+    <ROW File="sunjce_provider.jar" Component_="accessbridge64.jar" FileName="SUNJCE~1.JAR|sunjce_provider.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\sunjce_provider.jar" SelfReg="false" NextFile="sunmscapi.jar"/>
+    <ROW File="sunmscapi.dll" Component_="sunmscapi.dll" FileName="SUNMSC~1.DLL|sunmscapi.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\sunmscapi.dll" SelfReg="false" NextFile="t2k.dll"/>
+    <ROW File="sunmscapi.jar" Component_="accessbridge64.jar" FileName="SUNMSC~1.JAR|sunmscapi.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\sunmscapi.jar" SelfReg="false" NextFile="sunpkcs11.jar"/>
+    <ROW File="sunpkcs11.jar" Component_="accessbridge64.jar" FileName="SUNPKC~1.JAR|sunpkcs11.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\sunpkcs11.jar" SelfReg="false" NextFile="zipfs.jar"/>
+    <ROW File="t2k.dll" Component_="t2k.dll" FileName="t2k.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\t2k.dll" SelfReg="false" NextFile="tnameserv.exe"/>
+    <ROW File="tnameserv.exe" Component_="tnameserv.exe" FileName="TNAMES~1.EXE|tnameserv.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\tnameserv.exe" SelfReg="false" NextFile="ucrtbase.dll" DigSign="true"/>
+    <ROW File="trusted.libraries" Component_="blacklist" FileName="TRUSTE~1.LIB|trusted.libraries" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\security\trusted.libraries" SelfReg="false" NextFile="sound.properties"/>
+    <ROW File="tzdb.dat" Component_="accessibility.properties" FileName="tzdb.dat" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\tzdb.dat" SelfReg="false" NextFile="tzmappings"/>
+    <ROW File="tzmappings" Component_="accessibility.properties" FileName="TZMAPP~1|tzmappings" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\tzmappings" SelfReg="false" NextFile="LICENSE"/>
+    <ROW File="ucrtbase.dll" Component_="ucrtbase.dll" FileName="ucrtbase.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\ucrtbase.dll" SelfReg="false" NextFile="unpack.dll"/>
+    <ROW File="unpack.dll" Component_="unpack.dll" FileName="unpack.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\unpack.dll" SelfReg="false" NextFile="unpack200.exe"/>
+    <ROW File="unpack200.exe" Component_="unpack200.exe" FileName="UNPACK~1.EXE|unpack200.exe" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\unpack200.exe" SelfReg="false" NextFile="vcruntime140.dll" DigSign="true"/>
+    <ROW File="vcruntime140.dll" Component_="vcruntime140.dll" FileName="VCRUNT~1.DLL|vcruntime140.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\vcruntime140.dll" SelfReg="false" NextFile="verify.dll"/>
+    <ROW File="verify.dll" Component_="verify.dll" FileName="verify.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\verify.dll" SelfReg="false" NextFile="w2k_lsa_auth.dll"/>
+    <ROW File="w2k_lsa_auth.dll" Component_="w2k_lsa_auth.dll" FileName="W2K_LS~1.DLL|w2k_lsa_auth.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\w2k_lsa_auth.dll" SelfReg="false" NextFile="WindowsAccessBridge64.dll"/>
+    <ROW File="win32_CopyDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~1.GIF|win32_CopyDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_CopyDrop32x32.gif" SelfReg="false" NextFile="win32_CopyNoDrop32x32.gif"/>
+    <ROW File="win32_CopyNoDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~2.GIF|win32_CopyNoDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_CopyNoDrop32x32.gif" SelfReg="false" NextFile="win32_LinkDrop32x32.gif"/>
+    <ROW File="win32_LinkDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~3.GIF|win32_LinkDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_LinkDrop32x32.gif" SelfReg="false" NextFile="win32_LinkNoDrop32x32.gif"/>
+    <ROW File="win32_LinkNoDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~4.GIF|win32_LinkNoDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_LinkNoDrop32x32.gif" SelfReg="false" NextFile="win32_MoveDrop32x32.gif"/>
+    <ROW File="win32_MoveDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~5.GIF|win32_MoveDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_MoveDrop32x32.gif" SelfReg="false" NextFile="win32_MoveNoDrop32x32.gif"/>
+    <ROW File="win32_MoveNoDrop32x32.gif" Component_="cursors.properties" FileName="WIN32_~6.GIF|win32_MoveNoDrop32x32.gif" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\images\cursors\win32_MoveNoDrop32x32.gif" SelfReg="false" NextFile="javafx.properties"/>
+    <ROW File="wsdetect.dll" Component_="wsdetect.dll" FileName="wsdetect.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\wsdetect.dll" SelfReg="false" NextFile="zip.dll"/>
+    <ROW File="zip.dll" Component_="zip.dll" FileName="zip.dll" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\bin\zip.dll" SelfReg="false" NextFile="COPYRIGHT"/>
+    <ROW File="zipfs.jar" Component_="accessbridge64.jar" FileName="zipfs.jar" Attributes="0" SourcePath="..\..\..\Program Files\Java\jdk1.8.0_152\jre\lib\ext\zipfs.jar" SelfReg="false" NextFile="flavormap.properties"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="2" PackageType="1" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="0" SignTool="0" UseSha256="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="InstallDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\InstallDlg.aip"/>
+    <ROW Fragment="LicenseAgreementDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\LicenseAgreementDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;surface\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;surface\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;surface\fragments\VerifyRepairDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_ConfigFailActions" Description="Configure service failure actions" Template="Service: [1]" DescriptionLocId="ActionText.Description.AI_ConfigFailActions" TemplateLocId="ActionText.Template.AI_ConfigFailActions"/>
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ProcessFailActions" Description="Generating actions to configure service failure actions" Template="Service: [1]" DescriptionLocId="ActionText.Description.AI_ProcessFailActions" TemplateLocId="ActionText.Template.AI_ProcessFailActions"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ROW Dialog_="CustomizeDlg" Control="CustomizeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="MsiRMFilesInUse" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="MsiRMFilesInUse#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="PatchWelcomeDlgDialogInitializer" Type="DialogInitializer" X="0" Y="0" Width="0" Height="0" Attributes="0" Order="-1" TextLocId="-" HelpLocId="-" ExtDataLocId="-"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="50" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="600" TextLocId="Metro.Control.Text.ProductName" MsiKey="PatchWelcomeDlg#ProductNameTitle"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="CompanyText" Type="Text" X="83" Y="16" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="700" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="PatchWelcomeDlg#CompanyText"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control="ProductLogo" Type="Bitmap" X="17" Y="5" Width="59" Height="63" Attributes="1" Text="[AppLogoIcon]" Order="800" MsiKey="PatchWelcomeDlg#ProductLogo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyReadyDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Back" Type="PushButton" X="5" Y="381" Width="11" Height="11" Attributes="2" Text="Control.Text.VerifyReadyDlg#Back" Help="Back|" Order="200" TextLocId="Control.Text.VerifyReadyDlg#Back" HelpLocId="Air.Control.Help#Back" MsiKey="VerifyReadyDlg#Back" Options="1" ExtType="PushButton" ExtData="[ButtonText_Back]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ReadyToInstall" Type="Text" X="17" Y="105" Width="312" Height="19" Attributes="196611" Text="Ready to Install" TextStyle="[SubTitleStyle]" Order="400" TextLocId="Control.Text.VerifyReadyDlg#Title" MsiKey="VerifyReadyDlg#ReadyToInstall"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="Text_2" Type="Text" X="17" Y="139" Width="312" Height="100" Attributes="65539" Text="The [Wizard] is ready to begin the [ProductName] installation" Order="500" TextLocId="Control.Text.VerifyReadyDlg#Description" MsiKey="VerifyReadyDlg#Text_2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="InstallButton" Type="ImageButton" X="251" Y="359" Width="78" Height="28" Attributes="3" Text="[metrobuttonimage]" TextStyle="[MetroButtonText]" Order="600" MsiKey="VerifyReadyDlg#InstallButton" ExtType="ImageButton" ExtData="INSTALL" ExtDataLocId="Metro.Control.ExtData.VerifyReadyDlg#InstallButton"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductNameTitle" Type="Text" X="83" Y="21" Width="245" Height="50" Attributes="196611" Text="[ProductName]" TextStyle="[ProductNameForSplash]" Order="700" TextLocId="Metro.Control.Text.ProductName" MsiKey="VerifyReadyDlg#ProductNameTitle"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="CompanyText" Type="Text" X="83" Y="16" Width="191" Height="12" Attributes="196611" Text="[Manufacturer]" TextStyle="[ManufacturerFont]" Order="800" TextLocId="Metro.Control.Text.Manufacturer" MsiKey="VerifyReadyDlg#CompanyText"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="ProductLogo" Type="Bitmap" X="17" Y="5" Width="59" Height="63" Attributes="1" Text="[AppLogoIcon]" Order="900" MsiKey="VerifyReadyDlg#ProductLogo"/>
+    <ROW Dialog_="VerifyReadyDlg" Control="AdvInst" Type="Text" X="5" Y="388" Width="74" Height="11" Attributes="196611" Text="Advanced Installer" TextStyle="[BrandingStyle]" Order="1000" MsiKey="VerifyReadyDlg#AdvInst"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control="Cancel" Type="ImageButton" X="163" Y="359" Width="78" Height="28" Attributes="2" Text="[NextCancelButtons]" TextStyle="[MetroButtonText]" Order="100" MsiKey="VerifyRemoveDlg#Cancel" Options="1" ExtType="ImageButton" ExtData="[ButtonText_Cancel]" ExtDataLocId="-"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Bitmap" Type="Bitmap" X="0" Y="0" Width="345" Height="400" Attributes="1" Text="[Background]" Order="100" MsiKey="VerifyRepairDlg#Bitmap"/>
+    <ROW Dialog_="VerifyRepairDlg" Control="Repair" Type="ImageButton" X="251" Y="359" Width="78" Height="28" Attributes="3" Text="[metrobuttonimage]" TextStyle="[MetroButtonText]" Order="200" MsiKey="VerifyRepairDlg#Repair" Options="1" ExtType="ImageButton" ExtData="&amp;Repair" ExtDataLocId="Metro.Control.ExtData.VerifyRepairDlg#Repair"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="301"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="NewDialog" Argument="LicenseAgreementDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="301"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="NewDialog" Argument="InstallDlg" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="1"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="199" Options="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="699"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="99"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="304" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL" Ordering="101" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL" Ordering="102" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL" Ordering="103" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="InstallDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL" Ordering="104" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="302" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="YouMustAgreeCtrl" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="303" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL" Ordering="0" Options="2"/>
+    <ROW Dialog_="InstallDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL" Ordering="1" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_INSTALL AND AiLicenseAgreement AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_INSTALL AND AiLicenseAgreement AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="101" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="102" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="103" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="LicenseAgreementDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="104" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="2" Options="2"/>
+    <ROW Dialog_="LicenseAgreementDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_INSTALL AND AiLicenseAgreement" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="102" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="EnableRollback" Argument="False" Condition="AI_MAINT AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="103" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Modify" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_MAINT AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="104" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_MAINT" Ordering="0" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_MAINT" Ordering="1" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="CustomizeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_MAINT" Ordering="2" Options="2"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_MAINT" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfRbDiskDlg" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND (PROMPTROLLBACKCOST=&quot;P&quot; OR NOT PROMPTROLLBACKCOST)" Ordering="202" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="EnableRollback" Argument="False" Condition="AI_PATCH AND OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 0 AND PROMPTROLLBACKCOST=&quot;D&quot;" Ordering="203" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="SpawnDialog" Argument="OutOfDiskDlg" Condition="AI_PATCH AND ( (OutOfDiskSpace = 1 AND OutOfNoRbDiskSpace = 1) OR (OutOfDiskSpace = 1 AND PROMPTROLLBACKCOST=&quot;F&quot;) )" Ordering="204" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_ButtonText_Next_Orig]" Argument="[ButtonText_Next]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[ButtonText_Next]" Argument="[[AI_CommitButton]]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[AI_Text_Next_Orig]" Argument="[Text_Next]" Condition="AI_PATCH" Ordering="2" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="PatchWelcomeDlgDialogInitializer" Event="[Text_Next]" Argument="[Text_Install]" Condition="AI_PATCH" Ordering="3" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[ButtonText_Next]" Argument="[AI_ButtonText_Next_Orig]" Condition="AI_PATCH" Ordering="0" Options="2"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Back" Event="[Text_Next]" Argument="[AI_Text_Next_Orig]" Condition="AI_PATCH" Ordering="1" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ChooseTextStyles" Type="1" Source="aicustact.dll" Target="ChooseTextStyles"/>
+    <ROW Action="AI_ConfigFailActions" Type="11265" Source="aicustact.dll" Target="ConfigureServFailActions" WithoutSeq="true"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_ProcessFailActions" Type="1" Source="aicustact.dll" Target="ProcessFailActions"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RunFinishActions" Type="1" Source="aicustact.dll" Target="RunFinishActions" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_ProcessFailActions" Sequence="5849"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="InstallDlg" Condition="AI_INSTALL" Sequence="1230" SeqType="3" MsiKey="WelcomeDlg"/>
+    <ROW Action="MaintenanceTypeDlg" Condition="AI_MAINT" Sequence="1250" SeqType="3" MsiKey="MaintenanceTypeDlg"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_ChooseTextStyles" Sequence="74"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#1" Component_="AI_CustomARPName"/>
+    <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#0" Component_="AI_CustomARPName"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServConfigFailureActionsComponent">
+    <ROW MsiServiceConfigFailureActions="ServiceName" Name="ServiceName" Event="1" ResetPeriod="1" Actions="1" DelayActions="1440" Component_="sawindbg.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServCtrlComponent">
+    <ROW ServiceControl="maprinterservice.exe" Name="maprinterservice.exe" Event="161" Wait="0" Component_="maprinterservice.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiServInstComponent">
+    <ROW ServiceInstall="maprinterservice.exe" Name="maprinterservice.exe" DisplayName="maprinterservice" ServiceType="32" StartType="4" ErrorControl="1" Component_="maprinterservice.exe" Description="maprinterservice scanner"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="surface"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

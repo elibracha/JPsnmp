@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>console</headerType>
+  <jar>C:\Users\elibr\GitHub\snmpEx4J\out\artifacts\snmpEx4j_jar\jars\printsemailservice.jar</jar>
+  <outfile>C:\Users\elibr\GitHub\snmpEx4J\out\artifacts\snmpEx4j_jar\maprinterservice.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\elibr\GitHub\snmpEx4j\out\artifacts\snmpEx4j_jar\icons\network_service.ico</icon>
+  <classPath>
+    <mainClass>Module.Main</mainClass>
+    <cp>Module.Main</cp>
+  </classPath>
+  <jre>
+    <path>jre</path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+</launch4jConfig>
