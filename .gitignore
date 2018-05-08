@@ -24,4 +24,8 @@ hs_err_pid*
 .idea/
 target/
 JPsnmp.iml
+<<<<<<< HEAD
 out/
+=======
+printersservice.iml
+>>>>>>> dc7bb104b0195fce924a1409d23b32c93b6e8c2f
