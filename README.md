@@ -22,3 +22,7 @@ A java Virtual Machine most be installed (version 1.8.0_153 and above)
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://github.com/elibracha/snmpEx4j/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
