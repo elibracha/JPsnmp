@@ -1,5 +1,5 @@
 # snmpEx4j
-A fast, reliable, and well-designed development kit  for the Pascal programming language. Including a compiler, interpreter, debugger and IDE.
+This is a javafx client with gives the user the ability to scan freely any client with support SNMP protocol, And extract the result to a custom mail.
 
 ## Getting Started
 
